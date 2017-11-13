@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ImputManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Grid.cs">
     <Files>
-      <File FileName="Assets\Grid.cs" Line="1" Column="1" />
-      <File FileName="Assets\Unit tests\PositionCollisionTest.cs" Line="1" Column="1" />
-      <File FileName="Assets\ImputManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\PlayerMovment.cs" Line="23" Column="131" />
+      <File FileName="Assets\Grid.cs" Line="56" Column="74" />
+      <File FileName="Assets\PlayerMovment.cs" Line="19" Column="24" />
+      <File FileName="Assets\InputManager.cs" Line="29" Column="4" />
+      <File FileName="Assets\GridManager.cs" Line="25" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

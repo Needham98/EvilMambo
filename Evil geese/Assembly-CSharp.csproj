@@ -51,11 +51,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\Grid.cs" />
      <Compile Include="Assets\GridManager.cs" />
      <Compile Include="Assets\InputManager.cs" />
      <Compile Include="Assets\Menu\Scripts\ButtonManager.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\PlayerMovment.cs" />
+=======
+     <Compile Include="Assets\PlayerAssets\Scripts\Player.cs" />
+>>>>>>> 5cd2221a25d228be630d42f27fcfba2905464332
      <Compile Include="Assets\Unit tests\PositionCollisionTest.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

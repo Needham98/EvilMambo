@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Movement demo.unity
+=======
+- path: Assets/CharSelectScene.unity
+>>>>>>> 5cd2221a25d228be630d42f27fcfba2905464332
   isLoaded: 1
   isActive: 1
