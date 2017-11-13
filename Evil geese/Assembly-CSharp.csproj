@@ -51,8 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\Grid.cs" />
      <Compile Include="Assets\Menu\Scripts\ButtonManager.cs" />
+     <Compile Include="Assets\PlayerAssets\Scripts\Player.cs" />
      <Compile Include="Assets\Unit tests\PositionCollisionTest.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Apps/Unity/2017.1.1.f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
