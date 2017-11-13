@@ -108,6 +108,77 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &136667466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 136667468}
+  - component: {fileID: 136667467}
+  m_Layer: 0
+  m_Name: marketsquare
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &136667467
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 136667466}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 6f5c982391a60594094b4a1e64f0cdb4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.44, y: 1.38}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!4 &136667468
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 136667466}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.2, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &311474520
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,43 +231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9399390be8dcfb4abc3036f8b4807ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keys: 030000000300000003000000020000000300000001000000030000000000000003000000ffffffff03000000feffffff03000000fdffffff02000000fdffffff01000000fdffffff00000000fdfffffffefffffffdfffffffffffffffdfffffffdfffffffdfffffffdfffffffefffffffdffffff01000000fdffffff00000000fdfffffffffffffffdffffff02000000
+  _keys: 02000000fdffffff01000000fdffffff00000000fdfffffffefffffffdfffffffdfffffffdfffffffdfffffffefffffffdffffffffffffffffffffff02000000feffffff02000000feffffff01000000ffffffff01000000010000000100000002000000010000000200000002000000010000000200000001000000030000000200000003000000ffffffff03000000feffffff03000000feffffff04000000feffffff05000000ffffffff05000000000000000500000001000000050000000200000005000000030000000500000004000000050000000500000005000000060000000500000007000000050000000700000004000000070000000300000007000000020000000600000003000000050000000300000004000000030000000300000003000000030000000200000004000000020000000500000001000000050000000000000004000000ffffffff04000000feffffff04000000fdffffff04000000fcffffff03000000fbffffff02000000fbffffff01000000fbffffff00000000fbfffffffffffffffbfffffffefffffffbfffffffdfffffffbfffffffcfffffffbfffffffbfffffffbfffffffbfffffffcfffffffbfffffffdfffffffcfffffffdfffffffefffffffffffffffefffffffeffffff00000000ffffffff00000000feffffff02000000feffffff02000000ffffffff01000000fffffffffcffffff00000000fcffffff01000000fcffffff02000000fdffffff03000000
   _positions:
-  - x: 3
-    y: 3
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 3
-    y: 2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 3
-    y: 1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 3
-    y: 0
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 3
-    y: -1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 3
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 3
-    y: -3
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
   - x: 2
     y: -3
     interactionObject: {fileID: 0}
@@ -217,11 +253,6 @@ MonoBehaviour:
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
-  - x: -1
-    y: -3
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
   - x: -3
     y: -3
     interactionObject: {fileID: 0}
@@ -233,22 +264,312 @@ MonoBehaviour:
     stepOn: {fileID: 0}
     blocked: 1
   - x: -3
-    y: 1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: -3
-    y: 0
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: -3
     y: -1
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
-  - x: -3
+  - x: -1
     y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -2
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -2
+    y: 1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -1
+    y: 1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 1
+    y: 1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 2
+    y: 1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 2
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 1
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 1
+    y: 3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 2
+    y: 3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -1
+    y: 3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -2
+    y: 3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -2
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -2
+    y: 5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -1
+    y: 5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 0
+    y: 5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 1
+    y: 5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 2
+    y: 5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 3
+    y: 5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: 5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 5
+    y: 5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 6
+    y: 5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 7
+    y: 5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 7
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 7
+    y: 3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 7
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 6
+    y: 3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 5
+    y: 3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: 3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 3
+    y: 3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 3
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 5
+    y: 1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 5
+    y: 0
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: -1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: -2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: -3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 3
+    y: -5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 2
+    y: -5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 1
+    y: -5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 0
+    y: -5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -1
+    y: -5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -2
+    y: -5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -3
+    y: -5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -4
+    y: -5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -5
+    y: -5
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -5
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -5
+    y: -3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -4
+    y: -3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -2
+    y: -1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -2
+    y: -2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 0
+    y: -1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 0
+    y: -2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 2
+    y: -2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 2
+    y: -1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 1
+    y: -1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -4
+    y: 0
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -4
+    y: 1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -4
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -3
+    y: 3
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
