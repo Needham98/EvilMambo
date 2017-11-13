@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grid {
-	Dictionary<ulong, GridPosition> gridDictionary;
+public class Grid : MonoBehaviour, ISerializationCallbackReceiver{
+	public Dictionary<ulong, GridPosition> gridDictionary;
+	//these are both for serialization
+	public List<ulong> _keys;
+	public List<GridPosition> _positions;
+
+	public void onStart(){
+	}
 	public Grid(){
 		this.gridDictionary = new Dictionary<ulong, GridPosition> ();
 	}
@@ -27,9 +33,32 @@ public class Grid {
 	public bool clearPosition(GridPosition pos){
 		return gridDictionary.Remove (pos.hashable ());
 	}
-}
 
-public class GridPosition {
+	public void OnBeforeSerialize(){
+		_keys = new List<ulong> ();
+		_positions = new List<GridPosition> ();
+		foreach (ulong key in gridDictionary.Keys) {
+			_keys.Add (key);
+			_positions.Add(gridDictionary[key]);
+		}
+	}
+
+	public void OnAfterDeserialize(){
+		gridDictionary = new Dictionary<ulong, GridPosition> ();
+		for (int i = 0; i < _keys.Count; i += 1) {
+			gridDictionary.Add (_keys [i], _positions [i]);
+		}
+	}
+
+	void OnDrawGizmosSelected(){
+		Gizmos.color = Color.red;
+		foreach (GridPosition pos in gridDictionary.Values) {
+			Gizmos.DrawSphere (new Vector3 ((float)pos.x, (float)pos.y, 0.0f), 0.4f);
+		}
+	}
+}
+[System.Serializable]
+public class GridPosition : System.Object {
 	public int x;
 	public int y;
 	public GameObject interactionObject;
