@@ -7,12 +7,15 @@ using UnityEditor;
 [CustomEditor(typeof(Grid))]
 [CanEditMultipleObjects]
 public class GridManager : Editor {
+	Vector2 mousePos = new Vector2 ();
 	int tempx = 0;
 	int tempy = 0;
 	GridPosition pos;
+	Grid myGrid;
 	public override void OnInspectorGUI(){
-		Grid myTarget = (Grid)target;
-		myTarget.OnAfterDeserialize ();
+		myGrid = (Grid)target;
+
+		myGrid.OnAfterDeserialize ();
 		//DrawDefaultInspector ();
 
 		EditorGUILayout.BeginHorizontal (null);
@@ -26,13 +29,13 @@ public class GridManager : Editor {
 		EditorGUILayout.EndHorizontal ();
 
 		if (GUILayout.Button ("add")) {
-			myTarget.setPosition (new GridPosition (tempx, tempy, blocked : true));
+			myGrid.setPosition (new GridPosition (tempx, tempy, blocked : true));
 		}
 		if (GUILayout.Button ("remove")) {
-			myTarget.clearPosition (tempx, tempy);
+			myGrid.clearPosition (tempx, tempy);
 		}
 		if (GUILayout.Button ("search")) {
-			pos = myTarget.getPosition (tempx, tempy);
+			pos = myGrid.getPosition (tempx, tempy);
 		}
 		if (pos != null) {
 			EditorGUILayout.BeginHorizontal (null);
@@ -61,6 +64,28 @@ public class GridManager : Editor {
 			EditorGUILayout.EndHorizontal ();
 
 		}
-		myTarget.OnBeforeSerialize ();
+		myGrid.OnBeforeSerialize ();
+		//Debug.Log (Event.current.mousePosition);
+	}
+
+	void OnSceneGUI()
+	{
+		mousePos = Event.current.mousePosition;
+		Vector3 worldPos = Camera.current.ScreenToWorldPoint (mousePos);
+		int localX = Mathf.RoundToInt (worldPos.x);
+		int localY = -Mathf.RoundToInt (worldPos.y);
+		worldPos.z = 0f;
+		if (Event.current.type == EventType.KeyDown) {
+			if (Event.current.keyCode == KeyCode.Q) {
+				myGrid.setPosition(new GridPosition (localX, localY, blocked : true));
+			}
+			if (Event.current.keyCode == KeyCode.S) {
+				pos = myGrid.getPosition (localX, localY);
+			}
+			if (Event.current.keyCode == KeyCode.C) {
+				myGrid.clearPosition (localX, localY);
+			}
+		}
+		
 	}
 }

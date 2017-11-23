@@ -7,9 +7,9 @@ public class PlayerMovment : MonoBehaviour {
 	public int x;// current x position on grid system
 	public int y;// current y position on grid system
 	bool moving = false;
-	GameObject stepObject;
-	GameObject MCP;
-	Vector2 movedir = Vector2.up;
+	GameObject stepObject; // for event triggers
+	GameObject MCP; // GameController
+	Vector2 movedir = Vector2.up; // for animations
 	Grid movementGrid;
 	float moveSpeed = 3.5f; // speed of movement in tiles per second
 
@@ -26,7 +26,7 @@ public class PlayerMovment : MonoBehaviour {
 			float xDir = (float) x - ownTransform.position.x;
 			float yDir = (float) y - ownTransform.position.y;
 			if (distance < moveSpeed * Time.deltaTime * 1.1) { // 1.1 is a magic number to prevent bugs from floating point errors
-				ownTransform.position = new Vector3 ((float) x, (float) y, ownTransform.position.y);
+				ownTransform.position = new Vector3 ((float) x, (float) y, ownTransform.position.z);
 				moving = false;
 			} else {
 				ownTransform.position += new Vector3 (xDir, yDir).normalized * moveSpeed * Time.deltaTime;
@@ -39,7 +39,7 @@ public class PlayerMovment : MonoBehaviour {
 		int newy = y + (int) dir.normalized.y;
 		GridPosition gridPos = movementGrid.getPosition(newx, newy);
 		if (moving) {
-			if ((new Vector2(ownTransform.position.x, ownTransform.position.y) - new Vector2 (newx, newy)).magnitude > 1.03) {
+			if ((new Vector2(ownTransform.position.x, ownTransform.position.y) - new Vector2 (newx, newy)).magnitude > 1.02) {
 				return false;
 			}
 		}

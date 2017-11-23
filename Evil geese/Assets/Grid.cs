@@ -8,8 +8,6 @@ public class Grid : MonoBehaviour, ISerializationCallbackReceiver{
 	public List<ulong> _keys;
 	public List<GridPosition> _positions;
 
-	public void onStart(){
-	}
 	public Grid(){
 		this.gridDictionary = new Dictionary<ulong, GridPosition> ();
 	}
