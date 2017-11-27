@@ -51,6 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CombatStuff\abilities\MeleeAttack.cs" />
+     <Compile Include="Assets\CombatStuff\CombatAbility.cs" />
+     <Compile Include="Assets\CombatStuff\CombatCharacter.cs" />
+     <Compile Include="Assets\CombatStuff\CombatEntity.cs" />
+     <Compile Include="Assets\CombatStuff\CombatManager.cs" />
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\Grid.cs" />
      <Compile Include="Assets\GridManager.cs" />

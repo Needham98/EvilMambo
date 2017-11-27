@@ -32,6 +32,7 @@ public class Grid : MonoBehaviour, ISerializationCallbackReceiver{
 		return gridDictionary.Remove (pos.hashable ());
 	}
 
+	// todo remove keys from serialization system since they can be calculated from the positions
 	public void OnBeforeSerialize(){
 		_keys = new List<ulong> ();
 		_positions = new List<GridPosition> ();
@@ -55,6 +56,7 @@ public class Grid : MonoBehaviour, ISerializationCallbackReceiver{
 		}
 	}
 }
+// todo move to own file
 [System.Serializable]
 public class GridPosition : System.Object {
 	public int x;

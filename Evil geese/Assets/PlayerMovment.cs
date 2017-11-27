@@ -7,9 +7,9 @@ public class PlayerMovment : MonoBehaviour {
 	public int x;// current x position on grid system
 	public int y;// current y position on grid system
 	bool moving = false;
-	GameObject stepObject; // for event triggers
+	public GameObject stepObject; // for event triggers
 	GameObject MCP; // GameController
-	Vector2 movedir = Vector2.up; // for animations
+	public Vector2 movedir = Vector2.up; // for animations
 	Grid movementGrid;
 	float moveSpeed = 3.5f; // speed of movement in tiles per second
 
