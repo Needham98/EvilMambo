@@ -5,18 +5,20 @@ using UnityEngine;
 public class CombatCharacter {
 	public int maxHealth;
 	public int health;
+	public int maxEnergy;
+	public int energy;
 	public CombatAbility basicAttack;
-	public bool isControlable;
 	public List<CombatAbility> abilities;
 	public CombatEntity entity;// the CombatEntity attached to the representation of this character
 
 	//todo define spriteset system for combat characters
-	public CombatCharacter(int maxHealth, int health, bool isControlable = true, CombatAbility basicAttack = null){
+	public CombatCharacter(int maxHealth, int health,int maxEnergy, int energy, CombatAbility basicAttack = null){
 		this.maxHealth = maxHealth;
 		this.health = health;
-		this.isControlable = isControlable;
+		this.maxEnergy = maxEnergy;
+		this.energy = energy;
 		if (basicAttack == null){
-			this.basicAttack = new MeleeAttack (8, 10);
+			this.basicAttack = new SimpleAttack (8, 10, "melee");
 		}
 		else{
 			this.basicAttack = basicAttack;
@@ -31,6 +33,13 @@ public class CombatCharacter {
 	// todo add system for damage calucation by damage type
 	public void takeDamage(int damage, string type = ""){
 		health -= damage;
+		updateEntityBars ();
+	}
+
+	public void updateEntityBars(){
+		if (entity != null) {
+			entity.setBars ((float) health / maxHealth, (float) energy / maxEnergy);
+		}
 	}
 
 	public bool isAlive(){

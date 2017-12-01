@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CombatManager : MonoBehaviour {
+	//todo status effects system
+
+
+
 	//the lists representing all the combatants
 	public List<CombatCharacter> frendlyChars;// the list of characters controlled by the player
 	public List<CombatCharacter> enemyChars;//the list of characters attacking the player
@@ -39,13 +43,13 @@ public class CombatManager : MonoBehaviour {
 
 		if (frendlyChars == null || frendlyChars.Count == 0) {
 			frendlyChars = new List<CombatCharacter> ();
-			frendlyChars.Add (new CombatCharacter (10, 10));// for testing
-			frendlyChars.Add (new CombatCharacter (10, 10));// for testing
+			frendlyChars.Add (new CombatCharacter (10, 10, 100,100));// for testing
+			frendlyChars.Add (new CombatCharacter (10, 10, 100,100));// for testing
 		}
 		if (enemyChars == null || enemyChars.Count == 0) {
 			enemyChars = new List<CombatCharacter> ();
-			enemyChars.Add (new CombatCharacter (10, 10));// for testing
-			enemyChars.Add (new CombatCharacter (10, 10));// for testing
+			enemyChars.Add (new CombatCharacter (10, 10, 100,100));// for testing
+			enemyChars.Add (new CombatCharacter (10, 10, 100,100));// for testing
 		}
 
 		Vector3 pos = new Vector3 (-4, 3); // arbitrary start position
@@ -53,13 +57,15 @@ public class CombatManager : MonoBehaviour {
 		foreach (CombatCharacter c in frendlyChars) {
 			GameObject obj = GameObject.Instantiate(combatEntityPrefab, pos, new Quaternion());
 			c.entity = obj.GetComponent<CombatEntity> ();
+			c.entity.setupBars (false, true);
 			pos += offset;
 		}
 		pos = new Vector3 (4, 3); // arbitrary start position 
 		foreach (CombatCharacter c in enemyChars) {
 			GameObject obj = GameObject.Instantiate(combatEntityPrefab, pos, new Quaternion());
-			pos += offset;
 			c.entity = obj.GetComponent<CombatEntity> ();
+			c.entity.setupBars (true, false);
+			pos += offset;
 		}
 		attacker = frendlyChars [attackerPos];
 	}
@@ -123,19 +129,23 @@ public class CombatManager : MonoBehaviour {
 	void selectionStage(){
 		if (!frendlyAttacking) {
 			//todo write better enemy combat logic
-			int toAttack = CombatCharacter.getFirstAlive(defendChars);
+			int toAttack = CombatCharacter.getFirstAlive (defendChars);
 			if (toAttack == -1) {
 				lose ();
 			} else {
-				attackTargets = new List<CombatCharacter>();
-				attackTargets.Add(defendChars[toAttack]);
+				attackTargets = new List<CombatCharacter> ();
+				attackTargets.Add (defendChars [toAttack]);
 				attack = attacker.basicAttack;
 				currentStage = turnStages.moving;
 			}
+		} else {
+			selectorRen.enabled = true;
+			selectorObj.transform.position = attacker.entity.transform.position;
 		}
 	}
 
 	void movingStage(){
+		selectorRen.enabled = false;
 		if (attacker.entity.moveAttack ()) {
 			currentStage = turnStages.attacking;
 		}
