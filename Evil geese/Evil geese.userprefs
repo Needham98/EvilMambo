@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CombatStuff\CombatEntity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CombatStuff\CombatManager.cs">
     <Files>
-      <File FileName="Assets\CombatStuff\CombatManager.cs" Line="52" Column="9" />
-      <File FileName="Assets\CombatStuff\CombatCharacter.cs" Line="18" Column="30" />
-      <File FileName="Assets\CombatStuff\CombatAbility.cs" Line="9" Column="20" />
-      <File FileName="Assets\CombatStuff\abilities\SimpleAttack.cs" Line="35" Column="36" />
+      <File FileName="Assets\CombatStuff\CombatManager.cs" Line="58" Column="19" />
+      <File FileName="Assets\CombatStuff\CombatCharacter.cs" Line="15" Column="111" />
+      <File FileName="Assets\CombatStuff\CombatAbility.cs" Line="10" Column="26" />
+      <File FileName="Assets\CombatStuff\abilities\SimpleAttack.cs" Line="39" Column="28" />
       <File FileName="Assets\CombatStuff\CombatEntity.cs" Line="55" Column="58" />
       <File FileName="Assets\Grid.cs" Line="1" Column="1" />
       <File FileName="Assets\GridManager.cs" Line="1" Column="1" />

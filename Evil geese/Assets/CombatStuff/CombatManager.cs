@@ -6,7 +6,6 @@ public class CombatManager : MonoBehaviour {
 	//todo status effects system
 
 
-
 	//the lists representing all the combatants
 	public List<CombatCharacter> frendlyChars;// the list of characters controlled by the player
 	public List<CombatCharacter> enemyChars;//the list of characters attacking the player
@@ -14,9 +13,13 @@ public class CombatManager : MonoBehaviour {
 	List<CombatCharacter> defendChars;// the list of characters deffending on the current turn (always points to the opposite list to attackChars)
 
 
-	//the selector icon
-	GameObject selectorObj; // the GameObject of the selector icon
+	//UI Variables
+	GameObject canvasObj; // the canvas used in the UI
+	GameObject selectorObj; // the GameObject of the selector icon (used to show which character you're controlling)
 	SpriteRenderer selectorRen;// the sprite renderer on said object
+	GameObject abilitiesPanel; // the panel used as the background and parent object for the ability selection menu
+	List<GameObject> abilityButtonObjs;// the buttons used in the abilities menu
+	List<GameObject> targetSelectorButtonObjs;
 
 
 	//data representing the state of the current turn
@@ -25,7 +28,8 @@ public class CombatManager : MonoBehaviour {
 	CombatCharacter attacker;// the current attacker
 	List<CombatCharacter> attackTargets;// list containing the targets of the current attack
 	CombatAbility attack; //the object representing the current attack
-	enum turnStages {selecting, moving, attacking, returning} // the stages of a turn
+	int targetsRemaining;
+	enum turnStages {selecting, targetSelection, moving, attacking, returning} // the stages of a turn
 	turnStages currentStage;
 		
 
@@ -39,12 +43,19 @@ public class CombatManager : MonoBehaviour {
 		selectorRen.sprite = Resources.Load<Sprite> ("Selector");
 		selectorRen.enabled = false;
 
+		canvasObj = this.transform.parent.gameObject;
+		abilitiesPanel = canvasObj.transform.Find ("AbilitiesPanel").gameObject;
+
 		GameObject combatEntityPrefab = Resources.Load<GameObject> ("CombatEntity");
 
 		if (frendlyChars == null || frendlyChars.Count == 0) {
 			frendlyChars = new List<CombatCharacter> ();
 			frendlyChars.Add (new CombatCharacter (10, 10, 100,100));// for testing
+			frendlyChars [0].AddAbility(new SimpleAttack(10,12,"melee", 10,"Big Stab"));
+			frendlyChars [0].AddAbility (new SimpleAttack (12, 14, "melee", 12, "Bigger Stab"));
 			frendlyChars.Add (new CombatCharacter (10, 10, 100,100));// for testing
+			frendlyChars [1].AddAbility(new SimpleAttack(40,50,"melee", 20,"Really Big Stab"));
+			frendlyChars [1].AddAbility (new SimpleAttack (100, 120, "melee", 50, "Biggest Stab"));
 		}
 		if (enemyChars == null || enemyChars.Count == 0) {
 			enemyChars = new List<CombatCharacter> ();
@@ -91,6 +102,10 @@ public class CombatManager : MonoBehaviour {
 		case turnStages.selecting:
 			selectionStage ();
 			break;
+		
+		case turnStages.targetSelection:
+			targetSelectionStage ();
+			break;
 
 		case turnStages.moving:
 			movingStage ();
@@ -108,14 +123,75 @@ public class CombatManager : MonoBehaviour {
 
 	public void doAttack(){// function to be called when the "attack" button is hit
 		if (currentStage == turnStages.selecting && frendlyAttacking) {
-			//todo implement system for targeting enemy characters
-			int toAttack = CombatCharacter.getFirstAlive(defendChars);
-			attackTargets = new List<CombatCharacter>();
-			attackTargets.Add(defendChars[toAttack]);
-
 			attack = attacker.basicAttack;
-			currentStage = turnStages.moving;
+			currentStage = turnStages.targetSelection;
+			targetsRemaining = attack.maxTargets;
 		}
+	}
+
+	public void doAbilities(){
+		if (currentStage != turnStages.selecting) {
+			return; // do nothing
+		}
+
+		//clear old buttons
+		if (abilityButtonObjs != null) {
+			foreach (GameObject button in abilityButtonObjs) {
+				GameObject.Destroy (button);
+			}
+		}
+
+		abilityButtonObjs = new List<GameObject> ();
+		abilitiesPanel.SetActive (true);
+		GameObject referenceButton = abilitiesPanel.transform.Find ("ReferenceButton").gameObject;
+		Vector2 newButtonPosMin = ((RectTransform) referenceButton.transform).offsetMin;
+		Vector2 newButtonPosMax = ((RectTransform) referenceButton.transform).offsetMax;
+		float buttonSeparation = 45; // distance apart the tops of the buttons should be in pixels
+		foreach (CombatAbility a in attacker.abilities) {
+			GameObject newButtonObj = Instantiate (referenceButton, abilitiesPanel.transform);
+			UnityEngine.UI.Button newButton = newButtonObj.GetComponent<UnityEngine.UI.Button> ();
+			abilityButtonObjs.Add (newButtonObj);
+			((RectTransform)newButtonObj.transform).offsetMin = newButtonPosMin;
+			((RectTransform)newButtonObj.transform).offsetMax = newButtonPosMax;
+			newButtonPosMin.y -= buttonSeparation;
+			newButtonPosMax.y -= buttonSeparation;
+			newButtonObj.SetActive (true);
+			newButtonObj.transform.Find ("NameText").gameObject.GetComponent<UnityEngine.UI.Text> ().text = a.abilityName;
+			newButtonObj.transform.Find ("CostText").gameObject.GetComponent<UnityEngine.UI.Text> ().text = a.energyCost.ToString();
+			CombatAbility tempValue = a; // necessary to deal with weird scoping
+			newButton.onClick.AddListener (delegate {selectAbility(a);});
+
+		}
+
+
+	}
+
+	public void hideAbilities(){
+		abilitiesPanel.SetActive (false);
+	}
+		
+	void selectAbility(CombatAbility ability){
+		attack = ability;
+		currentStage = turnStages.targetSelection;
+		targetsRemaining = attack.maxTargets;
+	}
+
+	void selectTarget(CombatCharacter target){
+		if (attackTargets == null) {
+			attackTargets = new List<CombatCharacter> ();
+		}
+		attackTargets.Add (target);
+		targetsRemaining -= 1;
+	}
+		
+	void removeTargetSelectors(){
+		if (targetSelectorButtonObjs == null) {
+			return;
+		}
+		foreach (GameObject obj in targetSelectorButtonObjs) {
+			Destroy (obj);
+		}
+		targetSelectorButtonObjs = null;
 	}
 
 	void lose(){//todo handle losing
@@ -144,7 +220,37 @@ public class CombatManager : MonoBehaviour {
 		}
 	}
 
+	void targetSelectionStage(){
+		selectorRen.enabled = false;
+		hideAbilities ();
+		if (targetsRemaining == 0) {
+			removeTargetSelectors ();
+			currentStage = turnStages.moving;
+			return;
+		}
+		if (targetSelectorButtonObjs == null) {
+			targetSelectorButtonObjs = new List<GameObject> ();
+			List<CombatCharacter> selectableCharacters;
+			if (attack.isAssist) {
+				selectableCharacters = attackChars;
+			} else {
+				selectableCharacters = defendChars;
+			}
+
+			foreach (CombatCharacter character in selectableCharacters){
+				GameObject newButtonObj = Instantiate (canvasObj.transform.Find ("ReferenceTargetButton").gameObject, canvasObj.transform);
+				newButtonObj.transform.position = character.entity.transform.position;
+				newButtonObj.SetActive (true);
+				targetSelectorButtonObjs.Add (newButtonObj);
+				UnityEngine.UI.Button newButton = newButtonObj.GetComponent<UnityEngine.UI.Button> ();
+				CombatCharacter tempValue = character; // necessary to deal with weird scoping
+				newButton.onClick.AddListener(delegate {selectTarget(tempValue);});
+			}
+		}
+	}
+
 	void movingStage(){
+		hideAbilities ();
 		selectorRen.enabled = false;
 		if (attacker.entity.moveAttack ()) {
 			currentStage = turnStages.attacking;
@@ -152,7 +258,8 @@ public class CombatManager : MonoBehaviour {
 	}
 
 	void attackingStage(){// todo add animations and delays to attack stage
-		attack.DoAbility (attackTargets);
+		attack.DoAbility (attackTargets, attacker);
+		attackTargets = null;
 		currentStage = turnStages.returning;
 	}
 

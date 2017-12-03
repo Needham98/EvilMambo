@@ -5,9 +5,10 @@ using UnityEngine;
 public interface CombatAbility {
 	int minTargets {get;}
 	int maxTargets {get;}
+	int energyCost {get;}
 	bool isAssist {get;}
-	string abilityName {get; set;}
+	string abilityName {get;}
 
-	void DoAbility (List<CombatCharacter> targets);
+	void DoAbility (List<CombatCharacter> targets, CombatCharacter user);
 
 }
