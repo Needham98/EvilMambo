@@ -28,7 +28,7 @@ public class SimpleAttack : CombatAbility {
 		this.damageType = damageType;
 	}
 
-	public void DoAbility (List<CombatCharacter> targets, CombatCharacter user){
+	public void doAbility (List<CombatCharacter> targets, CombatCharacter user){
 		if (user.energy < energyCost) {
 			throw new ArgumentException ("this ability can't be used because the user doesn't have enough energy");
 		}
@@ -39,7 +39,14 @@ public class SimpleAttack : CombatAbility {
 		user.updateEntityBars ();
 		foreach (CombatCharacter c in targets) {
 			int damage = UnityEngine.Random.Range (minDamage, maxDamage + 1);
-			c.takeDamage (damage, damageType);
+			c.takeDamage ((int) (damage * user.damageDealtModifier(damageType)), damageType);
 		} 
 	}
+
+	public void OnBeforeSerialize(){
+	}
+
+	public void OnAfterDeserialize(){
+	}
+
 }

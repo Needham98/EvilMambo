@@ -53,6 +53,7 @@ public class CombatManager : MonoBehaviour {
 			frendlyChars.Add (new CombatCharacter (10, 10, 100,100));// for testing
 			frendlyChars [0].AddAbility(new SimpleAttack(10,12,"melee", 10,"Big Stab"));
 			frendlyChars [0].AddAbility (new SimpleAttack (12, 14, "melee", 12, "Bigger Stab"));
+			frendlyChars [0].addEffect (new CombatEffect (CombatEffect.effectType.damageDealtModifier, 10, damageType : "melee", modifier : 1.5f));
 			frendlyChars.Add (new CombatCharacter (10, 10, 100,100));// for testing
 			frendlyChars [1].AddAbility(new SimpleAttack(40,50,"melee", 20,"Really Big Stab"));
 			frendlyChars [1].AddAbility (new SimpleAttack (100, 120, "melee", 50, "Biggest Stab"));
@@ -262,7 +263,7 @@ public class CombatManager : MonoBehaviour {
 	}
 
 	void attackingStage(){// todo add animations and delays to attack stage
-		attack.DoAbility (attackTargets, attacker);
+		attack.doAbility (attackTargets, attacker);
 		attackTargets = null;
 		currentStage = turnStages.returning;
 	}
