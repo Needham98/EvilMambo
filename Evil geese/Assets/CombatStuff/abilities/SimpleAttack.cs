@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class SimpleAttack : CombatAbility {
 	int maxDamage;
 	int minDamage;

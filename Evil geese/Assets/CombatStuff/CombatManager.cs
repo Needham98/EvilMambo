@@ -159,7 +159,7 @@ public class CombatManager : MonoBehaviour {
 			newButtonObj.transform.Find ("NameText").gameObject.GetComponent<UnityEngine.UI.Text> ().text = a.abilityName;
 			newButtonObj.transform.Find ("CostText").gameObject.GetComponent<UnityEngine.UI.Text> ().text = a.energyCost.ToString();
 			CombatAbility tempValue = a; // necessary to deal with weird scoping
-			newButton.onClick.AddListener (delegate {selectAbility(a);});
+			newButton.onClick.AddListener (delegate {selectAbility(tempValue);});
 
 		}
 
@@ -238,13 +238,17 @@ public class CombatManager : MonoBehaviour {
 			}
 
 			foreach (CombatCharacter character in selectableCharacters){
-				GameObject newButtonObj = Instantiate (canvasObj.transform.Find ("ReferenceTargetButton").gameObject, canvasObj.transform);
-				newButtonObj.transform.position = character.entity.transform.position;
-				newButtonObj.SetActive (true);
-				targetSelectorButtonObjs.Add (newButtonObj);
-				UnityEngine.UI.Button newButton = newButtonObj.GetComponent<UnityEngine.UI.Button> ();
-				CombatCharacter tempValue = character; // necessary to deal with weird scoping
-				newButton.onClick.AddListener(delegate {selectTarget(tempValue);});
+				if (character.isAlive()) {
+					GameObject newButtonObj = Instantiate (canvasObj.transform.Find ("ReferenceTargetButton").gameObject, canvasObj.transform);
+					newButtonObj.transform.position = character.entity.transform.position;
+					newButtonObj.SetActive (true);
+					targetSelectorButtonObjs.Add (newButtonObj);
+					UnityEngine.UI.Button newButton = newButtonObj.GetComponent<UnityEngine.UI.Button> ();
+					CombatCharacter tempValue = character; // necessary to deal with weird scoping
+					newButton.onClick.AddListener (delegate {
+						selectTarget (tempValue);
+					});
+				}
 			}
 		}
 	}
