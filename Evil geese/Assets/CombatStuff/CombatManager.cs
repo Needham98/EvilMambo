@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CombatManager : MonoBehaviour {
-	//todo status effects system
-
+	//todo visual representation of status effects
 
 	//the lists representing all the combatants
 	public List<CombatCharacter> frendlyChars;// the list of characters controlled by the player
@@ -29,9 +28,13 @@ public class CombatManager : MonoBehaviour {
 	List<CombatCharacter> attackTargets;// list containing the targets of the current attack
 	CombatAbility attack; //the object representing the current attack
 	int targetsRemaining;
-	enum turnStages {selecting, targetSelection, moving, attacking, returning} // the stages of a turn
+	enum turnStages {selecting, targetSelection, moving, attacking, returning, win, lose} // the posible stages of a turn
 	turnStages currentStage;
-		
+
+
+	//win data
+	public delegate void winAction(); //function that gets called when the player wins
+
 
 	void Start () {
 		frendlyAttacking = true;
@@ -196,10 +199,12 @@ public class CombatManager : MonoBehaviour {
 	}
 
 	void lose(){//todo handle losing
+		currentStage = turnStages.lose;
 		Debug.Log("You Lose! Now implement losing.");
 	}
 
 	void win(){// todo handle winning
+		currentStage = turnStages.win;
 		Debug.Log ("You Win! Now implement winning.");
 	}
 
@@ -287,6 +292,9 @@ public class CombatManager : MonoBehaviour {
 
 			if (attackerPos >= attackChars.Count) {
 				frendlyAttacking = !frendlyAttacking;
+				foreach (CombatCharacter character in defendChars) {
+					character.doEffects ();
+				}
 				attackerPos = CombatCharacter.getFirstAlive (defendChars);
 			}
 			if (attackerPos == -1) {
