@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9399390be8dcfb4abc3036f8b4807ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keys: 02000000fdffffff01000000fdffffff00000000fdfffffffefffffffdfffffffdfffffffdfffffffdfffffffefffffffdffffffffffffffffffffff02000000feffffff02000000feffffff01000000ffffffff01000000010000000100000002000000010000000200000002000000010000000200000001000000030000000200000003000000ffffffff03000000feffffff03000000feffffff04000000feffffff05000000ffffffff05000000000000000500000001000000050000000200000005000000030000000500000004000000050000000500000005000000060000000500000007000000050000000700000004000000070000000300000007000000020000000600000003000000050000000300000004000000030000000300000003000000030000000200000004000000020000000500000001000000050000000000000004000000ffffffff04000000feffffff04000000fdffffff04000000fcffffff03000000fbffffff02000000fbffffff01000000fbffffff00000000fbfffffffffffffffbfffffffefffffffbfffffffdfffffffbfffffffcfffffffbfffffffbfffffffbfffffffbfffffffcfffffffbfffffffdfffffffcfffffffdfffffffefffffffffffffffefffffffeffffff00000000ffffffff00000000feffffff02000000feffffff02000000ffffffff01000000fffffffffcffffff00000000fcffffff01000000fcffffff02000000fdffffff03000000
+  _keys: 02000000fdffffff01000000fdffffff00000000fdfffffffefffffffdfffffffdfffffffdfffffffdffffffffffffffffffffff02000000feffffff02000000feffffff01000000ffffffff0100000001000000010000000200000001000000010000000200000001000000030000000200000003000000ffffffff03000000feffffff04000000ffffffff05000000000000000500000001000000050000000200000005000000030000000500000004000000050000000500000005000000060000000500000007000000040000000600000003000000050000000300000004000000030000000300000003000000030000000200000004000000020000000500000001000000050000000000000004000000ffffffff04000000feffffff04000000fdffffff04000000fcffffff03000000fbffffff02000000fbffffff01000000fbffffff00000000fbfffffffffffffffbfffffffefffffffbfffffffdfffffffbfffffffcfffffffbfffffffbfffffffcfffffffcfffffffdfffffffefffffffffffffffefffffffeffffff00000000ffffffff00000000feffffff02000000feffffff02000000ffffffff01000000fffffffffcffffff00000000fcffffff01000000fcffffff02000000fdffffff03000000
   _positions:
   - x: 2
     y: -3
@@ -255,11 +255,6 @@ MonoBehaviour:
     blocked: 1
   - x: -3
     y: -3
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: -3
-    y: -2
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
@@ -298,11 +293,6 @@ MonoBehaviour:
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
-  - x: 2
-    y: 2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
   - x: 1
     y: 2
     interactionObject: {fileID: 0}
@@ -324,17 +314,7 @@ MonoBehaviour:
     stepOn: {fileID: 0}
     blocked: 1
   - x: -2
-    y: 3
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: -2
     y: 4
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: -2
-    y: 5
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
@@ -379,22 +359,7 @@ MonoBehaviour:
     stepOn: {fileID: 0}
     blocked: 1
   - x: 7
-    y: 5
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 7
     y: 4
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 7
-    y: 3
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 7
-    y: 2
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
@@ -499,17 +464,7 @@ MonoBehaviour:
     stepOn: {fileID: 0}
     blocked: 1
   - x: -5
-    y: -5
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: -5
     y: -4
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: -5
-    y: -3
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
@@ -692,6 +647,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
+  stepObject: {fileID: 0}
+  movedir: {x: 0, y: 1}
 --- !u!212 &1377318973
 SpriteRenderer:
   m_ObjectHideFlags: 0

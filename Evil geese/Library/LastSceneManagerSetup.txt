@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/CombatStuff/CombatTest.unity
+- path: Assets/Movement demo.unity
   isLoaded: 1
   isActive: 1

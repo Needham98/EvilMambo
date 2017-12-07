@@ -70,6 +70,9 @@ public class GridManager : Editor {
 
 	void OnSceneGUI()
 	{
+		if (myGrid == null) {
+			return;
+		}
 		mousePos = Event.current.mousePosition;
 		Vector3 worldPos = Camera.current.ScreenToWorldPoint (mousePos);
 		int localX = Mathf.RoundToInt (worldPos.x);
@@ -80,12 +83,15 @@ public class GridManager : Editor {
 				myGrid.setPosition(new GridPosition (localX, localY, blocked : true));
 			}
 			if (Event.current.keyCode == KeyCode.S) {
+				tempx = localX;
+				tempy = localY;
 				pos = myGrid.getPosition (localX, localY);
 			}
 			if (Event.current.keyCode == KeyCode.C) {
 				myGrid.clearPosition (localX, localY);
 			}
 		}
+		myGrid.OnBeforeSerialize ();
 		
 	}
 }
