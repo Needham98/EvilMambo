@@ -54,10 +54,12 @@
      <Compile Include="Assets\CombatStuff\abilities\SimpleAttack.cs" />
      <Compile Include="Assets\CombatStuff\CombatAbility.cs" />
      <Compile Include="Assets\CombatStuff\CombatCharacter.cs" />
+     <Compile Include="Assets\CombatStuff\CombatCharacterFactory.cs" />
      <Compile Include="Assets\CombatStuff\CombatEffect.cs" />
      <Compile Include="Assets\CombatStuff\CombatEntity.cs" />
      <Compile Include="Assets\CombatStuff\CombatManager.cs" />
      <Compile Include="Assets\GameManager.cs" />
+     <Compile Include="Assets\GameStateManager.cs" />
      <Compile Include="Assets\Grid.cs" />
      <Compile Include="Assets\GridManager.cs" />
      <Compile Include="Assets\InputManager.cs" />
@@ -65,6 +67,7 @@
      <Compile Include="Assets\PlayerAssets\Scripts\Player.cs" />
      <Compile Include="Assets\PlayerMovment.cs" />
      <Compile Include="Assets\Unit tests\PositionCollisionTest.cs" />
+     <Compile Include="Assets\WorldInteraction.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

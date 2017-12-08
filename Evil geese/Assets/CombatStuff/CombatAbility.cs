@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public interface CombatAbility : ISerializationCallbackReceiver {
+public interface CombatAbility {
 	int minTargets {get;}
 	int maxTargets {get;}
 	int energyCost {get;}

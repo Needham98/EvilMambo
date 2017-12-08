@@ -42,11 +42,4 @@ public class SimpleAttack : CombatAbility {
 			c.takeDamage ((int) (damage * user.damageDealtModifier(damageType)), damageType);
 		} 
 	}
-
-	public void OnBeforeSerialize(){
-	}
-
-	public void OnAfterDeserialize(){
-	}
-
 }

@@ -27,5 +27,8 @@ public class InputManager : MonoBehaviour {
 		if (Input.GetAxis ("Horizontal") < -movementThreshold) {
 			movement.move (Vector2.left);
 		}
+		if (Input.GetButtonDown ("Submit")) {
+			movement.interact();
+		}
 	}
 }

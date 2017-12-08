@@ -28,9 +28,11 @@ public class CombatEntity : MonoBehaviour {
 		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	void OnDestroy(){
+		Destroy (healthBar);
+		Destroy (healthBarMask);
+		Destroy (energyBar);
+		Destroy (energyBarMask);
 	}
 
 	public void setupBars(bool placeRight, bool showEnergy){

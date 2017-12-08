@@ -35,8 +35,28 @@ public class CombatManager : MonoBehaviour {
 	//win data
 	public delegate void winAction(); //function that gets called when the player wins
 
+	//data needed to reset the scene after combat has finished
+	List<GameObject> sceneObjects; //the list of objects that were active in the scene when combat began
+	Vector3 startingCameraPosition;// the cameras position when combat began
+	GameObject sceneCamera; // the camera in the scene
 
 	void Start () {
+		canvasObj = this.transform.parent.gameObject;
+		abilitiesPanel = canvasObj.transform.Find ("AbilitiesPanel").gameObject;
+
+		sceneObjects = new List<GameObject> ();
+		foreach (GameObject obj in GameObject.FindObjectsOfType<GameObject>()) {
+			if (obj.tag == "MainCamera") {
+				canvasObj.GetComponent<Canvas> ().worldCamera = obj.GetComponent<Camera> ();
+				startingCameraPosition = obj.transform.position;
+				sceneCamera = obj;
+				obj.transform.position = new Vector3 (0f, 0f, -10f);
+			} else if (!obj.transform.IsChildOf(this.transform.parent)){
+				sceneObjects.Add (obj);
+				obj.SetActive (false);
+			}
+		}
+
 		frendlyAttacking = true;
 		attackerPos = 0;
 		currentStage = turnStages.selecting;
@@ -46,26 +66,7 @@ public class CombatManager : MonoBehaviour {
 		selectorRen.sprite = Resources.Load<Sprite> ("Selector");
 		selectorRen.enabled = false;
 
-		canvasObj = this.transform.parent.gameObject;
-		abilitiesPanel = canvasObj.transform.Find ("AbilitiesPanel").gameObject;
-
 		GameObject combatEntityPrefab = Resources.Load<GameObject> ("CombatEntity");
-
-		if (frendlyChars == null || frendlyChars.Count == 0) {
-			frendlyChars = new List<CombatCharacter> ();
-			frendlyChars.Add (new CombatCharacter (10, 10, 100,100));// for testing
-			frendlyChars [0].AddAbility(new SimpleAttack(10,12,"melee", 10,"Big Stab"));
-			frendlyChars [0].AddAbility (new SimpleAttack (12, 14, "melee", 12, "Bigger Stab"));
-			frendlyChars [0].addEffect (new CombatEffect (CombatEffect.effectType.damageDealtModifier, 10, damageType : "melee", modifier : 1.5f));
-			frendlyChars.Add (new CombatCharacter (10, 10, 100,100));// for testing
-			frendlyChars [1].AddAbility(new SimpleAttack(40,50,"melee", 20,"Really Big Stab"));
-			frendlyChars [1].AddAbility (new SimpleAttack (100, 120, "melee", 50, "Biggest Stab"));
-		}
-		if (enemyChars == null || enemyChars.Count == 0) {
-			enemyChars = new List<CombatCharacter> ();
-			enemyChars.Add (new CombatCharacter (10, 10, 100,100));// for testing
-			enemyChars.Add (new CombatCharacter (10, 10, 100,100));// for testing
-		}
 
 		Vector3 pos = new Vector3 (-4, 3); // arbitrary start position
 		Vector3 offset = new Vector3(0,-2); // arbitrary offset
@@ -122,6 +123,11 @@ public class CombatManager : MonoBehaviour {
 		case turnStages.returning:
 			returningStage ();
 			break;
+		
+		case turnStages.win:
+			winStage ();
+			break;
+		
 		}
 	}
 
@@ -303,5 +309,22 @@ public class CombatManager : MonoBehaviour {
 			currentStage = turnStages.selecting;
 		}
 	}
-		
+
+	void winStage(){
+		if (abilitiesPanel != null) {
+			Destroy (abilitiesPanel);
+			Destroy (selectorObj);
+			foreach (CombatCharacter character in frendlyChars) {
+				Destroy (character.entity.transform.gameObject);
+			}
+			foreach (CombatCharacter character in enemyChars) {
+				Destroy (character.entity.transform.gameObject);
+			}
+			foreach (GameObject obj in sceneObjects) {
+				obj.SetActive (true);
+			}
+			sceneCamera.transform.position = startingCameraPosition;
+			Destroy (this.transform.parent.gameObject);
+		}
+	}
 }

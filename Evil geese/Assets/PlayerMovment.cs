@@ -45,6 +45,7 @@ public class PlayerMovment : MonoBehaviour {
 		}
 		if (gridPos != null) {
 			if (gridPos.blocked) {
+				movedir = dir.normalized;
 				return false;
 			}
 			stepObject = gridPos.stepOn;
@@ -56,5 +57,18 @@ public class PlayerMovment : MonoBehaviour {
 		moving = true;
 		movedir = dir.normalized;
 		return true;
+	}
+
+	public void interact(){
+		GridPosition pos = movementGrid.getPosition(x + (int) movedir.x, y + (int) movedir.y);
+		if (pos == null){
+			return;
+		}
+		GameObject interactionObject = pos.interactionObject;
+		WorldInteraction interaction = interactionObject.GetComponent<WorldInteraction> ();
+		if (interaction == null) {
+			return;
+		}
+		interaction.interact ();
 	}
 }

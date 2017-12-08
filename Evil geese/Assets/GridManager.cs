@@ -55,12 +55,12 @@ public class GridManager : Editor {
 
 			EditorGUILayout.BeginHorizontal (null);
 			EditorGUILayout.PrefixLabel(new GUIContent("interaction:"));
-			pos.interactionObject = (GameObject) EditorGUILayout.ObjectField (pos.interactionObject, null, allowSceneObjects: true);
+			pos.interactionObject = (GameObject) EditorGUILayout.ObjectField (pos.interactionObject, typeof(GameObject), true,  null);
 			EditorGUILayout.EndHorizontal ();
 
 			EditorGUILayout.BeginHorizontal (null);
 			EditorGUILayout.PrefixLabel(new GUIContent("step on:"));
-			pos.stepOn = (GameObject) EditorGUILayout.ObjectField (pos.stepOn, null, allowSceneObjects: true);
+			pos.stepOn = (GameObject) EditorGUILayout.ObjectField (pos.stepOn, typeof(GameObject), true, null);
 			EditorGUILayout.EndHorizontal ();
 
 		}
@@ -70,11 +70,12 @@ public class GridManager : Editor {
 
 	void OnSceneGUI()
 	{
-		if (myGrid == null) {
+		if (myGrid == null || Camera.current == null) {
 			return;
 		}
 		mousePos = Event.current.mousePosition;
 		Vector3 worldPos = Camera.current.ScreenToWorldPoint (mousePos);
+		
 		int localX = Mathf.RoundToInt (worldPos.x);
 		int localY = -Mathf.RoundToInt (worldPos.y);
 		worldPos.z = 0f;
