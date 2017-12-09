@@ -62,6 +62,7 @@
      <Compile Include="Assets\GameStateManager.cs" />
      <Compile Include="Assets\Grid.cs" />
      <Compile Include="Assets\GridManager.cs" />
+     <Compile Include="Assets\GridPosition.cs" />
      <Compile Include="Assets\InputManager.cs" />
      <Compile Include="Assets\Menu\Scripts\ButtonManager.cs" />
      <Compile Include="Assets\PlayerAssets\Scripts\Player.cs" />

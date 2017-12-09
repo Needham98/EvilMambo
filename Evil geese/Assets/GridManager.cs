@@ -77,7 +77,8 @@ public class GridManager : Editor {
 		Vector3 worldPos = Camera.current.ScreenToWorldPoint (mousePos);
 		
 		int localX = Mathf.RoundToInt (worldPos.x);
-		int localY = -Mathf.RoundToInt (worldPos.y);
+		int localY = Mathf.RoundToInt (-worldPos.y + 2 * Camera.current.transform.position.y);
+
 		worldPos.z = 0f;
 		if (Event.current.type == EventType.KeyDown) {
 			if (Event.current.keyCode == KeyCode.Q) {

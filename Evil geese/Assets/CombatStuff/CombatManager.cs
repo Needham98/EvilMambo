@@ -209,7 +209,7 @@ public class CombatManager : MonoBehaviour {
 		Debug.Log("You Lose! Now implement losing.");
 	}
 
-	void win(){// todo handle winning
+	void win(){// todo handle winning better
 		currentStage = turnStages.win;
 		Debug.Log ("You Win! Now implement winning.");
 	}
