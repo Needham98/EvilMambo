@@ -59,6 +59,8 @@
      <Compile Include="Assets\CombatStuff\CombatEntity.cs" />
      <Compile Include="Assets\CombatStuff\CombatManager.cs" />
      <Compile Include="Assets\GameManager.cs" />
+     <Compile Include="Assets\GameSave.cs" />
+     <Compile Include="Assets\GameState.cs" />
      <Compile Include="Assets\GameStateManager.cs" />
      <Compile Include="Assets\Grid.cs" />
      <Compile Include="Assets\GridManager.cs" />

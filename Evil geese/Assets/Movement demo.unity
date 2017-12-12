@@ -555,8 +555,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774ac6c0619032e4bb75a1b5b5cc6139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availibleCharacters: 
-  currentTeam: 0000000000000000
+  state:
+    availibleCharacters: 
+    currentTeam: 0000000000000000
+    gameVarNames: []
+    gameVarValues: []
 --- !u!4 &717349955
 Transform:
   m_ObjectHideFlags: 0
@@ -564,7 +567,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 717349953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12882157, y: 0.03651645, z: -9}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
