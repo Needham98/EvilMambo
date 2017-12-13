@@ -40,6 +40,8 @@ public class CombatManager : MonoBehaviour {
 	Vector3 startingCameraPosition;// the cameras position when combat began
 	GameObject sceneCamera; // the camera in the scene
 
+
+	// todo hide attack and abilities buttons exept during selecting stage
 	void Start () {
 		canvasObj = this.transform.parent.gameObject;
 		abilitiesPanel = canvasObj.transform.Find ("AbilitiesPanel").gameObject;

@@ -58,12 +58,16 @@
      <Compile Include="Assets\CombatStuff\CombatEffect.cs" />
      <Compile Include="Assets\CombatStuff\CombatEntity.cs" />
      <Compile Include="Assets\CombatStuff\CombatManager.cs" />
+     <Compile Include="Assets\Dialog stuff\DialogAction.cs" />
+     <Compile Include="Assets\Dialog stuff\DialogEditor.cs" />
+     <Compile Include="Assets\Dialog stuff\DialogElement.cs" />
+     <Compile Include="Assets\Dialog stuff\DialogManager.cs" />
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\GameSave.cs" />
      <Compile Include="Assets\GameState.cs" />
      <Compile Include="Assets\GameStateManager.cs" />
      <Compile Include="Assets\Grid.cs" />
-     <Compile Include="Assets\GridManager.cs" />
+     <Compile Include="Assets\GridEditor.cs" />
      <Compile Include="Assets\GridPosition.cs" />
      <Compile Include="Assets\InputManager.cs" />
      <Compile Include="Assets\Menu\Scripts\ButtonManager.cs" />

@@ -10,9 +10,11 @@ public class GameState : ISerializationCallbackReceiver{
 	List<string> gameVarNames;
 	[SerializeField]
 	List<string> gameVarValues;
+	public bool movementEnabled;
 
 	public GameState(){
 		gameStateVars = new Dictionary<string, string> ();
+		movementEnabled = true;
 	}
 
 	public void OnBeforeSerialize(){

@@ -6,15 +6,20 @@ public class InputManager : MonoBehaviour {
 	GameObject player;
 	PlayerMovment movement;
 	float movementThreshold = 0.8f; // magnitude of movment axis must be greater than this to move
+	GameStateManager state;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		movement = player.GetComponent<PlayerMovment> ();
+		state = GameObject.FindGameObjectWithTag ("GameStateManager").GetComponent<GameStateManager> ();
 	}
 
 	// Update is called once per frame
 	void Update () {
+		if (!state.movementEnabled) {
+			return;
+		}
 		if (Input.GetAxis ("Vertical") > movementThreshold) {
 			movement.move (Vector2.up);
 		}

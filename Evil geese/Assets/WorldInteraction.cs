@@ -34,8 +34,12 @@ public class WorldInteraction : MonoBehaviour {
 			break;
 
 		case InteractionTypes.DialogStart:
-			//todo implement dialog system
-			Debug.Log ("NOT IMPLEMENTED");
+			DialogManager dialogManager = this.GetComponentInParent<DialogManager> ();
+			if (dialogManager == null) {
+				Debug.Log ("Error: no DialogManager component found");
+				return;
+			}
+			dialogManager.beginDialog ();
 			break;
 		}
 	}

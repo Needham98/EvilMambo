@@ -108,6 +108,128 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &118535589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 118535592}
+  - component: {fileID: 118535591}
+  - component: {fileID: 118535590}
+  m_Layer: 0
+  m_Name: DialogInteraction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &118535590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 118535589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba05fd0888f34e4f8360c77ec524234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownInteractionType: 1
+  enemies: 
+--- !u!114 &118535591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 118535589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6976a059de7d1541969c6681fba7c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogStarts:
+  - start
+  startSelectorVarName: 
+  dialogDataKeys:
+  - inside
+  - inside2
+  - start
+  - hungry
+  - hungry2
+  - insist
+  - insist2
+  dialogDataValues:
+  - speekerName: You
+    dialogText: I would like to come inside please, I need to buy some things.
+    optionDescription:
+    - Continue
+    optionPointer:
+    - inside2
+    actions: []
+  - speekerName: The Doors
+    dialogText: Too bloody bad mate, we're shut.
+    optionDescription:
+    - Give up
+    - Insist on getting inside
+    optionPointer:
+    - 
+    - insist
+    actions: []
+  - speekerName: The Doors
+    dialogText: What do you want?
+    optionDescription:
+    - I want to come inside
+    - I'm hungry
+    optionPointer:
+    - inside
+    - hungry
+    actions: []
+  - speekerName: You
+    dialogText: Well I'm hungry and I wanted to buy some food.
+    optionDescription:
+    - continue
+    optionPointer:
+    - hungry2
+    actions: []
+  - speekerName: The Doors
+    dialogText: If yer hungry piss off down tut courtyard. We're closed
+    optionDescription:
+    - Give up
+    - Insist on getting inside
+    optionPointer:
+    - 
+    - insist
+    actions: []
+  - speekerName: You
+    dialogText: I'm afraid I must insist on being allowed to enter.
+    optionDescription:
+    - continue
+    optionPointer:
+    - insist2
+    actions: []
+  - speekerName: The Doors
+    dialogText: I SAID WE'RE CLOSED!!! IF YA DON'T PISS OFF I'LL GIVE YA SOMETHING
+      TO BE AFRIAD OF
+    optionDescription:
+    - run away
+    optionPointer:
+    - 
+    actions: []
+--- !u!4 &118535592
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 118535589}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &136667466
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,12 +507,12 @@ MonoBehaviour:
     blocked: 1
   - x: 3
     y: 2
-    interactionObject: {fileID: 0}
+    interactionObject: {fileID: 118535589}
     stepOn: {fileID: 0}
     blocked: 1
   - x: 4
     y: 2
-    interactionObject: {fileID: 0}
+    interactionObject: {fileID: 118535589}
     stepOn: {fileID: 0}
     blocked: 1
   - x: 5
@@ -560,6 +682,7 @@ MonoBehaviour:
     currentTeam: 0000000000000000
     gameVarNames: []
     gameVarValues: []
+    movementEnabled: 1
 --- !u!4 &717349955
 Transform:
   m_ObjectHideFlags: 0

@@ -10,8 +10,12 @@ public class GameStateManager : MonoBehaviour{
 		set {state.availibleCharacters = value;}
 	}
 	public List<CombatCharacterFactory.CombatCharacterPresets> currentTeam { 
-		get{return state.currentTeam;}
-		set{state.currentTeam = value;}
+		get {return state.currentTeam;}
+		set {state.currentTeam = value;}
+	}
+	public bool movementEnabled {
+		get {return state.movementEnabled;}
+		set {state.movementEnabled = value;}
 	}
 	public GameState state;
 
