@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour, ISerializationCallbackReceiver{
-	public List<string> dialogStarts; // the posible starting dialogs
 	public string startSelectorVarName; // the name of the gameState variable that controls which of the above dialogs will be used
 	public Dictionary<string, DialogElement> dialogData; // the dictionary that contains all the dialog elements that might be used in this dialog
 
@@ -65,11 +64,17 @@ public class DialogManager : MonoBehaviour, ISerializationCallbackReceiver{
 
 	public void beginDialog(){
 		state.movementEnabled = false;
+		string dialogName;
 		if (startSelectorVarName.Length == 0) {
-			currentDialog = dialogData[dialogStarts[0]];
-			}else{
-			currentDialog = dialogData [dialogStarts [int.Parse(state.getGameVar (startSelectorVarName))]];
-			}
+			dialogName = "start";
+		}else{
+			dialogName = state.getGameVar (startSelectorVarName);
+		}
+		if (dialogName == "") {
+			Debug.Log ("the gameVar \"" + startSelectorVarName + "\" is undefined, using the \"start\" dialog");
+			dialogName = "start";
+		}
+		doDialogOption (dialogName);
 		dialogCanvasObj = Instantiate (dialogCanvasPrefab);
 		}
 
@@ -81,8 +86,10 @@ public class DialogManager : MonoBehaviour, ISerializationCallbackReceiver{
 			buttonObjs = null;
 			return;
 		}
-		foreach (GameObject obj in buttonObjs) {
-			Destroy (obj);
+		if (buttonObjs != null) {
+			foreach (GameObject obj in buttonObjs) {
+				Destroy (obj);
+			}
 		}
 		buttonObjs = null;
 		if (!dialogData.ContainsKey (option)) {
@@ -90,6 +97,9 @@ public class DialogManager : MonoBehaviour, ISerializationCallbackReceiver{
 			doDialogOption (""); // ends dialog, see above
 		}else{
 			currentDialog = dialogData [option];
+		}
+		foreach (DialogAction action in currentDialog.actions) {
+			action.doAction ();
 		}
 	}
 

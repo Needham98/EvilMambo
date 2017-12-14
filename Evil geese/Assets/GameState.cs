@@ -6,8 +6,10 @@ public class GameState : ISerializationCallbackReceiver{
 	public List<CombatCharacterFactory.CombatCharacterPresets> availibleCharacters;
 	public List<CombatCharacterFactory.CombatCharacterPresets> currentTeam;
 	public Dictionary<string, string> gameStateVars;
+	[HideInInspector]
 	[SerializeField]
 	List<string> gameVarNames;
+	[HideInInspector]
 	[SerializeField]
 	List<string> gameVarValues;
 	public bool movementEnabled;

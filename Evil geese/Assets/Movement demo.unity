@@ -149,9 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6976a059de7d1541969c6681fba7c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogStarts:
-  - start
-  startSelectorVarName: 
+  startSelectorVarName: Door Dialog
   dialogDataKeys:
   - inside
   - inside2
@@ -160,6 +158,13 @@ MonoBehaviour:
   - hungry2
   - insist
   - insist2
+  - ram
+  - ram2
+  - ram3
+  - ram4
+  - angry
+  - combat
+  - postCombat
   dialogDataValues:
   - speekerName: You
     dialogText: I would like to come inside please, I need to buy some things.
@@ -172,9 +177,11 @@ MonoBehaviour:
     dialogText: Too bloody bad mate, we're shut.
     optionDescription:
     - Give up
+    - Ram the Doors
     - Insist on getting inside
     optionPointer:
     - 
+    - ram
     - insist
     actions: []
   - speekerName: The Doors
@@ -197,9 +204,11 @@ MonoBehaviour:
     dialogText: If yer hungry piss off down tut courtyard. We're closed
     optionDescription:
     - Give up
+    - Ram the Doors
     - Insist on getting inside
     optionPointer:
     - 
+    - ram
     - insist
     actions: []
   - speekerName: You
@@ -214,6 +223,75 @@ MonoBehaviour:
       TO BE AFRIAD OF
     optionDescription:
     - run away
+    - Fight!!!
+    optionPointer:
+    - 
+    - combat
+    actions: []
+  - speekerName: The Narrator
+    dialogText: You take a few steps back.
+    optionDescription:
+    - Continue
+    optionPointer:
+    - ram2
+    actions: []
+  - speekerName: The Narrator
+    dialogText: You charge the doors
+    optionDescription:
+    - Continue
+    optionPointer:
+    - ram3
+    actions: []
+  - speekerName: The Narrator
+    dialogText: You charge the doors . . . and bounce off.
+    optionDescription:
+    - Continue
+    optionPointer:
+    - ram4
+    actions: []
+  - speekerName: The Doors
+    dialogText: OI! YOU WANNA GO MATE!!! COME ON FIGHT ME!!!
+    optionDescription:
+    - FIGHT!!!
+    - Run away
+    optionPointer:
+    - combat
+    - 
+    actions:
+    - ownActionType: 0
+      gameVarName: Door Dialog
+      gameVarValue: angry
+      combatEnemies: 
+  - speekerName: The Doors
+    dialogText: OI!!! YOU'RE THE GIT WOT RAMMED INTO ME!!! FIGHT ME!!!
+    optionDescription:
+    - FIGHT!!!
+    - Run away
+    optionPointer:
+    - combat
+    - 
+    actions: []
+  - speekerName: The Doors
+    dialogText: Alright you win but I still can't let ya in.
+    optionDescription:
+    - Continue
+    optionPointer:
+    - 
+    actions:
+    - ownActionType: 1
+      gameVarName: 
+      gameVarValue: 
+      combatEnemies: 0000000000000000
+    - ownActionType: 0
+      gameVarName: Door Dialog
+      gameVarValue: postCombat
+      combatEnemies: 
+  - speekerName: The Doors
+    dialogText: 'I can''t let you in, I''m still locked.
+
+      Besides there isn''t any art for inside Nisa yet'
+    optionDescription:
+    - Continue
     optionPointer:
     - 
     actions: []
@@ -781,7 +859,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1803088030}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -872,6 +951,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1803088029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1803088030}
+  - component: {fileID: 1803088032}
+  - component: {fileID: 1803088031}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1803088030
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1803088029}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 908265254}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1803088031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1803088029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1803088032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1803088029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 5
 --- !u!1 &2047459186
 GameObject:
   m_ObjectHideFlags: 0

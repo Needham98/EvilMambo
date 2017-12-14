@@ -31,12 +31,8 @@ public class CombatManager : MonoBehaviour {
 	enum turnStages {selecting, targetSelection, moving, attacking, returning, win, lose} // the posible stages of a turn
 	turnStages currentStage;
 
-
-	//win data
-	public delegate void winAction(); //function that gets called when the player wins
-
 	//data needed to reset the scene after combat has finished
-	List<GameObject> sceneObjects; //the list of objects that were active in the scene when combat began
+	List<GameObject> sceneObjects; //the list of objects that were deactivated in the scene when combat began
 	Vector3 startingCameraPosition;// the cameras position when combat began
 	GameObject sceneCamera; // the camera in the scene
 
@@ -58,6 +54,17 @@ public class CombatManager : MonoBehaviour {
 				obj.SetActive (false);
 			}
 		}
+		List<GameObject> gameObjectsToLeaveActive = new List<GameObject> ();
+		foreach (GameObject obj in sceneObjects) {
+			if (obj.transform.IsChildOf (sceneCamera.transform)) {
+				gameObjectsToLeaveActive.Add (obj);
+			}
+		}
+		foreach (GameObject obj in gameObjectsToLeaveActive) {
+			sceneObjects.Remove(obj);
+			obj.SetActive (true);
+		}
+
 
 		frendlyAttacking = true;
 		attackerPos = 0;
@@ -323,10 +330,30 @@ public class CombatManager : MonoBehaviour {
 				Destroy (character.entity.transform.gameObject);
 			}
 			foreach (GameObject obj in sceneObjects) {
-				obj.SetActive (true);
+				if (obj != null) {
+					obj.SetActive (true);
+				}
 			}
+
 			sceneCamera.transform.position = startingCameraPosition;
 			Destroy (this.transform.parent.gameObject);
 		}
+	}
+
+	public static void startCombat(List<CombatCharacterFactory.CombatCharacterPresets> enemies){
+		GameObject combatObject = (GameObject) Instantiate (Resources.Load ("CombatCanvas"));
+		CombatManager combatMan = combatObject.GetComponentInChildren<CombatManager> ();
+		List<CombatCharacter> enemyCharList = new List<CombatCharacter> ();
+		foreach (CombatCharacterFactory.CombatCharacterPresets charType in enemies) {
+			enemyCharList.Add (CombatCharacterFactory.MakeCharacter (charType));
+		}
+		combatMan.enemyChars = enemyCharList;
+
+		GameStateManager gameState = GameObject.FindGameObjectWithTag ("GameStateManager").GetComponent<GameStateManager> ();
+		List<CombatCharacter> frendlyCharList = new List<CombatCharacter> ();
+		foreach (CombatCharacterFactory.CombatCharacterPresets charType in gameState.currentTeam) {
+			frendlyCharList.Add (CombatCharacterFactory.MakeCharacter (charType));
+		}
+		combatMan.frendlyChars = frendlyCharList;
 	}
 }

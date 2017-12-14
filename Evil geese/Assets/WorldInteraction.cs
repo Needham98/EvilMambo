@@ -17,20 +17,7 @@ public class WorldInteraction : MonoBehaviour {
 	public void interact(){
 		switch (ownInteractionType) {
 		case InteractionTypes.CombatStart:
-			GameObject combatObject = (GameObject) Instantiate (Resources.Load ("CombatCanvas"));
-			CombatManager combatMan = combatObject.GetComponentInChildren<CombatManager> ();
-			List<CombatCharacter> enemyCharList = new List<CombatCharacter> ();
-			foreach (CombatCharacterFactory.CombatCharacterPresets charType in enemies) {
-				enemyCharList.Add (CombatCharacterFactory.MakeCharacter (charType));
-			}
-			combatMan.enemyChars = enemyCharList;
-
-			GameStateManager gameState = GameObject.FindGameObjectWithTag ("GameStateManager").GetComponent<GameStateManager> ();
-			List<CombatCharacter> frendlyCharList = new List<CombatCharacter> ();
-			foreach (CombatCharacterFactory.CombatCharacterPresets charType in gameState.currentTeam) {
-				frendlyCharList.Add (CombatCharacterFactory.MakeCharacter (charType));
-			}
-			combatMan.frendlyChars = frendlyCharList;
+			CombatManager.startCombat (enemies);
 			break;
 
 		case InteractionTypes.DialogStart:
