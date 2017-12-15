@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovment : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour {
 	Transform ownTransform;
 	public int x;// current x position on grid system
 	public int y;// current y position on grid system
@@ -14,7 +14,7 @@ public class PlayerMovment : MonoBehaviour {
 	float moveSpeed = 3.5f; // speed of movement in tiles per second
 
 	void Start () {
-		ownTransform = GetComponent<Transform> ();
+		ownTransform = this.transform;
 		MCP = GameObject.FindGameObjectWithTag ("GameController");
 		movementGrid = (Grid) MCP.GetComponent<Grid> ();
 	}
@@ -71,5 +71,10 @@ public class PlayerMovment : MonoBehaviour {
 			return;
 		}
 		interaction.interact ();
+	}
+
+	public void snapToGridPos(){
+		ownTransform = this.transform;
+		ownTransform.position = new Vector3 ((float)x, (float)y, ownTransform.position.z);
 	}
 }

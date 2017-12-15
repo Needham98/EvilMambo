@@ -13,6 +13,9 @@ public class GameState : ISerializationCallbackReceiver{
 	[SerializeField]
 	List<string> gameVarValues;
 	public bool movementEnabled;
+	public string sceneName;
+	public int playerX;
+	public int playerY;
 
 	public GameState(){
 		gameStateVars = new Dictionary<string, string> ();

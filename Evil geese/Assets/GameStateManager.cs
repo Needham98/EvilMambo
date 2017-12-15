@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour{
 	public List<CombatCharacterFactory.CombatCharacterPresets> availibleCharacters { 
@@ -17,6 +19,7 @@ public class GameStateManager : MonoBehaviour{
 		get {return state.movementEnabled;}
 		set {state.movementEnabled = value;}
 	}
+	bool hasLoaded = false;
 	public GameState state;
 
 	// Use this for initialization
@@ -31,6 +34,22 @@ public class GameStateManager : MonoBehaviour{
 			Debug.Log ("the gamestate was null, creating new gamestate");
 			state = new GameState ();
 		}
+		SceneManager.sceneLoaded += onSceneLoad;
+	}
+
+	void onSceneLoad(Scene scene, LoadSceneMode mode){
+		if (hasLoaded) {
+			hasLoaded = false;
+			try{
+				PlayerMovement movement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+				movement.x = state.playerX;
+				movement.y = state.playerY;
+				movement.snapToGridPos();
+			}catch (NullReferenceException e ){
+				Debug.Log (e);
+			}
+		}
+		movementEnabled = true;
 	}
 
 	public string getGameVar(string varName){
@@ -55,6 +74,8 @@ public class GameStateManager : MonoBehaviour{
 
 	public void loadState(string saveName){
 		state = GameSave.loadState (saveName);
+		SceneManager.LoadScene (state.sceneName);
+		hasLoaded = true;
 	}
 		
 

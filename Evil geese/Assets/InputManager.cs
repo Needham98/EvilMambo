@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour {
 	GameObject player;
-	PlayerMovment movement;
+	PlayerMovement movement;
 	float movementThreshold = 0.8f; // magnitude of movment axis must be greater than this to move
 	GameStateManager state;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
-		movement = player.GetComponent<PlayerMovment> ();
+		movement = player.GetComponent<PlayerMovement> ();
 		state = GameObject.FindGameObjectWithTag ("GameStateManager").GetComponent<GameStateManager> ();
 	}
 
@@ -34,6 +34,9 @@ public class InputManager : MonoBehaviour {
 		}
 		if (Input.GetButtonDown ("Submit")) {
 			movement.interact();
+		}
+		if (Input.GetButtonDown("Cancel")){
+			PauseMenuManager.pause ();
 		}
 	}
 }
