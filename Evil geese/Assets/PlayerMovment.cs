@@ -65,6 +65,7 @@ public class PlayerMovment : MonoBehaviour {
 			return;
 		}
 		GameObject interactionObject = pos.interactionObject;
+		//TODO catch NullRefrenceExeption
 		WorldInteraction interaction = interactionObject.GetComponent<WorldInteraction> ();
 		if (interaction == null) {
 			return;

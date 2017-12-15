@@ -17,6 +17,8 @@ public class GameState : ISerializationCallbackReceiver{
 	public GameState(){
 		gameStateVars = new Dictionary<string, string> ();
 		movementEnabled = true;
+		availibleCharacters = new List<CombatCharacterFactory.CombatCharacterPresets> ();
+		currentTeam = new List<CombatCharacterFactory.CombatCharacterPresets> ();
 	}
 
 	public void OnBeforeSerialize(){

@@ -21,6 +21,11 @@ public class GameStateManager : MonoBehaviour{
 
 	// Use this for initialization
 	void Start () {
+		// if a GameStateManager already exists destroy this one;
+		if (GameObject.FindGameObjectsWithTag ("GameStateManager").Length > 1) {
+			Destroy (this.gameObject);
+			return;
+		}
 		GameObject.DontDestroyOnLoad (this.gameObject);
 		if (state == null) {
 			Debug.Log ("the gamestate was null, creating new gamestate");

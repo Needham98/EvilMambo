@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1439946346176200}
+  m_RootGameObject: {fileID: 1889742329189002}
   m_IsPrefabParent: 1
---- !u!1 &1439946346176200
+--- !u!1 &1889742329189002
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4020958540618578}
-  - component: {fileID: 114172690169858354}
+  - component: {fileID: 4905166147593204}
+  - component: {fileID: 114729010611386790}
   m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
+  m_Name: GameStateManager
+  m_TagString: GameStateManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4020958540618578
+--- !u!4 &4905166147593204
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1439946346176200}
+  m_GameObject: {fileID: 1889742329189002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,18 +40,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114172690169858354
+--- !u!114 &114729010611386790
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1439946346176200}
+  m_GameObject: {fileID: 1889742329189002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff0926fc8423d94f9427d73a05b21bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 774ac6c0619032e4bb75a1b5b5cc6139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 100
-  strengthPoints: 1
-  defensePoints: 1
-  statModifierVar: health
+  state:
+    availibleCharacters: 
+    currentTeam: 0000000000000000
+    gameVarNames: []
+    gameVarValues: []
+    movementEnabled: 1
