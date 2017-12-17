@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CombatManager : MonoBehaviour {
 	//todo visual representation of status effects
+	//todo inventory system
 
 	//the lists representing all the combatants
 	public List<CombatCharacter> frendlyChars;// the list of characters controlled by the player
 	public List<CombatCharacter> enemyChars;//the list of characters attacking the player
 	List<CombatCharacter> attackChars;//the list of characters attacking on the current turn (always points to either the frendlyChars or enemyChars list)
 	List<CombatCharacter> defendChars;// the list of characters deffending on the current turn (always points to the opposite list to attackChars)
-
 
 	//UI Variables
 	GameObject canvasObj; // the canvas used in the UI
@@ -37,10 +37,14 @@ public class CombatManager : MonoBehaviour {
 	GameObject sceneCamera; // the camera in the scene
 
 
+	//gameState data
+	GameStateManager state;
+
 	// todo hide attack and abilities buttons exept during selecting stage
 	void Start () {
 		canvasObj = this.transform.parent.gameObject;
 		abilitiesPanel = canvasObj.transform.Find ("AbilitiesPanel").gameObject;
+		state = GameObject.FindGameObjectWithTag ("GameStateManager").GetComponent<GameStateManager> ();
 
 		sceneObjects = new List<GameObject> ();
 		foreach (GameObject obj in GameObject.FindObjectsOfType<GameObject>()) {
@@ -57,6 +61,9 @@ public class CombatManager : MonoBehaviour {
 		List<GameObject> gameObjectsToLeaveActive = new List<GameObject> ();
 		foreach (GameObject obj in sceneObjects) {
 			if (obj.transform.IsChildOf (sceneCamera.transform)) {
+				gameObjectsToLeaveActive.Add (obj);
+			}
+			if (obj.tag == "GameStateManager") {
 				gameObjectsToLeaveActive.Add (obj);
 			}
 		}
