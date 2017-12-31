@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CombatManager : MonoBehaviour {
 	//todo visual representation of status effects
-	//todo inventory system
 
 	//the lists representing all the combatants
 	public List<CombatCharacter> frendlyChars;// the list of characters controlled by the player

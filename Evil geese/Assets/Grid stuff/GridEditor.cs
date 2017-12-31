@@ -14,9 +14,9 @@ public class GridEditor : Editor {
 	Grid myGrid;
 	public override void OnInspectorGUI(){
 		myGrid = (Grid)target;
+		Undo.RecordObject (myGrid, "grid change");
 
 		myGrid.OnAfterDeserialize ();
-		//DrawDefaultInspector ();
 
 		EditorGUILayout.BeginHorizontal (null);
 		EditorGUILayout.PrefixLabel(new GUIContent("x:"));

@@ -59,6 +59,7 @@
      <Compile Include="Assets\CombatStuff\CombatEntity.cs" />
      <Compile Include="Assets\CombatStuff\CombatManager.cs" />
      <Compile Include="Assets\Dialog stuff\DialogAction.cs" />
+     <Compile Include="Assets\Dialog stuff\DialogConditional.cs" />
      <Compile Include="Assets\Dialog stuff\DialogEditor.cs" />
      <Compile Include="Assets\Dialog stuff\DialogElement.cs" />
      <Compile Include="Assets\Dialog stuff\DialogManager.cs" />

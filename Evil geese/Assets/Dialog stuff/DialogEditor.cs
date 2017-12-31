@@ -5,7 +5,6 @@ using UnityEditor;
 [CustomEditor(typeof(DialogManager))]
 [CanEditMultipleObjects]
 public class DialogEditor : Editor{
-	//TODO add system for dialog wherin dialog options may or may not be shown based on some conditional
 	DialogManager ownDialogManager;
 	DialogElement currentDialogElement;
 	string dialogName = "";
@@ -20,6 +19,7 @@ public class DialogEditor : Editor{
 	public override void OnInspectorGUI(){
 		GUILayout.ExpandWidth (false);
 		ownDialogManager = (DialogManager)target;
+		Undo.RecordObject (ownDialogManager, "dialog change");
 		DrawDefaultInspector ();
 		currentMode = (modes) EditorGUILayout.EnumPopup(currentMode);
 		switch (currentMode) {
@@ -57,7 +57,11 @@ public class DialogEditor : Editor{
 				EditorGUILayout.EndHorizontal ();
 
 				int toDelete = -1;
-				for (int i = 0; i < currentDialogElement.optionPointer.Count; i++) {
+				for (int i = 0; i < currentDialogElement.optionPointer.Count; i++){
+					if (currentDialogElement.optionConditional.Count < currentDialogElement.optionPointer.Count) {
+						currentDialogElement.optionConditional.Add (new DialogConditional ());
+					}
+
 					EditorGUILayout.BeginHorizontal ();
 					currentDialogElement.optionPointer [i] = EditorGUILayout.TextField (currentDialogElement.optionPointer [i]);
 					currentDialogElement.optionDescription [i] = EditorGUILayout.TextField (currentDialogElement.optionDescription [i]);
@@ -65,14 +69,51 @@ public class DialogEditor : Editor{
 						toDelete = i;
 					}
 					EditorGUILayout.EndHorizontal ();
+					EditorGUILayout.BeginHorizontal ();
+					bool showConditionalDetail = true;
+					DialogConditional currentConditional = currentDialogElement.optionConditional [i];
+					if (currentConditional.ownComparison == DialogConditional.comparisonTypes._false
+						|| currentConditional.ownComparison == DialogConditional.comparisonTypes._true) {
+						showConditionalDetail = false;
+					}
+
+					if (showConditionalDetail) {
+						if (currentConditional.leftSideComparable == DialogConditional.comparableTypes.item) {
+							currentConditional.leftItemType = (InventoryItems.itemTypes)EditorGUILayout.EnumPopup (currentConditional.leftItemType);
+						}else{
+							currentConditional.leftSide = EditorGUILayout.TextField(currentConditional.leftSide);
+						}
+					}
+
+					currentConditional.ownComparison = (DialogConditional.comparisonTypes) EditorGUILayout.EnumPopup (currentConditional.ownComparison);
+
+					if (showConditionalDetail) {
+						if (currentConditional.rightSideComparable == DialogConditional.comparableTypes.item) {
+							currentConditional.rightItemType = (InventoryItems.itemTypes)EditorGUILayout.EnumPopup (currentConditional.rightItemType);
+						}else{
+							currentConditional.rightSide = EditorGUILayout.TextField(currentConditional.rightSide);
+						}
+					}
+					EditorGUILayout.EndHorizontal ();
+
+					if (showConditionalDetail) {
+						EditorGUILayout.BeginHorizontal ();
+						currentConditional.leftSideComparable = (DialogConditional.comparableTypes)EditorGUILayout.EnumPopup (currentConditional.leftSideComparable);
+						currentConditional.rightSideComparable = (DialogConditional.comparableTypes)EditorGUILayout.EnumPopup (currentConditional.rightSideComparable);
+						EditorGUILayout.EndHorizontal ();
+					}
+
+					EditorGUILayout.LabelField ("");
 				} 
 				if (toDelete != -1) {
 					currentDialogElement.optionPointer.RemoveAt (toDelete);
 					currentDialogElement.optionDescription.RemoveAt (toDelete);
+					currentDialogElement.optionConditional.RemoveAt (toDelete);
 				}
 				if (GUILayout.Button ("Add dialog option")) {
 					currentDialogElement.optionPointer.Add ("");
 					currentDialogElement.optionDescription.Add ("");
+					currentDialogElement.optionConditional.Add(new DialogConditional());
 				}
 
 				//todo add actions editor

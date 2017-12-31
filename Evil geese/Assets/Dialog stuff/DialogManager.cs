@@ -37,26 +37,34 @@ public class DialogManager : MonoBehaviour, ISerializationCallbackReceiver{
 			Transform panelTransform = dialogCanvasObj.transform.Find ("Panel");
 			panelTransform.Find ("CharName").gameObject.GetComponent<UnityEngine.UI.Text> ().text = currentDialog.speekerName;
 			panelTransform.Find ("MainText").gameObject.GetComponent<UnityEngine.UI.Text> ().text = currentDialog.dialogText;
-			//todo make dialog apear slowly (add one character at a time till the whole thing is displayed)
 			if (buttonObjs == null) {
 				buttonObjs = new List<GameObject> ();
 				GameObject buttonRefrence = panelTransform.Find ("DialogButton").gameObject;
+				List<int> optionsVaild = new List<int> ();
+				for (int i = 0; i < currentDialog.optionConditional.Count; i++) {
+					if (currentDialog.optionConditional [i].evaluate ()) {
+						optionsVaild.Add (i);
+					}
+				}
+
 				float maxOffset = 990f; // the maximum spread between buttons
-				for (int i = 0; i < currentDialog.optionPointer.Count; i++) {
+				int currentButtonCount = 0;
+				foreach (int currentOption in optionsVaild){
 					GameObject button = Instantiate (buttonRefrence, panelTransform);
-					string optionPointer = currentDialog.optionPointer [i];
-					string optionDescription = currentDialog.optionDescription [i];
+					string optionPointer = currentDialog.optionPointer [currentOption];
+					string optionDescription = currentDialog.optionDescription [currentOption];
 					button.GetComponent<Button> ().onClick.AddListener (delegate {doDialogOption(optionPointer);});
 					button.SetActive (true);
 					button.transform.Find ("Text").gameObject.GetComponent<UnityEngine.UI.Text> ().text = optionDescription;
 					Vector3 newButtonPos = button.transform.localPosition * 1; // multiply by one to force derefrence
-					if (currentDialog.optionPointer.Count > 1) {
-						newButtonPos.x += maxOffset - maxOffset * ((i)/(float)(currentDialog.optionPointer.Count-1));
+					if (optionsVaild.Count > 1) {
+						newButtonPos.x += maxOffset - maxOffset * ((currentButtonCount)/(float)(optionsVaild.Count-1));
 					}else{
 						newButtonPos.x += maxOffset;
 					}
 					button.transform.localPosition = newButtonPos;
 					buttonObjs.Add (button);
+					currentButtonCount++;
 				}
 			}
 		}

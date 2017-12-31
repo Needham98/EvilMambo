@@ -80,6 +80,14 @@ public class GameStateManager : MonoBehaviour{
 		}
 	}
 
+	public int getItem(InventoryItems.itemTypes itemType){
+		if (inventory.ContainsKey(itemType)){
+			return inventory [itemType];
+		}else{
+			return 0;
+		}
+	}
+
 	public void saveState(string saveName){
 		GameSave.saveState (saveName, state);
 	}
