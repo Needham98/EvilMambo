@@ -5,6 +5,7 @@ using UnityEditor;
 [CustomEditor(typeof(DialogManager))]
 [CanEditMultipleObjects]
 public class DialogEditor : Editor{
+	//TODO add system for dialog wherin dialog options may or may not be shown based on some conditional
 	DialogManager ownDialogManager;
 	DialogElement currentDialogElement;
 	string dialogName = "";
@@ -107,6 +108,10 @@ public class DialogEditor : Editor{
 							action.combatEnemies[i]	= (CombatCharacterFactory.CombatCharacterPresets) EditorGUILayout.EnumPopup(action.combatEnemies[i]);
 						}
 
+						break;
+					case DialogAction.actionType.giveItem:
+						action.itemType = (InventoryItems.itemTypes)EditorGUILayout.EnumPopup (action.itemType);
+						action.itemAmount = EditorGUILayout.IntField (action.itemAmount);
 						break;
 					}
 					if (GUILayout.Button ("Delete")) {

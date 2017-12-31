@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 321}
   m_MaxSize: {x: 8004, y: 8021}
   vertical: 1
-  controlID: 58
+  controlID: 10
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 59
+  controlID: 11
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -364,23 +364,23 @@ MonoBehaviour:
     height: 439
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 86050000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 1afcffff00000000
+    m_SelectedIDs: 5c2b0000
+    m_LastClickedID: 11100
+    m_ExpandedIDs: b4a2feff3ca5feff44bcfeff58bcfeffa8cbfeff82e8ffff96f0ffff9cf0ffff9ef0ffff1afcfffff4ffffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: CombatCanvas
+      m_OriginalName: CombatCanvas
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -3940
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -416,14 +416,14 @@ MonoBehaviour:
     width: 901
     height: 439
   m_SceneLighting: 0
-  lastFramingTime: 89937.39721750988
+  lastFramingTime: 2204.7005374664277
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6.070296, y: 1.5580949, z: -9}
+    m_Target: {x: 1.8265061, y: -0.42548305, z: 0}
     speed: 2
-    m_Value: {x: 6.070296, y: 1.5580949, z: -9}
+    m_Value: {x: 1.8265061, y: -0.42548305, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -450,9 +450,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 19.9072
+    m_Target: 46.9558
     speed: 2
-    m_Value: 19.9072
+    m_Value: 46.9558
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -566,8 +566,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 86050000
-    m_LastClickedInstanceID: 1414
+    m_SelectedInstanceIDs: 5c2b0000
+    m_LastClickedInstanceID: 11100
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300008805000000000000
     m_RenameOverlay:

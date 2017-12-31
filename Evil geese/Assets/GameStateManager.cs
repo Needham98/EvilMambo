@@ -19,6 +19,10 @@ public class GameStateManager : MonoBehaviour{
 		get {return state.movementEnabled;}
 		set {state.movementEnabled = value;}
 	}
+	public Dictionary<InventoryItems.itemTypes, int> inventory {
+		get {return state.inventory;}
+	}
+
 	bool hasLoaded = false;
 	public GameState state;
 
@@ -65,6 +69,14 @@ public class GameStateManager : MonoBehaviour{
 			state.gameStateVars [varName] = varValue;
 		} else {
 			state.gameStateVars.Add (varName, varValue);
+		}
+	}
+
+	public void changeItem(InventoryItems.itemTypes itemType, int amount){
+		if (inventory.ContainsKey(itemType)){
+			inventory[itemType] += amount;
+		}else{
+			inventory.Add(itemType, amount);
 		}
 	}
 

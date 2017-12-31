@@ -155,6 +155,7 @@ public class CombatManager : MonoBehaviour {
 		}
 	}
 
+	//TODO add coloumn descriptions to the abilities and items boxes
 	public void doAbilities(){
 		if (currentStage != turnStages.selecting) {
 			return; // do nothing
@@ -192,10 +193,64 @@ public class CombatManager : MonoBehaviour {
 
 	}
 
+	public void doItems(){
+		//uses the same panel as abilities
+		if (currentStage != turnStages.selecting) {
+			return; // do nothing
+		}
+
+		//clear old buttons
+		if (abilityButtonObjs != null) {
+			foreach (GameObject button in abilityButtonObjs) {
+				GameObject.Destroy (button);
+			}
+		}
+
+		abilityButtonObjs = new List<GameObject> ();
+		abilitiesPanel.SetActive (true);
+		GameObject referenceButton = abilitiesPanel.transform.Find ("ReferenceButton").gameObject;
+		Vector2 newButtonPosMin = ((RectTransform) referenceButton.transform).offsetMin;
+		Vector2 newButtonPosMax = ((RectTransform) referenceButton.transform).offsetMax;
+		float buttonSeparation = 45; // distance apart the tops of the buttons should be in pixels
+
+		List<InventoryItems.itemTypes> items = new List<InventoryItems.itemTypes> ();
+		foreach (InventoryItems.itemTypes itemType in state.state.inventory.Keys) {
+			if (state.state.inventory [itemType] > 0 && InventoryItems.itemHasAbility(itemType)) {
+				items.Add (itemType);
+			}
+		}
+
+		foreach (InventoryItems.itemTypes itemType in items) {
+			GameObject newButtonObj = Instantiate (referenceButton, abilitiesPanel.transform);
+			UnityEngine.UI.Button newButton = newButtonObj.GetComponent<UnityEngine.UI.Button> ();
+			abilityButtonObjs.Add (newButtonObj);
+			((RectTransform)newButtonObj.transform).offsetMin = newButtonPosMin;
+			((RectTransform)newButtonObj.transform).offsetMax = newButtonPosMax;
+			newButtonPosMin.y -= buttonSeparation;
+			newButtonPosMax.y -= buttonSeparation;
+			newButtonObj.SetActive (true);
+			newButtonObj.transform.Find ("NameText").gameObject.GetComponent<UnityEngine.UI.Text> ().text = InventoryItems.itemDisplayName(itemType);
+			//TODO refactor name "CostText" to "SecondText" or other similar since it describes more than cost
+			newButtonObj.transform.Find ("CostText").gameObject.GetComponent<UnityEngine.UI.Text> ().text = state.state.inventory[itemType].ToString();
+			InventoryItems.itemTypes tempValue = itemType;
+			newButton.onClick.AddListener (delegate {selectItem(tempValue);});
+
+		}
+
+
+	}
+
 	public void hideAbilities(){
 		abilitiesPanel.SetActive (false);
 	}
-		
+
+	void selectItem(InventoryItems.itemTypes itemType){
+		selectAbility (InventoryItems.itemAbility (itemType));
+		if (InventoryItems.itemConsumedOnUse(itemType)) {
+			state.changeItem (itemType, -1);
+		}
+	}
+
 	void selectAbility(CombatAbility ability){
 		attack = ability;
 		currentStage = turnStages.targetSelection;
@@ -203,6 +258,7 @@ public class CombatManager : MonoBehaviour {
 	}
 
 	void selectTarget(CombatCharacter target){
+		//TODO add check to allow targeting freindlys if the ability is an assist
 		if (attackTargets == null) {
 			attackTargets = new List<CombatCharacter> ();
 		}

@@ -22,7 +22,7 @@ public static class InventoryItems {
 		case itemTypes.beak:
 			return "It appears to the the beak of a goose";
 		default:
-			return "error: invalid item";	
+			return "error: No descrition exists for this item";	
 		}
 	}
 
@@ -30,6 +30,15 @@ public static class InventoryItems {
 		switch (itemType) {
 		case itemTypes.beak:
 			return true;
+		default:
+			return itemAbility (itemType) == null;
+		}
+	}
+
+	public static bool itemConsumedOnUse(itemTypes itemType){
+		switch (itemType) {
+		case itemTypes.beak:
+			return false;
 		default:
 			return false;
 		}
