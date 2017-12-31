@@ -77,6 +77,10 @@ public class GameStateManager : MonoBehaviour{
 		SceneManager.LoadScene (state.sceneName);
 		hasLoaded = true;
 	}
+
+	public static GameStateManager getGameStateManager(){
+		return GameObject.FindGameObjectWithTag ("GameStateManager").GetComponent<GameStateManager> ();
+	}
 		
 
 }

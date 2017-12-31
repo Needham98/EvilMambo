@@ -27,7 +27,7 @@ public class DialogManager : MonoBehaviour, ISerializationCallbackReceiver{
 	// Use this for initialization
 	void Start () {
 		currentDialog = null;
-		state = GameObject.FindGameObjectWithTag ("GameStateManager").GetComponent<GameStateManager> ();
+		state = GameStateManager.getGameStateManager ();
 		dialogCanvasPrefab = (GameObject) Resources.Load ("DialogCanvas");
 	}
 	

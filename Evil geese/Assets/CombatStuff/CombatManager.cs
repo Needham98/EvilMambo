@@ -44,7 +44,7 @@ public class CombatManager : MonoBehaviour {
 	void Start () {
 		canvasObj = this.transform.parent.gameObject;
 		abilitiesPanel = canvasObj.transform.Find ("AbilitiesPanel").gameObject;
-		state = GameObject.FindGameObjectWithTag ("GameStateManager").GetComponent<GameStateManager> ();
+		state = GameStateManager.getGameStateManager ();
 
 		sceneObjects = new List<GameObject> ();
 		foreach (GameObject obj in GameObject.FindObjectsOfType<GameObject>()) {

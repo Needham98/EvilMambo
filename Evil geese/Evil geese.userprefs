@@ -5,10 +5,11 @@
       <File FileName="Assets\Dialog stuff\DialogEditor.cs" Line="1" Column="1" />
       <File FileName="Assets\Dialog stuff\DialogAction.cs" Line="1" Column="1" />
       <File FileName="Assets\Dialog stuff\DialogElement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Dialog stuff\DialogManager.cs" Line="30" Column="3" />
-      <File FileName="Assets\InventoryItems.cs" Line="38" Column="15" />
-      <File FileName="Assets\GameState.cs" Line="60" Column="60" />
-      <File FileName="Assets\CombatStuff\CombatManager.cs" Line="7" Column="25" />
+      <File FileName="Assets\Dialog stuff\DialogManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\InventoryItems.cs" Line="1" Column="1" />
+      <File FileName="Assets\GameState.cs" Line="1" Column="1" />
+      <File FileName="Assets\CombatStuff\CombatManager.cs" Line="12" Column="16" />
+      <File FileName="Assets\CombatStuff\CombatCharacter.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

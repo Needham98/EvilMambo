@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -65,9 +66,10 @@ public class PlayerMovement : MonoBehaviour {
 			return;
 		}
 		GameObject interactionObject = pos.interactionObject;
-		//TODO catch NullRefrenceExeption
-		WorldInteraction interaction = interactionObject.GetComponent<WorldInteraction> ();
-		if (interaction == null) {
+		WorldInteraction interaction;
+		try{
+			interaction = interactionObject.GetComponent<WorldInteraction> ();
+		}catch (NullReferenceException){
 			return;
 		}
 		interaction.interact ();

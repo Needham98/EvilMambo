@@ -11,7 +11,7 @@ public class PauseMenuManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		state = GameObject.FindGameObjectWithTag ("GameStateManager").GetComponent<GameStateManager> ();
+		state = GameStateManager.getGameStateManager ();
 		state.movementEnabled = false;
 		movement = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerMovement> ();
 	}
