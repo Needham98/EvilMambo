@@ -32,6 +32,7 @@ public class GameState : ISerializationCallbackReceiver{
 		movementEnabled = true;
 		availibleCharacters = new List<CombatCharacterFactory.CombatCharacterPresets> ();
 		currentTeam = new List<CombatCharacterFactory.CombatCharacterPresets> ();
+		inventory = new Dictionary<InventoryItems.itemTypes, int> ();
 	}
 
 	public void OnBeforeSerialize(){

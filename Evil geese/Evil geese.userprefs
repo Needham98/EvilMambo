@@ -1,15 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CombatStuff\CombatManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Grid stuff\GridEditor.cs">
     <Files>
-      <File FileName="Assets\Dialog stuff\DialogEditor.cs" Line="1" Column="1" />
+      <File FileName="Assets\Dialog stuff\DialogEditor.cs" Line="22" Column="38" />
       <File FileName="Assets\Dialog stuff\DialogAction.cs" Line="1" Column="1" />
-      <File FileName="Assets\Dialog stuff\DialogElement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Dialog stuff\DialogManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\InventoryItems.cs" Line="1" Column="1" />
+      <File FileName="Assets\Dialog stuff\DialogElement.cs" Line="19" Column="54" />
+      <File FileName="Assets\Dialog stuff\DialogManager.cs" Line="61" Column="99" />
+      <File FileName="Assets\InventoryItems.cs" Line="41" Column="16" />
       <File FileName="Assets\GameState.cs" Line="1" Column="1" />
-      <File FileName="Assets\CombatStuff\CombatManager.cs" Line="12" Column="16" />
+      <File FileName="Assets\CombatStuff\CombatManager.cs" Line="252" Column="2" />
       <File FileName="Assets\CombatStuff\CombatCharacter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Dialog stuff\DialogConditional.cs" Line="35" Column="24" />
+      <File FileName="Assets\GameStateManager.cs" Line="79" Column="16" />
+      <File FileName="Assets\Grid stuff\GridEditor.cs" Line="17" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
