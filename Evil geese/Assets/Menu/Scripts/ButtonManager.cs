@@ -9,8 +9,6 @@ public class ButtonManager : MonoBehaviour {
 		GameStateManager state = GameObject.FindGameObjectWithTag ("GameStateManager").GetComponent<GameStateManager> ();
 		state.state = new GameState ();
 		state.availibleCharacters.Add (CombatCharacterFactory.CombatCharacterPresets.PlayerCharBasic);
-		state.availibleCharacters.Add (CombatCharacterFactory.CombatCharacterPresets.PlayerCharBasic);
-		state.currentTeam.Add (CombatCharacterFactory.CombatCharacterPresets.PlayerCharBasic);
 		state.currentTeam.Add (CombatCharacterFactory.CombatCharacterPresets.PlayerCharBasic);
 		SceneManager.LoadScene (NewGameScene);
 	}

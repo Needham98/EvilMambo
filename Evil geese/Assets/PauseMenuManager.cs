@@ -13,11 +13,13 @@ public class PauseMenuManager : MonoBehaviour {
 	void Start () {
 		state = GameStateManager.getGameStateManager ();
 		state.movementEnabled = false;
+		state.isPaused = true;
 		movement = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerMovement> ();
 	}
 
 	public void resume(){
 		state.movementEnabled = true;
+		state.isPaused = false;
 		Destroy (this.gameObject);
 	}
 

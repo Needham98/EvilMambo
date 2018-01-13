@@ -143,6 +143,9 @@ public class CombatManager : MonoBehaviour {
 			winStage ();
 			break;
 		
+		case turnStages.lose:
+			loseStage ();
+			break;
 		}
 	}
 
@@ -379,6 +382,10 @@ public class CombatManager : MonoBehaviour {
 			}
 			currentStage = turnStages.selecting;
 		}
+	}
+
+	void loseStage(){
+		Debug.LogError ("losing not implemented");
 	}
 
 	void winStage(){

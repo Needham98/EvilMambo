@@ -167,6 +167,7 @@ MonoBehaviour:
   - postCombat
   - itemTest
   - itemTest2
+  - newChar
   dialogDataValues:
   - speekerName: You
     dialogText: I would like to come inside please, I need to buy some things.
@@ -174,7 +175,14 @@ MonoBehaviour:
     - Continue
     optionPointer:
     - inside2
-    optionConditional: []
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
     actions: []
   - speekerName: The Doors
     dialogText: Too bloody bad mate, we're shut.
@@ -186,7 +194,28 @@ MonoBehaviour:
     - 
     - ram
     - insist
-    optionConditional: []
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
     actions: []
   - speekerName: The Doors
     dialogText: What do you want?
@@ -195,11 +224,13 @@ MonoBehaviour:
     - I'm hungry
     - I want to test the new item system
     - I want to test the new item system
+    - I want another team member
     optionPointer:
     - inside
     - hungry
     - itemTest
     - itemTest2
+    - newChar
     optionConditional:
     - rightSideComparable: 2
       leftSideComparable: 2
@@ -229,6 +260,13 @@ MonoBehaviour:
       leftSide: 
       rightItemType: 0
       leftItemType: 0
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
     actions: []
   - speekerName: You
     dialogText: Well I'm hungry and I wanted to buy some food.
@@ -236,7 +274,14 @@ MonoBehaviour:
     - continue
     optionPointer:
     - hungry2
-    optionConditional: []
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
     actions: []
   - speekerName: The Doors
     dialogText: If yer hungry piss off down tut courtyard. We're closed
@@ -248,7 +293,28 @@ MonoBehaviour:
     - 
     - ram
     - insist
-    optionConditional: []
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
     actions: []
   - speekerName: You
     dialogText: I'm afraid I must insist on being allowed to enter.
@@ -256,7 +322,14 @@ MonoBehaviour:
     - continue
     optionPointer:
     - insist2
-    optionConditional: []
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
     actions: []
   - speekerName: The Doors
     dialogText: I SAID WE'RE CLOSED!!! IF YA DON'T PISS OFF I'LL GIVE YA SOMETHING
@@ -267,7 +340,21 @@ MonoBehaviour:
     optionPointer:
     - 
     - combat
-    optionConditional: []
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
     actions: []
   - speekerName: The Narrator
     dialogText: You take a few steps back.
@@ -275,7 +362,14 @@ MonoBehaviour:
     - Continue
     optionPointer:
     - ram2
-    optionConditional: []
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
     actions: []
   - speekerName: The Narrator
     dialogText: You charge the doors
@@ -283,7 +377,14 @@ MonoBehaviour:
     - Continue
     optionPointer:
     - ram3
-    optionConditional: []
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
     actions: []
   - speekerName: The Narrator
     dialogText: You charge the doors . . . and bounce off.
@@ -291,7 +392,14 @@ MonoBehaviour:
     - Continue
     optionPointer:
     - ram4
-    optionConditional: []
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
     actions: []
   - speekerName: The Doors
     dialogText: OI! YOU WANNA GO MATE!!! COME ON FIGHT ME!!!
@@ -301,7 +409,21 @@ MonoBehaviour:
     optionPointer:
     - combat
     - 
-    optionConditional: []
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
     actions:
     - ownActionType: 0
       gameVarName: Door Dialog
@@ -309,6 +431,8 @@ MonoBehaviour:
       combatEnemies: 
       itemType: 0
       itemAmount: 0
+      character: 0
+      charAvailible: 0
   - speekerName: The Doors
     dialogText: OI!!! YOU'RE THE GIT WOT RAMMED INTO ME!!! FIGHT ME!!!
     optionDescription:
@@ -317,7 +441,21 @@ MonoBehaviour:
     optionPointer:
     - combat
     - 
-    optionConditional: []
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
     actions: []
   - speekerName: The Doors
     dialogText: Alright you win but I still can't let ya in.
@@ -325,7 +463,14 @@ MonoBehaviour:
     - Continue
     optionPointer:
     - 
-    optionConditional: []
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
     actions:
     - ownActionType: 1
       gameVarName: 
@@ -333,12 +478,16 @@ MonoBehaviour:
       combatEnemies: 0000000000000000
       itemType: 0
       itemAmount: 0
+      character: 0
+      charAvailible: 0
     - ownActionType: 0
       gameVarName: Door Dialog
       gameVarValue: postCombat
       combatEnemies: 
       itemType: 0
       itemAmount: 0
+      character: 0
+      charAvailible: 0
   - speekerName: The Doors
     dialogText: 'I can''t let you in, I''m still locked.
 
@@ -347,7 +496,14 @@ MonoBehaviour:
     - Continue
     optionPointer:
     - 
-    optionConditional: []
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
     actions: []
   - speekerName: The Narrator
     dialogText: You use your Incredible debug powers to cause a... goose beak... ok
@@ -371,6 +527,8 @@ MonoBehaviour:
       combatEnemies: 
       itemType: 0
       itemAmount: 1
+      character: 0
+      charAvailible: 0
   - speekerName: The Narrator
     dialogText: 'You already made a goose beak.
 
@@ -388,6 +546,29 @@ MonoBehaviour:
       rightItemType: 0
       leftItemType: 0
     actions: []
+  - speekerName: The Narrator
+    dialogText: A new character is added to your roster
+    optionDescription:
+    - Continue
+    optionPointer:
+    - 
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    actions:
+    - ownActionType: 3
+      gameVarName: 
+      gameVarValue: 
+      combatEnemies: 
+      itemType: 0
+      itemAmount: 0
+      character: 1
+      charAvailible: 1
 --- !u!4 &118535592
 Transform:
   m_ObjectHideFlags: 0
@@ -1067,6 +1248,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
+        type: 2}
+      propertyPath: state.currentTeam.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
+        type: 2}
+      propertyPath: state.availibleCharacters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4905166147593204, guid: d407bc6b3aaa52146ac4de7d6f7232fb, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0

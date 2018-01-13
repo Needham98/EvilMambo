@@ -23,6 +23,7 @@ public class GameState : ISerializationCallbackReceiver{
 	List<int> inventoryValues;
 
 	public bool movementEnabled;
+	public bool isPaused;
 	public string sceneName;
 	public int playerX;
 	public int playerY;
@@ -30,6 +31,7 @@ public class GameState : ISerializationCallbackReceiver{
 	public GameState(){
 		gameStateVars = new Dictionary<string, string> ();
 		movementEnabled = true;
+		isPaused = false;
 		availibleCharacters = new List<CombatCharacterFactory.CombatCharacterPresets> ();
 		currentTeam = new List<CombatCharacterFactory.CombatCharacterPresets> ();
 		inventory = new Dictionary<InventoryItems.itemTypes, int> ();

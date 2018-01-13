@@ -19,6 +19,10 @@ public class GameStateManager : MonoBehaviour{
 		get {return state.movementEnabled;}
 		set {state.movementEnabled = value;}
 	}
+	public bool isPaused{
+		get { return state.isPaused; }
+		set { state.isPaused = value; }
+	}
 	public Dictionary<InventoryItems.itemTypes, int> inventory {
 		get {return state.inventory;}
 	}

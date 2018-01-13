@@ -6,7 +6,8 @@ public class DialogAction {
 	public enum actionType{
 		setGameVar,
 		startCombat,
-		giveItem
+		giveItem,
+		setCharacterAvailibility
 	}
 	public actionType ownActionType;
 	public string gameVarName = "";
@@ -14,6 +15,9 @@ public class DialogAction {
 	public List<CombatCharacterFactory.CombatCharacterPresets> combatEnemies;
 	public InventoryItems.itemTypes itemType;
 	public int itemAmount;
+
+	public CombatCharacterFactory.CombatCharacterPresets character;
+	public bool charAvailible;
 
 	public DialogAction (){
 		combatEnemies = new List<CombatCharacterFactory.CombatCharacterPresets> ();
@@ -30,6 +34,20 @@ public class DialogAction {
 			break;
 		case actionType.giveItem:
 			state.changeItem (itemType, itemAmount);
+			break;
+		case actionType.setCharacterAvailibility:
+			if (charAvailible) {
+				if (!state.availibleCharacters.Contains (character)) {
+					state.availibleCharacters.Add (character);
+				}
+			} else {
+				if (state.availibleCharacters.Contains(character)){
+					state.availibleCharacters.Remove(character);
+				}
+				if (state.currentTeam.Contains (character)) {
+					state.currentTeam.Remove (character);
+				}
+			}
 			break;
 		}
 	}
