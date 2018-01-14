@@ -78,6 +78,7 @@
      <Compile Include="Assets\Unit tests\CombatSystemTests.cs" />
      <Compile Include="Assets\Unit tests\GridSystemTests.cs" />
      <Compile Include="Assets\WorldInteraction.cs" />
+     <Compile Include="Assets\WorldMap\WorldMapButton.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

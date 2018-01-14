@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour {
 	public int y;// current y position on grid system
 	bool moving = false;
 	public GameObject stepObject; // for event triggers
+	WorldInteraction stepObjectWorldInteraction;
 	GameObject MCP; // GameController
 	public Vector2 movedir = Vector2.up; // for animations
 	Grid movementGrid;
@@ -24,6 +25,11 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
 		if (moving) {
 			float distance = (ownTransform.position - new Vector3 (x, y, ownTransform.position.z)).magnitude;
+
+			if (distance < 0.3 &&  stepObjectWorldInteraction != null) {
+				stepObjectWorldInteraction.interact ();
+			}
+
 			float xDir = (float) x - ownTransform.position.x;
 			float yDir = (float) y - ownTransform.position.y;
 			if (distance < moveSpeed * Time.deltaTime * 1.1) { // 1.1 is a magic number to prevent bugs from floating point errors
@@ -53,6 +59,10 @@ public class PlayerMovement : MonoBehaviour {
 		} else {
 			stepObject = null;
 		}
+		if (stepObject != null) {
+			stepObjectWorldInteraction = stepObject.GetComponent<WorldInteraction> ();
+		}
+
 		x = newx;
 		y = newy;
 		moving = true;

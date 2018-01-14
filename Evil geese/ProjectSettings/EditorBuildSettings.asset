@@ -14,3 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Movement demo.unity
     guid: c0bfa11d50068594b98258c818a0abda
+  - enabled: 1
+    path: Assets/WorldMap.unity
+    guid: 65226dc464b91bf47b0f01a51874cd29

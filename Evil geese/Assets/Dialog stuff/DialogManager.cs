@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour, ISerializationCallbackReceiver{
 	public string startSelectorVarName; // the name of the gameState variable that controls which of the above dialogs will be used
-	public Dictionary<string, DialogElement> dialogData; // the dictionary that contains all the dialog elements that might be used in this dialog
+	public Dictionary<string, DialogElement> dialogData = new Dictionary<string, DialogElement>(); // the dictionary that contains all the dialog elements that might be used in this dialog
 
 	//serialization variables
 	[HideInInspector]
