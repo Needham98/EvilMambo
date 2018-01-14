@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WorldInteraction : MonoBehaviour {
-	public enum InteractionTypes {CombatStart, DialogStart}
+	public enum InteractionTypes {CombatStart, DialogStart, SceneChange}
 	public InteractionTypes ownInteractionType;
 	public List<CombatCharacterFactory.CombatCharacterPresets> enemies;
+	public string sceneName;
+	public int playerX;
+	public int playerY;
 
 
 	// Use this for initialization
@@ -28,6 +32,14 @@ public class WorldInteraction : MonoBehaviour {
 			}
 			dialogManager.beginDialog ();
 			break;
+		
+		case InteractionTypes.SceneChange:
+			GameStateManager state = GameStateManager.getGameStateManager ();
+			state.state.playerX = playerX;
+			state.state.playerY = playerY;
+			SceneManager.LoadScene (sceneName);
+			break;
+
 		}
 	}
 
