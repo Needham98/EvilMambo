@@ -75,7 +75,8 @@
      <Compile Include="Assets\Menu\Scripts\ButtonManager.cs" />
      <Compile Include="Assets\PauseMenuManager.cs" />
      <Compile Include="Assets\PlayerMovement.cs" />
-     <Compile Include="Assets\Unit tests\PositionCollisionTest.cs" />
+     <Compile Include="Assets\Unit tests\CombatSystemTests.cs" />
+     <Compile Include="Assets\Unit tests\GridSystemTests.cs" />
      <Compile Include="Assets\WorldInteraction.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
