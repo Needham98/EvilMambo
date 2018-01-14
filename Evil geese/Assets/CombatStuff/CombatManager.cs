@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CombatManager : MonoBehaviour {
-	//todo visual representation of status effects
+	//TODO visual representation of status effects
 
 	//the lists representing all the combatants
 	public List<CombatCharacter> frendlyChars;// the list of characters controlled by the player
@@ -18,6 +18,8 @@ public class CombatManager : MonoBehaviour {
 	GameObject abilitiesPanel; // the panel used as the background and parent object for the ability selection menu
 	List<GameObject> abilityButtonObjs;// the buttons used in the abilities menu
 	List<GameObject> targetSelectorButtonObjs;
+	GameObject WinPanel;// the pannel displayed after winning
+	GameObject LosePanel;// the panel displayed after losing
 
 
 	//data representing the state of the current turn
@@ -26,9 +28,9 @@ public class CombatManager : MonoBehaviour {
 	CombatCharacter attacker;// the current attacker
 	List<CombatCharacter> attackTargets;// list containing the targets of the current attack
 	CombatAbility attack; //the object representing the current attack
-	int targetsRemaining;
+	int targetsRemaining; // how many more targets need selecting for the current attack
 	enum turnStages {selecting, targetSelection, moving, attacking, returning, win, lose} // the posible stages of a turn
-	turnStages currentStage;
+	turnStages currentStage; // which of the above stages this combat encounter is currently in
 
 	//data needed to reset the scene after combat has finished
 	List<GameObject> sceneObjects; //the list of objects that were deactivated in the scene when combat began
@@ -42,6 +44,8 @@ public class CombatManager : MonoBehaviour {
 	// todo hide attack and abilities buttons exept during selecting stage
 	void Start () {
 		canvasObj = this.transform.parent.gameObject;
+		WinPanel = this.transform.parent.Find("WinPanel").gameObject;
+		LosePanel = this.transform.parent.Find ("LosePanel").gameObject;
 		abilitiesPanel = canvasObj.transform.Find ("AbilitiesPanel").gameObject;
 		state = GameStateManager.getGameStateManager ();
 
@@ -246,6 +250,31 @@ public class CombatManager : MonoBehaviour {
 		abilitiesPanel.SetActive (false);
 	}
 
+	public void doWin(){
+		if (abilitiesPanel != null) {
+			Destroy (abilitiesPanel);
+			Destroy (selectorObj);
+			foreach (CombatCharacter character in frendlyChars) {
+				Destroy (character.entity.transform.gameObject);
+			}
+			foreach (CombatCharacter character in enemyChars) {
+				Destroy (character.entity.transform.gameObject);
+			}
+			foreach (GameObject obj in sceneObjects) {
+				if (obj != null) {
+					obj.SetActive (true);
+				}
+			}
+
+			sceneCamera.transform.position = startingCameraPosition;
+			Destroy (this.transform.parent.gameObject);
+		}
+	}
+
+	public void doLose(){
+		Debug.LogError ("losing not implemented");
+	}
+
 	void selectItem(InventoryItems.itemTypes itemType){
 		selectAbility (InventoryItems.itemAbility (itemType));
 		if (InventoryItems.itemConsumedOnUse(itemType)) {
@@ -285,7 +314,6 @@ public class CombatManager : MonoBehaviour {
 
 	void win(){// todo handle winning better
 		currentStage = turnStages.win;
-		Debug.Log ("You Win! Now implement winning.");
 	}
 
 	void selectionStage(){
@@ -385,28 +413,11 @@ public class CombatManager : MonoBehaviour {
 	}
 
 	void loseStage(){
-		Debug.LogError ("losing not implemented");
+		LosePanel.SetActive (true);
 	}
 
 	void winStage(){
-		if (abilitiesPanel != null) {
-			Destroy (abilitiesPanel);
-			Destroy (selectorObj);
-			foreach (CombatCharacter character in frendlyChars) {
-				Destroy (character.entity.transform.gameObject);
-			}
-			foreach (CombatCharacter character in enemyChars) {
-				Destroy (character.entity.transform.gameObject);
-			}
-			foreach (GameObject obj in sceneObjects) {
-				if (obj != null) {
-					obj.SetActive (true);
-				}
-			}
-
-			sceneCamera.transform.position = startingCameraPosition;
-			Destroy (this.transform.parent.gameObject);
-		}
+		WinPanel.SetActive (true);
 	}
 
 	public static void startCombat(List<CombatCharacterFactory.CombatCharacterPresets> enemies){

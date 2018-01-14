@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AnimationLoop : MonoBehaviour {
 	public List<Sprite> frames;
@@ -9,17 +10,14 @@ public class AnimationLoop : MonoBehaviour {
 	public bool obeysPause = true;
 
 	SpriteRenderer ren;
+	Image img;
 	public float animationTime = 0f;
 	GameStateManager state;
 	// Use this for initialization
 	void Start () {
 		state = GameStateManager.getGameStateManager ();
-		try{
-			ren = this.gameObject.GetComponent<SpriteRenderer> ();
-		}catch (MissingComponentException){
-			this.gameObject.AddComponent (typeof(SpriteRenderer));
-			ren = this.gameObject.GetComponent<SpriteRenderer> ();
-		}
+		ren = this.gameObject.GetComponent<SpriteRenderer> ();
+		img = this.gameObject.GetComponent<UnityEngine.UI.Image>();
 	}
 	
 	// Update is called once per frame
@@ -33,6 +31,10 @@ public class AnimationLoop : MonoBehaviour {
 		} else {
 			nextFrame = Mathf.Min (Mathf.RoundToInt (animationTime * frameRate), frames.Count-1);
 		}
-		ren.sprite = frames [nextFrame];
+		if (ren != null) {
+			ren.sprite = frames [nextFrame];
+		} else {
+			img.sprite = frames [nextFrame];
+		}
 	}
 }
