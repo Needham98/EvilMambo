@@ -27,7 +27,7 @@ public class GameStateManager : MonoBehaviour{
 		get {return state.inventory;}
 	}
 
-	bool hasLoaded = false;
+	public bool hasLoaded = false;
 	public GameState state;
 
 	// Use this for initialization
@@ -46,6 +46,7 @@ public class GameStateManager : MonoBehaviour{
 	}
 
 	void onSceneLoad(Scene scene, LoadSceneMode mode){
+		Debug.Log (scene.name);
 		if (hasLoaded) {
 			hasLoaded = false;
 			try{
@@ -54,8 +55,9 @@ public class GameStateManager : MonoBehaviour{
 				movement.y = state.playerY;
 				movement.snapToGridPos();
 			}catch (NullReferenceException e ){
-				Debug.Log (e);
+				Debug.LogError (e);
 			}
+
 		}
 		movementEnabled = true;
 	}

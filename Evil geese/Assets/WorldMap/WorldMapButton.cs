@@ -13,7 +13,6 @@ public class WorldMapButton : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Awake ();
 	}
 
 	void Awake(){
@@ -31,7 +30,7 @@ public class WorldMapButton : MonoBehaviour {
 		button.interactable = enabled;
 		button.onClick.AddListener (delegate {
 			enterScene (sceneName, playerX, playerY);
-		});
+			});
 	}
 
 	public void enterScene(string newScene, int playerX, int playerY){
@@ -39,5 +38,6 @@ public class WorldMapButton : MonoBehaviour {
 		state.state.playerX = playerX;
 		state.state.playerY = playerY;
 		SceneManager.LoadScene (newScene);
+		state.hasLoaded = true;
 	}
 }

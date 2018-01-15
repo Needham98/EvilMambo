@@ -249,7 +249,7 @@ MonoBehaviour:
   varibleName: test
   defaultState: 1
   sceneName: Movement demo
-  playerX: 0
+  playerX: 3
   playerY: 0
 --- !u!114 &259626221
 MonoBehaviour:

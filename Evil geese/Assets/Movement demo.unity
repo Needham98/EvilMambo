@@ -667,7 +667,7 @@ GameObject:
   - component: {fileID: 311474522}
   - component: {fileID: 311474523}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: GameController
   m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
