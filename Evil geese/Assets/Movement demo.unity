@@ -1105,6 +1105,7 @@ GameObject:
   - component: {fileID: 1377318974}
   - component: {fileID: 1377318973}
   - component: {fileID: 1377318972}
+  - component: {fileID: 1377318975}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1127,6 +1128,14 @@ MonoBehaviour:
   y: 0
   stepObject: {fileID: 0}
   movedir: {x: 0, y: 1}
+  upAnimationLoop:
+  - {fileID: 21300000, guid: aae453052c2f88d4e97ea52443feeb2d, type: 3}
+  downAnimationLoop:
+  - {fileID: 21300000, guid: 952d333a1e1806b48b9e66d84841291f, type: 3}
+  leftAnimationLoop:
+  - {fileID: 21300000, guid: 661bf935b8feccb498591e8cc5451b64, type: 3}
+  rightAnimationLoop:
+  - {fileID: 21300000, guid: 23d6a74c12c18fd4c9680385d4bdcf60, type: 3}
 --- !u!212 &1377318973
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1159,7 +1168,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 952d333a1e1806b48b9e66d84841291f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1177,11 +1186,28 @@ Transform:
   m_GameObject: {fileID: 1377318971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1377318975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1377318971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c3f7201cf10324d84d84b6cd481676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frames:
+  - {fileID: 21300000, guid: 952d333a1e1806b48b9e66d84841291f, type: 3}
+  frameRate: 12
+  loop: 1
+  obeysPause: 1
+  animationTime: 0
 --- !u!1 &1658153290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,7 +1445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownInteractionType: 2
   enemies: 
-  sceneName: WorldMap
+  sceneName: WorldMap/WorldMap
   playerX: 0
   playerY: 0
 --- !u!1001 &2020558212
@@ -1432,12 +1458,12 @@ Prefab:
     - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
         type: 2}
       propertyPath: state.currentTeam.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
         type: 2}
       propertyPath: state.availibleCharacters.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4905166147593204, guid: d407bc6b3aaa52146ac4de7d6f7232fb, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1470,6 +1496,16 @@ Prefab:
     - target: {fileID: 4905166147593204, guid: d407bc6b3aaa52146ac4de7d6f7232fb, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
+        type: 2}
+      propertyPath: state.currentTeam.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
+        type: 2}
+      propertyPath: state.availibleCharacters.Array.data[1]
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d407bc6b3aaa52146ac4de7d6f7232fb, type: 2}

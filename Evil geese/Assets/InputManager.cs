@@ -38,5 +38,8 @@ public class InputManager : MonoBehaviour {
 		if (Input.GetButtonDown("Cancel")){
 			PauseMenuManager.pause ();
 		}
+		if (Input.GetButtonDown("RosterOpen")){
+			CharacterMenu.open();
+		}
 	}
 }

@@ -10,15 +10,22 @@ public class PlayerMovement : MonoBehaviour {
 	bool moving = false;
 	public GameObject stepObject; // for event triggers
 	WorldInteraction stepObjectWorldInteraction;
-	GameObject MCP; // GameController
+	GameObject gameController; // GameController
 	public Vector2 movedir = Vector2.up; // for animations
 	Grid movementGrid;
 	float moveSpeed = 3.5f; // speed of movement in tiles per second
 
+	public List<Sprite> upAnimationLoop;
+	public List<Sprite> downAnimationLoop;
+	public List<Sprite> leftAnimationLoop;
+	public List<Sprite> rightAnimationLoop;
+	AnimationLoop anim;
+
 	void Start () {
 		ownTransform = this.transform;
-		MCP = GameObject.FindGameObjectWithTag ("GameController");
-		movementGrid = (Grid) MCP.GetComponent<Grid> ();
+		gameController = GameObject.FindGameObjectWithTag ("GameController");
+		movementGrid = (Grid) gameController.GetComponent<Grid> ();
+		anim = this.gameObject.GetComponent<AnimationLoop> ();
 	}
 
 
@@ -67,6 +74,17 @@ public class PlayerMovement : MonoBehaviour {
 		y = newy;
 		moving = true;
 		movedir = dir.normalized;
+
+		if (movedir == Vector2.up) {
+			anim.frames = upAnimationLoop;
+		} else if (movedir == Vector2.down) {
+			anim.frames = downAnimationLoop;
+		} else if (movedir == Vector2.left) {
+			anim.frames = leftAnimationLoop;
+		} else if (movedir == Vector2.right) {
+			anim.frames = rightAnimationLoop;
+		}
+
 		return true;
 	}
 
