@@ -640,8 +640,8 @@ MonoBehaviour:
     blocked: 0
   - x: 6
     y: -5
-    interactionObject: {fileID: 430058756}
-    stepOn: {fileID: 0}
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 430058756}
     blocked: 0
   - x: 0
     y: 0

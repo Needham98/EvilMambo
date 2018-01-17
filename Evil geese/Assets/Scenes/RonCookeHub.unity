@@ -972,6 +972,14 @@ MonoBehaviour:
       itemAmount: 0
       character: 0
       charAvailible: 0
+    - ownActionType: 0
+      gameVarName: GlassHouseUnlocked
+      gameVarValue: true
+      combatEnemies: 
+      itemType: 0
+      itemAmount: 0
+      character: 0
+      charAvailible: 0
 --- !u!114 &1460186307
 MonoBehaviour:
   m_ObjectHideFlags: 0

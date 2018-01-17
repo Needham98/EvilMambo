@@ -26,7 +26,6 @@ public class DialogManager : MonoBehaviour, ISerializationCallbackReceiver{
 
 	// Use this for initialization
 	void Start () {
-		currentDialog = null;
 		state = GameStateManager.getGameStateManager ();
 		dialogCanvasPrefab = (GameObject) Resources.Load ("DialogCanvas");
 	}
@@ -71,6 +70,13 @@ public class DialogManager : MonoBehaviour, ISerializationCallbackReceiver{
 	}
 
 	public void beginDialog(){
+		if (state == null) {
+			state = GameStateManager.getGameStateManager ();
+		}
+		if (dialogCanvasPrefab == null) {
+			dialogCanvasPrefab = (GameObject) Resources.Load ("DialogCanvas");
+		}
+
 		state.movementEnabled = false;
 		string dialogName;
 		if (startSelectorVarName.Length == 0) {
@@ -87,7 +93,7 @@ public class DialogManager : MonoBehaviour, ISerializationCallbackReceiver{
 		}
 
 	public void doDialogOption(string option){
-		if (option == "" || option == "None") {
+		if (option == "" || option == "None") {// end dialog if dialog option is a dialog cancel option
 			state.movementEnabled = true;
 			currentDialog = null;
 			Destroy (dialogCanvasObj);
