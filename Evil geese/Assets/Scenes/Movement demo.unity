@@ -226,13 +226,11 @@ MonoBehaviour:
     - I want to come inside
     - I'm hungry
     - I want to test the new item system
-    - I want to test the new item system
     - I want another team member
     optionPointer:
     - inside
     - hungry
     - itemTest
-    - itemTest2
     - newChar
     optionConditional:
     - rightSideComparable: 2
@@ -251,15 +249,8 @@ MonoBehaviour:
       leftItemType: 0
     - rightSideComparable: 2
       leftSideComparable: 1
-      ownComparison: 3
+      ownComparison: 0
       rightSide: 1
-      leftSide: 
-      rightItemType: 0
-      leftItemType: 0
-    - rightSideComparable: 2
-      leftSideComparable: 1
-      ownComparison: 4
-      rightSide: 0
       leftSide: 
       rightItemType: 0
       leftItemType: 0
@@ -509,8 +500,10 @@ MonoBehaviour:
       leftItemType: 0
     actions: []
   - speekerName: The Narrator
-    dialogText: You use your Incredible debug powers to cause a... goose beak... ok
-      then, a magnificent goose beak to appear in the air in front of you.
+    dialogText: 'You use your Incredible debug powers to cause a... goose beak...
+      ok then, a magnificent goose beak to appear in the air in front of you.
+
+      You now have %Beak beaks.'
     optionDescription:
     - Continue
     optionPointer:

@@ -71,6 +71,7 @@
      <Compile Include="Assets\Grid stuff\Grid.cs" />
      <Compile Include="Assets\Grid stuff\GridEditor.cs" />
      <Compile Include="Assets\Grid stuff\GridPosition.cs" />
+     <Compile Include="Assets\HideSpriteGameVar.cs" />
      <Compile Include="Assets\InputManager.cs" />
      <Compile Include="Assets\InventoryItems.cs" />
      <Compile Include="Assets\Menu\Scripts\ButtonManager.cs" />

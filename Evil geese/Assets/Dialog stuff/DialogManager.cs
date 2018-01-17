@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,7 +36,16 @@ public class DialogManager : MonoBehaviour, ISerializationCallbackReceiver{
 		if (currentDialog != null) {
 			Transform panelTransform = dialogCanvasObj.transform.Find ("Panel");
 			panelTransform.Find ("CharName").gameObject.GetComponent<UnityEngine.UI.Text> ().text = currentDialog.speekerName;
-			panelTransform.Find ("MainText").gameObject.GetComponent<UnityEngine.UI.Text> ().text = currentDialog.dialogText;
+			string dialogText = currentDialog.dialogText;
+
+			//replace "%ItemType" with the count of that item in inventory
+
+			foreach (InventoryItems.itemTypes itemType in Enum.GetValues(typeof(InventoryItems.itemTypes))){
+				dialogText = dialogText.Replace ("%" + itemType.ToString (), state.getItem (itemType).ToString ());
+			}
+
+
+			panelTransform.Find ("MainText").gameObject.GetComponent<UnityEngine.UI.Text> ().text = dialogText;
 			if (buttonObjs == null) {
 				buttonObjs = new List<GameObject> ();
 				GameObject buttonRefrence = panelTransform.Find ("DialogButton").gameObject;
