@@ -44,7 +44,7 @@ public class CharacterMenu : MonoBehaviour {
 			button.GetComponent<Button> ().onClick.AddListener (delegate {
 				selectCharacter (tempValue);
 				});
-			buttonOffset += 0.1f;
+			buttonOffset += 0.08f;
 		}
 		
 	}

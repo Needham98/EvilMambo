@@ -93,6 +93,7 @@ public class CombatManager : MonoBehaviour {
 			GameObject obj = GameObject.Instantiate(combatEntityPrefab, pos, new Quaternion());
 			c.entity = obj.GetComponent<CombatEntity> ();
 			c.entity.setupBars (false, true);
+			c.updateEntityBars ();
 			pos += offset;
 		}
 		pos = new Vector3 (4, 3); // arbitrary start position 
@@ -100,6 +101,7 @@ public class CombatManager : MonoBehaviour {
 			GameObject obj = GameObject.Instantiate(combatEntityPrefab, pos, new Quaternion());
 			c.entity = obj.GetComponent<CombatEntity> ();
 			c.entity.setupBars (true, false);
+			c.updateEntityBars ();
 			pos += offset;
 		}
 		attacker = frendlyChars [attackerPos];
