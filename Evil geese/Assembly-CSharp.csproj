@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AnimationLoop.cs" />
+     <Compile Include="Assets\CameraFollow.cs" />
      <Compile Include="Assets\CharacterMenu.cs" />
      <Compile Include="Assets\CombatStuff\abilities\SimpleAttack.cs" />
      <Compile Include="Assets\CombatStuff\CombatAbility.cs" />

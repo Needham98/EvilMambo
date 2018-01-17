@@ -386,8 +386,8 @@ MonoBehaviour:
   varibleName: RCHUnlocked
   defaultState: 1
   sceneName: Scenes/RonCookeHub
-  playerX: 0
-  playerY: -2
+  playerX: -11
+  playerY: -4
 --- !u!114 &530942993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,8 +524,8 @@ MonoBehaviour:
   varibleName: GlassHouseUnlocked
   defaultState: 0
   sceneName: Scenes/GlassHouse
-  playerX: 0
-  playerY: 0
+  playerX: -7
+  playerY: -2
 --- !u!114 &603080349
 MonoBehaviour:
   m_ObjectHideFlags: 0

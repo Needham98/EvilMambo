@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Movement demo.unity
+- path: Assets/Scenes/GlassHouse.unity
   isLoaded: 1
   isActive: 1
