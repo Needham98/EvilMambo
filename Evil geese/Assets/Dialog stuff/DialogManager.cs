@@ -82,12 +82,12 @@ public class DialogManager : MonoBehaviour, ISerializationCallbackReceiver{
 			Debug.Log ("the gameVar \"" + startSelectorVarName + "\" is undefined, using the \"start\" dialog");
 			dialogName = "start";
 		}
-		doDialogOption (dialogName);
 		dialogCanvasObj = Instantiate (dialogCanvasPrefab);
+		doDialogOption (dialogName);
 		}
 
 	public void doDialogOption(string option){
-		if (option == "") {
+		if (option == "" || option == "None") {
 			state.movementEnabled = true;
 			currentDialog = null;
 			Destroy (dialogCanvasObj);

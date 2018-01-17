@@ -25,6 +25,13 @@ public class PlayerMovement : MonoBehaviour {
 		ownTransform = this.transform;
 		gameController = GameObject.FindGameObjectWithTag ("GameController");
 		movementGrid = (Grid) gameController.GetComponent<Grid> ();
+		if (movementGrid.getPosition (x, y) != null) {
+			stepObject = movementGrid.getPosition (x, y).stepOn;
+		}
+		if (stepObject != null) {
+			WorldInteraction stepObjectWorldInteraction = stepObject.GetComponent<WorldInteraction> ();
+			stepObjectWorldInteraction.interact ();
+		}
 		anim = this.gameObject.GetComponent<AnimationLoop> ();
 	}
 
@@ -57,9 +64,20 @@ public class PlayerMovement : MonoBehaviour {
 				return false;
 			}
 		}
+		movedir = dir.normalized;
+
+		if (movedir == Vector2.up) {
+			anim.frames = upAnimationLoop;
+		} else if (movedir == Vector2.down) {
+			anim.frames = downAnimationLoop;
+		} else if (movedir == Vector2.left) {
+			anim.frames = leftAnimationLoop;
+		} else if (movedir == Vector2.right) {
+			anim.frames = rightAnimationLoop;
+		}
+
 		if (gridPos != null) {
 			if (gridPos.blocked) {
-				movedir = dir.normalized;
 				return false;
 			}
 			stepObject = gridPos.stepOn;
@@ -73,18 +91,6 @@ public class PlayerMovement : MonoBehaviour {
 		x = newx;
 		y = newy;
 		moving = true;
-		movedir = dir.normalized;
-
-		if (movedir == Vector2.up) {
-			anim.frames = upAnimationLoop;
-		} else if (movedir == Vector2.down) {
-			anim.frames = downAnimationLoop;
-		} else if (movedir == Vector2.left) {
-			anim.frames = leftAnimationLoop;
-		} else if (movedir == Vector2.right) {
-			anim.frames = rightAnimationLoop;
-		}
-
 		return true;
 	}
 

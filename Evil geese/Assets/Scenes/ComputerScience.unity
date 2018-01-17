@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9399390be8dcfb4abc3036f8b4807ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keys: fefffffffefffffffdffffff02000000fcffffff02000000fbffffff01000000fbffffff00000000fbfffffffffffffffcfffffffefffffffdfffffffefffffffffffffffeffffff00000000feffffff01000000feffffff02000000feffffff02000000fdffffff02000000fcffffff02000000fbffffff03000000faffffff04000000faffffff05000000faffffff05000000fdffffff05000000feffffff05000000ffffffff05000000000000000500000001000000040000000200000003000000020000000200000002000000feffffff02000000ffffffff010000000000000001000000010000000200000006000000fcffffff06000000fbffffff
+  _keys: fefffffffefffffffdffffff02000000fcffffff02000000fbffffff01000000fbffffff00000000fbfffffffffffffffcfffffffefffffffdfffffffefffffffffffffffeffffff00000000feffffff01000000feffffff02000000feffffff02000000fdffffff02000000fcffffff02000000fbffffff03000000faffffff04000000faffffff05000000faffffff05000000fdffffff05000000feffffff05000000ffffffff05000000000000000500000001000000040000000200000003000000020000000200000002000000feffffff02000000ffffffff010000000000000001000000010000000200000006000000fcffffff06000000fbffffff0000000000000000
   _positions:
   - x: -2
     y: -2
@@ -643,6 +643,11 @@ MonoBehaviour:
     interactionObject: {fileID: 430058756}
     stepOn: {fileID: 0}
     blocked: 0
+  - x: 0
+    y: 0
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 1252911247}
+    blocked: 0
 --- !u!114 &1208672788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,6 +671,155 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1252911247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1252911250}
+  - component: {fileID: 1252911249}
+  - component: {fileID: 1252911248}
+  m_Layer: 0
+  m_Name: StartDialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1252911248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1252911247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba05fd0888f34e4f8360c77ec524234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownInteractionType: 1
+  enemies: 
+  sceneName: 
+  playerX: 0
+  playerY: 0
+--- !u!114 &1252911249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1252911247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6976a059de7d1541969c6681fba7c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSelectorVarName: StartDialog
+  dialogDataKeys:
+  - start
+  - dialog
+  - dialog2
+  - dialog3
+  - dialog2b
+  dialogDataValues:
+  - speekerName: The Narrator
+    dialogText: You and your friends wake up outside the Computer Science building.
+      what Happened last night?!
+    optionDescription:
+    - Continue
+    optionPointer:
+    - dialog
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    actions: []
+  - speekerName: The Narrator
+    dialogText: You Spot a Poster on the ground.
+    optionDescription:
+    - Pick it up
+    optionPointer:
+    - dialog2
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    actions: []
+  - speekerName: The Poster
+    dialogText: "WANTED\r:\nThe Protagonists\nDead or Alive\r\nReward: \xA39250\r"
+    optionDescription:
+    - Continue
+    optionPointer:
+    - dialog2b
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    actions: []
+  - speekerName: The Narrator
+    dialogText: 'Its Signed: The Vice Chancellor'
+    optionDescription:
+    - Continue
+    optionPointer:
+    - 
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    actions:
+    - ownActionType: 0
+      gameVarName: StartDialog
+      gameVarValue: None
+      combatEnemies: 
+      itemType: 0
+      itemAmount: 0
+      character: 0
+      charAvailible: 0
+  - speekerName: The Poster
+    dialogText: "Bring them to my office to collect your reward\r\nYours faithfully"
+    optionDescription:
+    - Continue
+    optionPointer:
+    - dialog3
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    actions: []
+--- !u!4 &1252911250
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1252911247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.55200195, y: 0.62056327, z: -74.875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1300797899
 GameObject:
