@@ -128,9 +128,70 @@ public static class CombatCharacterFactory {
 
 	public static Dictionary<string, List<Sprite>> getCharacterSprites(CombatCharacterPresets characterType){
 		Dictionary<string, List<Sprite>> sprites = new Dictionary<string, List<Sprite>> ();
+		List<Sprite> frames = new List<Sprite> ();
 		switch (characterType) {
+		case CombatCharacterPresets.BobbyBard:
+			frames = new List<Sprite> ();
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 6/F4"));
+			sprites.Add ("base", frames);
+			frames = new List<Sprite> ();
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 6/F5"));
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 6/F6"));
+			sprites.Add ("attack", frames);
+			break;
+
+		case CombatCharacterPresets.CharlieCleric:
+			frames = new List<Sprite> ();
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 4/D4"));
+			sprites.Add ("base", frames);
+			frames = new List<Sprite> ();
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 4/D7"));
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 4/D6"));
+			sprites.Add ("attack", frames);
+			break;
+		
+		case CombatCharacterPresets.MabelMage:
+			frames = new List<Sprite> ();
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 2/A4"));
+			sprites.Add ("base", frames);
+			frames = new List<Sprite> ();
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 2/A5"));
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 2/A6"));
+			sprites.Add ("attack", frames);
+			break;
+		
+		case CombatCharacterPresets.PamelaPaladin:
+			frames = new List<Sprite> ();
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 5/E4"));
+			sprites.Add ("base", frames);
+			frames = new List<Sprite> ();
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 5/E5"));
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 5/E6"));
+			sprites.Add ("attack", frames);
+			break;
+		
+		case CombatCharacterPresets.SusanShapeShifter:
+			frames = new List<Sprite> ();
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 3/B4"));
+			sprites.Add ("base", frames);
+			frames = new List<Sprite> ();
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 3/B5"));
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 3/B6"));
+			sprites.Add ("attack", frames);
+			break;
+		
+		case CombatCharacterPresets.WalterWizard:
+			frames = new List<Sprite> ();
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 1/c21"));
+			sprites.Add ("base", frames);
+			frames = new List<Sprite> ();
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 1/c4"));
+			frames.Add (Resources.Load<Sprite> ("Sprites/Character 1/c6"));
+			sprites.Add ("attack", frames);
+			break;
+
 		case CombatCharacterPresets.Goose:
-			List<Sprite> frames = new List<Sprite> ();
+			frames = new List<Sprite> ();
 			frames.Add (Resources.Load<Sprite>("Sprites/Goose"));
 			sprites.Add ("base", frames);
 			break;

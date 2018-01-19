@@ -18,6 +18,7 @@ public class CombatEntity : MonoBehaviour {
 		Start (); // because instantiating an object doesn't instantly call Start but does call awake
 
 		animLoop = this.gameObject.AddComponent<AnimationLoop> ();
+		animLoop.loop = true;
 		animLoop.frameRate = 12f;
 	}
 
