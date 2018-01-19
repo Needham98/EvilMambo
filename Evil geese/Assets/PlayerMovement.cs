@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour {
 		if (stepObject != null) {
 			WorldInteraction stepObjectWorldInteraction = stepObject.GetComponent<WorldInteraction> ();
 			stepObjectWorldInteraction.interact ();
+			stepObjectWorldInteraction = null;
 		}
 		anim = this.gameObject.GetComponent<AnimationLoop> ();
 	}
@@ -42,6 +43,7 @@ public class PlayerMovement : MonoBehaviour {
 
 			if (distance < 0.3 &&  stepObjectWorldInteraction != null) {
 				stepObjectWorldInteraction.interact ();
+				stepObjectWorldInteraction = null;
 			}
 
 			float xDir = (float) x - ownTransform.position.x;
