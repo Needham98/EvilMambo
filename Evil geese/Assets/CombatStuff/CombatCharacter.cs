@@ -12,6 +12,8 @@ public class CombatCharacter {
 	public CombatEntity entity;// the CombatEntity attached to the representation of this character
 	public List<CombatEffect> effectList;
 
+	public Dictionary<string, List<Sprite>> combatSprites;
+
 	//todo define spriteset system for combat characters
 	public CombatCharacter(int maxHealth, int health,int maxEnergy, int energy, CombatAbility basicAttack = null){
 		this.maxHealth = maxHealth;
@@ -82,6 +84,17 @@ public class CombatCharacter {
 
 	public bool isAlive(){
 		return health > 0;
+	}
+
+	public void updateEntityAnimation(string animSet){
+		if (entity != null && entity.animLoop != null) {
+			entity.animLoop.animationTime = 0f;
+			combatSprites.TryGetValue (animSet,  out entity.animLoop.frames);
+			if ((entity.animLoop.frames == null || entity.animLoop.frames.Count == 0) && animSet != "base") {
+				Debug.Log ("animation set \"" + animSet + "\" not found, reverting to \"base\" set");
+				combatSprites.TryGetValue ("base",  out entity.animLoop.frames);
+			}
+		}
 	}
 		
 	public static int getFirstAlive (List<CombatCharacter> L){

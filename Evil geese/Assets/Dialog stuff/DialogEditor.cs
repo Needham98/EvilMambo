@@ -139,7 +139,7 @@ public class DialogEditor : Editor{
 						numberOfEnemies = EditorGUILayout.IntSlider (action.combatEnemies.Count, 1, 5);
 						if (numberOfEnemies > action.combatEnemies.Count) {
 							for (int i = action.combatEnemies.Count; i < numberOfEnemies; i++) {
-								action.combatEnemies.Add (CombatCharacterFactory.CombatCharacterPresets.PlayerCharBasic);
+								action.combatEnemies.Add (CombatCharacterFactory.CombatCharacterPresets.BobbyBard);
 							}
 						} else if (numberOfEnemies < action.combatEnemies.Count) {
 							action.combatEnemies.RemoveRange (numberOfEnemies - 1, action.combatEnemies.Count - numberOfEnemies);

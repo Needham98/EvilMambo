@@ -12,8 +12,13 @@ public class CombatEntity : MonoBehaviour {
 	GameObject energyBarMask;
 	Vector3 energyBarMaskInitalScale;
 
+	public AnimationLoop animLoop;
+
 	void Awake() {		
-		Start (); // because instantiating an object doesn't instantly call Start
+		Start (); // because instantiating an object doesn't instantly call Start but does call awake
+
+		animLoop = this.gameObject.AddComponent<AnimationLoop> ();
+		animLoop.frameRate = 12f;
 	}
 
 	void Start () {

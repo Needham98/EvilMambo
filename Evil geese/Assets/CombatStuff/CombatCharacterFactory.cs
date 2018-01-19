@@ -4,48 +4,38 @@ using UnityEngine;
 [System.Serializable]
 public static class CombatCharacterFactory {
 	public enum CombatCharacterPresets{// always store an element from this list instead of a CombatCharacter if a variable needs to be serialized
-		PlayerCharBasic,
-		PlayerCharTwo,
 		BobbyBard,
 		CharlieCleric,
 		MabelMage,
 		SusanShapeShifter,
 		WalterWizard,
-		PamelaPaladin
+		PamelaPaladin,
+		Goose
 	}
 
 	public static CombatCharacter MakeCharacter(CombatCharacterPresets characterType){
 		CombatCharacter newCharacter = null;
 		int characterMaxHealth = GetCharacterMaxhealth (characterType);
 		int characterMaxEnergy = GetCharacterMaxEnergy (characterType);
+		CombatAbility basicAttack = getCharacterBasicAttack (characterType);
 		switch (characterType){
-		case CombatCharacterPresets.PlayerCharBasic:
-			newCharacter = new CombatCharacter (characterMaxHealth, characterMaxHealth, characterMaxEnergy, characterMaxEnergy, new SimpleAttack (20, 30, "melee", 0));
-			break;
-		
-		case CombatCharacterPresets.PlayerCharTwo:
-			newCharacter = new CombatCharacter (characterMaxHealth, characterMaxHealth, characterMaxEnergy, characterMaxEnergy, new SimpleAttack (30, 40, "melee", 0));
-			break;
 		case CombatCharacterPresets.BobbyBard:
-			newCharacter = new CombatCharacter (characterMaxHealth, characterMaxHealth / 2, characterMaxEnergy, characterMaxEnergy, new SimpleAttack (20, 30, "melee", 0));
+			newCharacter = new CombatCharacter (characterMaxHealth, characterMaxHealth / 2, characterMaxEnergy, characterMaxEnergy, basicAttack);
 			break;
 		default:
-			newCharacter = new CombatCharacter(characterMaxHealth, characterMaxHealth, characterMaxEnergy, characterMaxEnergy, new SimpleAttack (20, 30, "melee", 0));
+			newCharacter = new CombatCharacter(characterMaxHealth, characterMaxHealth, characterMaxEnergy, characterMaxEnergy, basicAttack);
 			break;
 		}
 		List<CombatAbility> abilities = GetCharacterAbilities (characterType);
 		foreach (CombatAbility ability in abilities) {
 			newCharacter.AddAbility (ability);
 		}
+		newCharacter.combatSprites = getCharacterSprites (characterType);
 		return newCharacter;
 	}
 
 	public static string GetCharacterName(CombatCharacterPresets characterType){
 		switch (characterType) {
-		case CombatCharacterPresets.PlayerCharBasic:
-			return "Test Character One";
-		case CombatCharacterPresets.PlayerCharTwo:
-			return "Test Character Two";
 		case CombatCharacterPresets.BobbyBard:
 			return "Bobby The Bard";
 		case CombatCharacterPresets.CharlieCleric:
@@ -58,16 +48,14 @@ public static class CombatCharacterFactory {
 			return "Walter The Wizard";
 		case CombatCharacterPresets.SusanShapeShifter:
 			return "Susan The ShapeShifter";
+		case CombatCharacterPresets.Goose:
+			return "Goose";
 		}
 		return "Character name not defined";
 	}
 
 	public static int GetCharacterMaxhealth(CombatCharacterPresets characterType){
 		switch (characterType) {
-		case CombatCharacterPresets.PlayerCharBasic:
-			return 100;
-		case CombatCharacterPresets.PlayerCharTwo:
-			return 120;
 		case CombatCharacterPresets.BobbyBard:
 			return 70;
 		case CombatCharacterPresets.CharlieCleric:
@@ -80,16 +68,14 @@ public static class CombatCharacterFactory {
 			return 100;
 		case CombatCharacterPresets.SusanShapeShifter:
 			return 100;
+		case CombatCharacterPresets.Goose:
+			return 50;
 		}
 		return 1;
 	}
 
 	public static int GetCharacterMaxEnergy(CombatCharacterPresets characterType){
 		switch (characterType) {
-		case CombatCharacterPresets.PlayerCharBasic:
-			return 100;
-		case CombatCharacterPresets.PlayerCharTwo:
-			return 120;
 		case CombatCharacterPresets.BobbyBard:
 			return 200;
 		case CombatCharacterPresets.CharlieCleric:
@@ -109,13 +95,6 @@ public static class CombatCharacterFactory {
 	public static List<CombatAbility> GetCharacterAbilities (CombatCharacterPresets characterType){
 		List<CombatAbility> abilities = new List<CombatAbility> ();
 		switch (characterType) {
-		case CombatCharacterPresets.PlayerCharBasic:
-			abilities.Add (new SimpleAttack (50, 60, "melee", 30, "Slash"));
-			break;
-		case CombatCharacterPresets.PlayerCharTwo:
-			abilities.Add (new SimpleAttack (60, 70, "melee", 30, "Big slash"));
-			abilities.Add (new SimpleAttack (80, 90, "melee", 40, "Really big slash"));
-			break;
 		case CombatCharacterPresets.BobbyBard:
 			//TODO add healing and damage resist abilities
 			break;
@@ -134,9 +113,30 @@ public static class CombatCharacterFactory {
 		case CombatCharacterPresets.SusanShapeShifter:
 			//TODO add shapshifting abilities
 			break;
+		case CombatCharacterPresets.Goose:
+			break;
 		}
 		return abilities;
 	}
 
-	//TODO add GetCharacterBasicAttack
+	public static CombatAbility getCharacterBasicAttack(CombatCharacterPresets characterType){
+		switch (characterType) {
+		default:
+			return new SimpleAttack (20, 30, "melee", 0);
+		}
+	}
+
+	public static Dictionary<string, List<Sprite>> getCharacterSprites(CombatCharacterPresets characterType){
+		Dictionary<string, List<Sprite>> sprites = new Dictionary<string, List<Sprite>> ();
+		switch (characterType) {
+		case CombatCharacterPresets.Goose:
+			List<Sprite> frames = new List<Sprite> ();
+			frames.Add (Resources.Load<Sprite>("Sprites/Goose"));
+			sprites.Add ("base", frames);
+			break;
+		}
+		return sprites;
+	
+	}
 }
+

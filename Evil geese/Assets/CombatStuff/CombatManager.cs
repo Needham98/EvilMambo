@@ -41,6 +41,8 @@ public class CombatManager : MonoBehaviour {
 	//gameState data
 	GameStateManager state;
 
+	float timer = 0f; //timer used to time animations
+
 	// todo hide attack and abilities buttons exept during selecting stage
 	void Start () {
 		canvasObj = this.transform.parent.gameObject;
@@ -94,6 +96,7 @@ public class CombatManager : MonoBehaviour {
 			c.entity = obj.GetComponent<CombatEntity> ();
 			c.entity.setupBars (false, true);
 			c.updateEntityBars ();
+			c.updateEntityAnimation ("base");
 			pos += offset;
 		}
 		pos = new Vector3 (4, 3); // arbitrary start position 
@@ -102,6 +105,7 @@ public class CombatManager : MonoBehaviour {
 			c.entity = obj.GetComponent<CombatEntity> ();
 			c.entity.setupBars (true, false);
 			c.updateEntityBars ();
+			c.updateEntityAnimation ("base");
 			pos += offset;
 		}
 		attacker = frendlyChars [attackerPos];
@@ -109,6 +113,8 @@ public class CombatManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		timer += Time.deltaTime;
+
 		if (frendlyAttacking) {
 			attackChars = frendlyChars;
 			defendChars = enemyChars;
@@ -238,7 +244,7 @@ public class CombatManager : MonoBehaviour {
 			newButtonPosMax.y -= buttonSeparation;
 			newButtonObj.SetActive (true);
 			newButtonObj.transform.Find ("NameText").gameObject.GetComponent<UnityEngine.UI.Text> ().text = InventoryItems.itemDisplayName(itemType);
-			//TODO refactor name "CostText" to "SecondText" or other similar since it describes more than cost
+			//TODO refactor name "CostText" to "SecondText" or other similar since it describes cost on abilities screen and count on items screen
 			newButtonObj.transform.Find ("CostText").gameObject.GetComponent<UnityEngine.UI.Text> ().text = state.state.inventory[itemType].ToString();
 			InventoryItems.itemTypes tempValue = itemType;
 			newButton.onClick.AddListener (delegate {selectItem(tempValue);});
@@ -291,7 +297,6 @@ public class CombatManager : MonoBehaviour {
 	}
 
 	void selectTarget(CombatCharacter target){
-		//TODO add check to allow targeting freindlys if the ability is an assist
 		if (attackTargets == null) {
 			attackTargets = new List<CombatCharacter> ();
 		}
@@ -320,7 +325,7 @@ public class CombatManager : MonoBehaviour {
 
 	void selectionStage(){
 		if (!frendlyAttacking) {
-			//todo write better enemy combat logic
+			//TODO write better enemy combat logic
 			int toAttack = CombatCharacter.getFirstAlive (defendChars);
 			if (toAttack == -1) {
 				lose ();
@@ -328,6 +333,7 @@ public class CombatManager : MonoBehaviour {
 				attackTargets = new List<CombatCharacter> ();
 				attackTargets.Add (defendChars [toAttack]);
 				attack = attacker.basicAttack;
+				attacker.updateEntityAnimation ("move");
 				currentStage = turnStages.moving;
 			}
 		} else {
@@ -342,6 +348,7 @@ public class CombatManager : MonoBehaviour {
 		if (targetsRemaining == 0) {
 			removeTargetSelectors ();
 			currentStage = turnStages.moving;
+			attacker.updateEntityAnimation ("move");
 			return;
 		}
 		if (targetSelectorButtonObjs == null) {
@@ -373,14 +380,19 @@ public class CombatManager : MonoBehaviour {
 		hideAbilities ();
 		selectorRen.enabled = false;
 		if (attacker.entity.moveAttack ()) {
+			attacker.updateEntityAnimation ("attack");
+			timer = 0f;
 			currentStage = turnStages.attacking;
 		}
 	}
 
-	void attackingStage(){// todo add animations and delays to attack stage
-		attack.doAbility (attackTargets, attacker);
-		attackTargets = null;
-		currentStage = turnStages.returning;
+	void attackingStage(){// TODO add animations and delays to attack stage
+		if (timer > 1f) {
+			attack.doAbility (attackTargets, attacker);
+			attackTargets = null;
+			currentStage = turnStages.returning;
+			attacker.updateEntityAnimation ("return");
+		}
 	}
 
 	void returningStage(){
@@ -392,6 +404,7 @@ public class CombatManager : MonoBehaviour {
 		}
 
 		if (attacker.entity.moveRest()){
+			attacker.updateEntityAnimation ("base");
 			do {
 				attackerPos++;
 				if (attackerPos >= attackChars.Count){

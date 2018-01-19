@@ -799,8 +799,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   varibleName: CampusTransitionUnlocked
   defaultState: 0
-  sceneName: 
-  playerX: 0
+  sceneName: Scenes/CampusTransition
+  playerX: 7
   playerY: 0
 --- !u!114 &884079813
 MonoBehaviour:

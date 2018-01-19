@@ -25,6 +25,9 @@ public class AnimationLoop : MonoBehaviour {
 		if (!(obeysPause && state.isPaused)) {
 			animationTime += Time.deltaTime;
 		}
+		if (frames == null || frames.Count == 0){
+			return;
+		}
 		int nextFrame;
 		if (loop) {
 			nextFrame = Mathf.RoundToInt (animationTime * frameRate) % frames.Count;

@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScene.unity
     guid: ef1867e17e9dcb54492ac58fe76f6857
   - enabled: 0
-    path: Assets/CharSelectScene.unity
+    path: 
     guid: 6052437404a1c6547ba5ef616cac156e
   - enabled: 1
     path: Assets/Scenes/Movement demo.unity
@@ -26,3 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GlassHouse.unity
     guid: 5ba95154f12a0a540baca717e06d65d0
+  - enabled: 1
+    path: Assets/Scenes/CampusTransition.unity
+    guid: e13c38396f95c854aaf889e65da3297b
