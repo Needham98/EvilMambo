@@ -999,9 +999,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   varibleName: LibraryUnlocked
   defaultState: 0
-  sceneName: 
+  sceneName: Scenes/Library
   playerX: 0
-  playerY: 0
+  playerY: -4
 --- !u!114 &1564068673
 MonoBehaviour:
   m_ObjectHideFlags: 0
