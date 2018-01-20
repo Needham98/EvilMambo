@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 [Serializable]
+//CombatAbility that takes one target and applys a CombatEffect to it
 public class GiveEffect : CombatAbility {
 	string ownName;
 	public string abilityName { get { return ownName; } }

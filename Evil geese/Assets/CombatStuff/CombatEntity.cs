@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//used to control the GameObject that represents a combatCharacter in combat sequences
 public class CombatEntity : MonoBehaviour {
 	public Vector3 restPosition;
 	float moveSpeed = 6.0f; // the movment speed in units per second

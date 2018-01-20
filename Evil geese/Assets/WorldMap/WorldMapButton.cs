@@ -13,6 +13,7 @@ public class WorldMapButton : MonoBehaviour, ICanvasRaycastFilter {
 	public int playerY;
 	RectTransform canvasTranform;
 	Image ownImage;
+	GameObject ownText;
 
 
 	// Use this for initialization
@@ -21,6 +22,7 @@ public class WorldMapButton : MonoBehaviour, ICanvasRaycastFilter {
 
 	void Awake(){
 		canvasTranform = (RectTransform) this.transform.parent.transform;
+		ownText = this.transform.Find ("Text").gameObject;
 		ownImage = this.GetComponent<Image> ();
 		state = GameStateManager.getGameStateManager ();
 		bool enabled;
@@ -34,6 +36,7 @@ public class WorldMapButton : MonoBehaviour, ICanvasRaycastFilter {
 
 		UnityEngine.UI.Button button = this.GetComponent<UnityEngine.UI.Button> ();
 		button.interactable = enabled;
+		ownText.SetActive (enabled);
 		button.onClick.AddListener (delegate {
 			enterScene (sceneName, playerX, playerY);
 			});

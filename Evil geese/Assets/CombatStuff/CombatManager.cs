@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//handles combat sequences
 public class CombatManager : MonoBehaviour {
-	//TODO visual representation of status effects
+	//TODO visual representation of status effects (CombatEffects)
 
 	//the lists representing all the combatants
 	public List<CombatCharacter> frendlyChars;// the list of characters controlled by the player
@@ -21,7 +21,6 @@ public class CombatManager : MonoBehaviour {
 	GameObject WinPanel;// the pannel displayed after winning
 	GameObject LosePanel;// the panel displayed after losing
 
-
 	//data representing the state of the current turn
 	bool frendlyAttacking; // whose turn it is, true if frendlyChars, false if enemyChars
 	public int attackerPos;// the position of the current attacker in the AttackChars list
@@ -37,13 +36,11 @@ public class CombatManager : MonoBehaviour {
 	Vector3 startingCameraPosition;// the cameras position when combat began
 	GameObject sceneCamera; // the camera in the scene
 
-
 	//gameState data
 	GameStateManager state;
 
 	float timer = 0f; //timer used to time animations
 
-	// todo hide attack and abilities buttons exept during selecting stage
 	void Start () {
 		canvasObj = this.transform.parent.gameObject;
 		WinPanel = this.transform.parent.Find("WinPanel").gameObject;
@@ -168,9 +165,8 @@ public class CombatManager : MonoBehaviour {
 			targetsRemaining = attack.maxTargets;
 		}
 	}
-
-	//TODO add coloumn descriptions to the abilities and items boxes
-	public void doAbilities(){
+		
+	public void doAbilities(){// function called when the abilities button is pressed
 		if (currentStage != turnStages.selecting) {
 			return; // do nothing
 		}
@@ -207,7 +203,7 @@ public class CombatManager : MonoBehaviour {
 
 	}
 
-	public void doItems(){
+	public void doItems(){// function called when the items button is pressed
 		//uses the same panel as abilities
 		if (currentStage != turnStages.selecting) {
 			return; // do nothing
@@ -258,7 +254,7 @@ public class CombatManager : MonoBehaviour {
 		abilitiesPanel.SetActive (false);
 	}
 
-	public void doWin(){
+	public void doWin(){// function called when the continue button on the victory screen is pressed
 		if (abilitiesPanel != null) {
 			Destroy (abilitiesPanel);
 			Destroy (selectorObj);
@@ -279,7 +275,7 @@ public class CombatManager : MonoBehaviour {
 		}
 	}
 
-	public void doLose(){
+	public void doLose(){// function called when the continue button on the defeat screen is pressed
 		Debug.LogError ("losing not implemented");
 	}
 
@@ -319,7 +315,7 @@ public class CombatManager : MonoBehaviour {
 		Debug.Log("You Lose! Now implement losing.");
 	}
 
-	void win(){// todo handle winning better
+	void win(){
 		currentStage = turnStages.win;
 	}
 

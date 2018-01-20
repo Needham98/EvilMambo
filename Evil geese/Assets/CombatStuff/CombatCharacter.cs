@@ -14,7 +14,6 @@ public class CombatCharacter {
 
 	public Dictionary<string, List<Sprite>> combatSprites;
 
-	//todo define spriteset system for combat characters
 	public CombatCharacter(int maxHealth, int health,int maxEnergy, int energy, CombatAbility basicAttack = null){
 		this.maxHealth = maxHealth;
 		this.health = health;
@@ -41,6 +40,7 @@ public class CombatCharacter {
 		updateEntityBars ();
 	}
 
+	// calculates how much of a modifiyer a given damage type should have when deffending
 	public float damageTakenModifier(string damageType){
 		float returnValue = 1f;
 		foreach (CombatEffect effect in effectList) {
@@ -51,6 +51,7 @@ public class CombatCharacter {
 		return returnValue;
 	}
 
+	// calculates how much of a modifiyer a given damage type should have when attacking
 	public float damageDealtModifier(string damageType){
 		float returnValue = 1f;
 		foreach (CombatEffect effect in effectList) {
@@ -86,6 +87,7 @@ public class CombatCharacter {
 		return health > 0;
 	}
 
+	//changes the set of frames used by the CombatEntity assosiated with this CombatCharacter
 	public void updateEntityAnimation(string animSet){
 		if (entity != null && entity.animLoop != null) {
 			entity.animLoop.animationTime = 0f;

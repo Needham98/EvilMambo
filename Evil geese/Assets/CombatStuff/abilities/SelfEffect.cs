@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 [Serializable]
+//CombatAbility that takes no targets and applys a CombatEffect to the user
 public class SelfEffect : CombatAbility {
 	string ownName;
 	public string abilityName { get { return ownName; } }

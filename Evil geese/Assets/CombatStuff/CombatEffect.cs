@@ -26,7 +26,7 @@ public class CombatEffect {
 		if (type == effectType.abilityPerTurn) {
 			List<CombatCharacter> characterList = new List<CombatCharacter> ();
 			characterList.Add (character);
-			ability.doAbility (characterList, new CombatCharacter (0, 0, 0, 0)); // uses dummy character to apply the ability
+			ability.doAbility (characterList, character);
 		}
 	}
 

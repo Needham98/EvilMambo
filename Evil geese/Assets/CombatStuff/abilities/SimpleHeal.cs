@@ -2,7 +2,8 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
+//CombatAbility that takes one target and heals it some amount within a range
 public class SimpleHeal : CombatAbility {
 	int maxHeal;
 	int minHeal;

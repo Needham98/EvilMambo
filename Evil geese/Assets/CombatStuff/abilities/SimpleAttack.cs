@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
+//CombatAbility that takes one target and deals damage in some range to it
 public class SimpleAttack : CombatAbility {
 	int maxDamage;
 	int minDamage;
