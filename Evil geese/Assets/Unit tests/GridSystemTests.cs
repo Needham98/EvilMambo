@@ -6,7 +6,7 @@ using System.Collections;
 public class GridSystemTests {
 
 	[Test]
-	public void GridSystemTestsCollisions() {
+	public void GridSystemCollisions() {
 		GameObject o = new GameObject ();
 		Grid g = o.AddComponent<Grid> ();
 		Assert.IsNull (g.getPosition (0, 0));

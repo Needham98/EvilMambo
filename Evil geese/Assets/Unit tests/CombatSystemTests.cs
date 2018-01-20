@@ -7,7 +7,7 @@ using System.Collections.Generic;
 public class CombatSystemTests {
 
 	[Test]
-	public void CombatSystemTestsCharacterDamage() {
+	public void CombatSystemCharacterDamage() {
 		CombatCharacter c1 = new CombatCharacter (100, 100, 100, 100, new SimpleAttack (20, 20, "melee"));
 		CombatCharacter c2 = new CombatCharacter (100, 100, 100, 100, new SimpleAttack (20, 20, "melee"));
 
