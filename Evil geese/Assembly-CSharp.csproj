@@ -80,6 +80,7 @@
      <Compile Include="Assets\PauseMenuManager.cs" />
      <Compile Include="Assets\PlayerMovement.cs" />
      <Compile Include="Assets\Unit tests\CombatSystemTests.cs" />
+     <Compile Include="Assets\Unit tests\DialogSystemTests.cs" />
      <Compile Include="Assets\Unit tests\GameStateTests.cs" />
      <Compile Include="Assets\Unit tests\GridSystemTests.cs" />
      <Compile Include="Assets\WorldInteraction.cs" />

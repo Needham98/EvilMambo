@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 508, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 506, y: 342}
+  m_MaxSize: {x: 12006, y: 8042}
   vertical: 0
-  controlID: 159
+  controlID: 108
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1088
     height: 731
-  m_MinSize: {x: 406, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+  m_MinSize: {x: 406, y: 342}
+  m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
-  controlID: 98
+  controlID: 10
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 99
+  controlID: 11
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,8 +176,8 @@ MonoBehaviour:
     y: 0
     width: 327
     height: 420
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -228,14 +228,14 @@ MonoBehaviour:
     y: 420
     width: 1088
     height: 311
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 17}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 17}
   - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -296,7 +296,7 @@ MonoBehaviour:
       name: Evil geese
       fullName: Evil geese
       resultStatus: 1
-      duration: 0.7848717
+      duration: 0.3382515
       messages: 
       output: 
       stacktrace: 
@@ -307,7 +307,7 @@ MonoBehaviour:
       name: Assembly-CSharp.dll
       fullName: C:/Users/clubs/Documents/EvilGeese/Evil geese/Library/ScriptAssemblies/Assembly-CSharp.dll
       resultStatus: 1
-      duration: 0.7340739
+      duration: 0.286019
       messages: 
       output: 
       stacktrace: 
@@ -318,7 +318,7 @@ MonoBehaviour:
       name: CombatSystemTests
       fullName: CombatSystemTests
       resultStatus: 1
-      duration: 0.0523799
+      duration: 0.0548008
       messages: 
       output: 
       stacktrace: 
@@ -328,8 +328,63 @@ MonoBehaviour:
     - id: '[Assembly-CSharp.dll][CombatSystemTests.CombatSystemCharacterDamage]'
       name: CombatSystemCharacterDamage
       fullName: CombatSystemTests.CombatSystemCharacterDamage
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0270391
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp.dll][DialogSystemTests][suite]'
+      name: DialogSystemTests
+      fullName: DialogSystemTests
+      resultStatus: 1
+      duration: 0.2660159
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp.dll][DialogSystemTests.DialogSystemConditionalConstantEvaluations]'
+      name: DialogSystemConditionalConstantEvaluations
+      fullName: DialogSystemTests.DialogSystemConditionalConstantEvaluations
+      resultStatus: 1
+      duration: 0.0371147
+      messages: 
+      output: "the gamestate was null, creating new gamestate\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp.dll][DialogSystemTests.DialogSystemConditionalGamevarEvaluations]'
+      name: DialogSystemConditionalGamevarEvaluations
+      fullName: DialogSystemTests.DialogSystemConditionalGamevarEvaluations
+      resultStatus: 1
+      duration: 0.0334782
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp.dll][DialogSystemTests.DialogSystemConditionalItemEvaluations]'
+      name: DialogSystemConditionalItemEvaluations
+      fullName: DialogSystemTests.DialogSystemConditionalItemEvaluations
+      resultStatus: 1
+      duration: 0.0342702
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp.dll][DialogSystemTests.DialogSystemConditionalStaticEvaluations]'
+      name: DialogSystemConditionalStaticEvaluations
+      fullName: DialogSystemTests.DialogSystemConditionalStaticEvaluations
+      resultStatus: 1
+      duration: 0.033556
       messages: 
       output: 
       stacktrace: 
@@ -340,7 +395,7 @@ MonoBehaviour:
       name: GameStateTests
       fullName: GameStateTests
       resultStatus: 1
-      duration: 0.54769
+      duration: 0.5512517
       messages: 
       output: 
       stacktrace: 
@@ -351,9 +406,9 @@ MonoBehaviour:
       name: GameStateInitalizedEmpty
       fullName: GameStateTests.GameStateInitalizedEmpty
       resultStatus: 1
-      duration: 0.0368738
+      duration: 0.0364378
       messages: 
-      output: "the gamestate was null, creating new gamestate\r\n"
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -362,7 +417,7 @@ MonoBehaviour:
       name: GameStateRetainsGameVars
       fullName: GameStateTests.GameStateRetainsGameVars
       resultStatus: 1
-      duration: 0.0332333
+      duration: 0.033248
       messages: 
       output: 
       stacktrace: 
@@ -373,7 +428,7 @@ MonoBehaviour:
       name: GameStateRetainsInventoryItems
       fullName: GameStateTests.GameStateRetainsInventoryItems
       resultStatus: 1
-      duration: 0.0347409
+      duration: 0.0331653
       messages: 
       output: 
       stacktrace: 
@@ -384,7 +439,7 @@ MonoBehaviour:
       name: GameStateSavesCorrectly
       fullName: GameStateTests.GameStateSavesCorrectly
       resultStatus: 1
-      duration: 0.1761039
+      duration: 0.1806248
       messages: 
       output: "ComputerScience\r\nthe gameVar \"StartDialog\" is undefined, using
         the \"start\" dialog\r\nComputerScience\r\nComputerScience\r\nthe gameVar
@@ -397,7 +452,7 @@ MonoBehaviour:
       name: GridSystemTests
       fullName: GridSystemTests
       resultStatus: 1
-      duration: 0.0495284
+      duration: 0.0497782
       messages: 
       output: 
       stacktrace: 
@@ -407,21 +462,21 @@ MonoBehaviour:
     - id: '[Assembly-CSharp.dll][GridSystemTests.GridSystemCollisions]'
       name: GridSystemCollisions
       fullName: GridSystemTests.GridSystemCollisions
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0188306
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    m_ResultText: GridSystemTestsCollisions (0.018s)
+    m_ResultText: DialogSystemTests (0.266s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 19af64ed
-      m_LastClickedID: -312168679
-      m_ExpandedIDs: 686cfbca8bf2d63dbafb713fc606a74b2ce51350ffffff7f
+      m_SelectedIDs: e694a48f
+      m_LastClickedID: -1885039386
+      m_ExpandedIDs: e694a48f686cfbca8bf2d63dbafb713fc606a74b2ce51350ffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -581,9 +636,9 @@ MonoBehaviour:
     height: 399
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e0060000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 1afcffff00000000
+    m_ExpandedIDs: ea9effff089fffff7aa1ffffc0a5ffffdca5ffffbcaaffff68aeffff84aeffff68b3ffff1eb6ffff3ab6ffff9ebaffff56bcffff74bcffff24bfffff14c5ffff32c5ffff98c7ffff08ccffff26ccffff32ceffff2ad4ffff48d4ffff5ed7ffffc4f1ffffe0f1ffff86f7ffff1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -754,9 +809,9 @@ MonoBehaviour:
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 127}
-    m_SelectedIDs: bc260000
-    m_LastClickedID: 9916
-    m_ExpandedIDs: 0000000052260000ba260000f4260000342700003a270000aa28000000ca9a3bffffff7f
+    m_SelectedIDs: ba260000
+    m_LastClickedID: 9914
+    m_ExpandedIDs: 0000000050260000b8260000f22600003227000038270000a228000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -784,7 +839,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000052260000ba260000f4260000342700003a270000aa280000
+    m_ExpandedIDs: 0000000050260000b8260000f22600003227000038270000a2280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
