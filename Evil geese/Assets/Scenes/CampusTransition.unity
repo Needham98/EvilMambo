@@ -160,7 +160,7 @@ Prefab:
     - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
         type: 2}
       propertyPath: state.currentTeam.Array.data[1]
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
         type: 2}
@@ -195,7 +195,7 @@ Prefab:
     - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
         type: 2}
       propertyPath: state.currentTeam.Array.data[2]
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
         type: 2}

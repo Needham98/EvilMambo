@@ -2,30 +2,28 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-[System.Serializable]
-public class SimpleAttack : CombatAbility {
-	int maxDamage;
-	int minDamage;
+
+public class SimpleHeal : CombatAbility {
+	int maxHeal;
+	int minHeal;
 	string ownName;
-	string damageType;
 	public string abilityName {
 		get {return ownName;} 
-		}
+	}
 	int ownCost;
 	public int minTargets { get { return 1; } }
 	public int maxTargets { get { return 1; } }
 	public int energyCost { get { return ownCost; } }
-	public bool isAssist { get { return false; } }
+	public bool isAssist { get { return true; } }
 
-	public SimpleAttack (int minDamage, int maxDamage,string damageType, int energyCost = 0, string abilityName = "Stab"){
-		if (maxDamage < minDamage) {
-			throw new ArgumentException("maxDamage must not be less than minDamage");
+	public SimpleHeal (int minHeal, int maxHeal, int energyCost = 0, string abilityName = "Stab"){
+		if (maxHeal < minHeal) {
+			throw new ArgumentException("maxHeal must not be less than minHeal");
 		}
-		this.maxDamage = maxDamage;
-		this.minDamage = minDamage;
+		this.maxHeal = maxHeal;
+		this.minHeal = minHeal;
 		this.ownName = abilityName;
 		this.ownCost = energyCost;
-		this.damageType = damageType;
 	}
 
 	public void doAbility (List<CombatCharacter> targets, CombatCharacter user){
@@ -38,9 +36,8 @@ public class SimpleAttack : CombatAbility {
 		user.energy -= energyCost;
 		user.updateEntityBars ();
 		foreach (CombatCharacter c in targets) {
-			int damage = UnityEngine.Random.Range (minDamage, maxDamage + 1);
-			Debug.Log (user.damageDealtModifier (damageType));
-			c.takeDamage ((int) (damage * user.damageDealtModifier(damageType)), damageType);
+			int heal = UnityEngine.Random.Range (minHeal, maxHeal + 1);
+			c.takeDamage ((int) -(heal * user.damageDealtModifier("heal")), "heal");
 		} 
 	}
 }

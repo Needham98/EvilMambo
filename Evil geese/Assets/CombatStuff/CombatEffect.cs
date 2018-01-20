@@ -29,4 +29,8 @@ public class CombatEffect {
 			ability.doAbility (characterList, new CombatCharacter (0, 0, 0, 0)); // uses dummy character to apply the ability
 		}
 	}
+
+	public CombatEffect copy(){
+		return (CombatEffect) this.MemberwiseClone ();
+	}
 }

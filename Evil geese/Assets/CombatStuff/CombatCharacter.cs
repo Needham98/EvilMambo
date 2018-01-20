@@ -44,7 +44,7 @@ public class CombatCharacter {
 	public float damageTakenModifier(string damageType){
 		float returnValue = 1f;
 		foreach (CombatEffect effect in effectList) {
-			if (effect.type == CombatEffect.effectType.damageTakenModifier && effect.damageType.Equals(damageType) ) {
+			if (effect.type == CombatEffect.effectType.damageTakenModifier && effect.damageType == damageType) {
 				returnValue *= effect.modifier;
 			}
 		}
@@ -54,7 +54,7 @@ public class CombatCharacter {
 	public float damageDealtModifier(string damageType){
 		float returnValue = 1f;
 		foreach (CombatEffect effect in effectList) {
-			if (effect.type == CombatEffect.effectType.damageDealtModifier && effect.damageType.Equals(damageType) ) {
+			if (effect.type == CombatEffect.effectType.damageDealtModifier && effect.damageType == damageType ) {
 				returnValue *= effect.modifier;
 			}
 		}
@@ -62,7 +62,7 @@ public class CombatCharacter {
 	}
 
 	public void addEffect(CombatEffect effect){
-		effectList.Add (effect);
+		effectList.Add (effect.copy());
 	}
 
 	public void doEffects(){

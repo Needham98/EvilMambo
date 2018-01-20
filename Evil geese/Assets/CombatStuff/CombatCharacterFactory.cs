@@ -96,22 +96,28 @@ public static class CombatCharacterFactory {
 		List<CombatAbility> abilities = new List<CombatAbility> ();
 		switch (characterType) {
 		case CombatCharacterPresets.BobbyBard:
-			//TODO add healing and damage resist abilities
+			abilities.Add (new SimpleHeal (30, 50, 40, "Basic Heal"));
+			abilities.Add( new GiveEffect (new CombatEffect( CombatEffect.effectType.damageDealtModifier, 3, damageType : "melee", modifier : 1.5f), 30, true, "Melee Buff"));
 			break;
 		case CombatCharacterPresets.CharlieCleric:
-			//TODO add high power healing abilities
+			abilities.Add (new SimpleHeal (30, 50, 40, "Basic Heal"));
+			abilities.Add (new SimpleHeal (80, 100, 80, "Big Heal"));
 			break;
 		case CombatCharacterPresets.MabelMage:
-			//TODO add melee and magic abilities
+			abilities.Add (new SimpleAttack (60, 80, "melee", 40, "Heavy Strike"));
+			abilities.Add (new SimpleAttack (65, 75, "magic", 40, "Ethereal Projectile"));
 			break;
 		case CombatCharacterPresets.PamelaPaladin:
-			//TODO add melee abilities
+			abilities.Add (new SimpleAttack (60, 80, "melee", 40, "Heavy Strike"));
+			abilities.Add (new SimpleAttack (80, 100, "melee", 80, "Epic Strike"));
 			break;
 		case CombatCharacterPresets.WalterWizard:
-			//TODO add magic abilities
+			abilities.Add (new SimpleAttack (60, 70, "fire", 30, "Fireball"));
+			abilities.Add (new SimpleAttack (65, 100, "electric", 70, "Lightning Strike"));
 			break;
 		case CombatCharacterPresets.SusanShapeShifter:
-			//TODO add shapshifting abilities
+			abilities.Add (new SelfEffect (new CombatEffect (CombatEffect.effectType.damageTakenModifier, 3, damageType : "melee", modifier : 0.2f), 40, "Skin of Steel"));
+			abilities.Add (new SelfEffect (new CombatEffect (CombatEffect.effectType.damageDealtModifier, 3, damageType : "melee", modifier : 4f), 40, "Knives For Hands"));
 			break;
 		case CombatCharacterPresets.Goose:
 			break;

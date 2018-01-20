@@ -38,26 +38,31 @@ public class GridEditor : Editor {
 			pos = myGrid.getPosition (tempx, tempy);
 		}
 		if (pos != null) {
+			//x co-ord box
 			EditorGUILayout.BeginHorizontal (null);
 			EditorGUILayout.PrefixLabel(new GUIContent("x:"));
 			pos.x = EditorGUILayout.IntField (pos.x, null);
 			EditorGUILayout.EndHorizontal ();
 
+			//y co-ord box
 			EditorGUILayout.BeginHorizontal (null);
 			EditorGUILayout.PrefixLabel(new GUIContent("y:"));
 			pos.y = EditorGUILayout.IntField (pos.y, null);
 			EditorGUILayout.EndHorizontal ();
 
+			//blocked toggle
 			EditorGUILayout.BeginHorizontal (null);
 			EditorGUILayout.PrefixLabel(new GUIContent("blocked:"));
 			pos.blocked = EditorGUILayout.Toggle (pos.blocked, null);
 			EditorGUILayout.EndHorizontal ();
 
+			//interaction object selector
 			EditorGUILayout.BeginHorizontal (null);
 			EditorGUILayout.PrefixLabel(new GUIContent("interaction:"));
 			pos.interactionObject = (GameObject) EditorGUILayout.ObjectField (pos.interactionObject, typeof(GameObject), true,  null);
 			EditorGUILayout.EndHorizontal ();
 
+			// step-on interaction object
 			EditorGUILayout.BeginHorizontal (null);
 			EditorGUILayout.PrefixLabel(new GUIContent("step on:"));
 			pos.stepOn = (GameObject) EditorGUILayout.ObjectField (pos.stepOn, typeof(GameObject), true, null);
@@ -65,7 +70,6 @@ public class GridEditor : Editor {
 
 		}
 		myGrid.OnBeforeSerialize ();
-		//Debug.Log (Event.current.mousePosition);
 	}
 
 	void OnSceneGUI()

@@ -345,6 +345,9 @@ public class CombatManager : MonoBehaviour {
 	void targetSelectionStage(){
 		selectorRen.enabled = false;
 		hideAbilities ();
+		if (attackTargets == null) {
+			attackTargets = new List<CombatCharacter> ();
+		}
 		if (targetsRemaining == 0) {
 			removeTargetSelectors ();
 			currentStage = turnStages.moving;
