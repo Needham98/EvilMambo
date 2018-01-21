@@ -11,9 +11,9 @@ public class WorldMapButton : MonoBehaviour, ICanvasRaycastFilter {
 	public string sceneName;
 	public int playerX;
 	public int playerY;
-	RectTransform canvasTranform;
 	Image ownImage;
 	GameObject ownText;
+	Camera sceneCamera;
 
 
 	// Use this for initialization
@@ -21,7 +21,7 @@ public class WorldMapButton : MonoBehaviour, ICanvasRaycastFilter {
 	}
 
 	void Awake(){
-		canvasTranform = (RectTransform) this.transform.parent.transform;
+		sceneCamera = FindObjectOfType<Camera> ();
 		ownText = this.transform.Find ("Text").gameObject;
 		ownImage = this.GetComponent<Image> ();
 		state = GameStateManager.getGameStateManager ();
@@ -52,9 +52,11 @@ public class WorldMapButton : MonoBehaviour, ICanvasRaycastFilter {
 
 	//used to allow transparent sections of buttons to not count as part of the button, (part of ICanvasRaycastFilter interface)
 	public bool IsRaycastLocationValid(Vector2 sp, Camera eventCamera){
+		//assumes that the world map fills the entire screen
 		Texture2D tex = (Texture2D) ownImage.mainTexture;
-		int x = (int) Mathf.Floor (sp.x /canvasTranform.offsetMax.x * ownImage.mainTexture.width);
-		int y = (int) Mathf.Floor (sp.y /canvasTranform.offsetMax.y * ownImage.mainTexture.height);
+		int x = (int) Mathf.Floor ((sp.x /(sceneCamera.pixelWidth)) * ownImage.mainTexture.width);
+		int y = (int) Mathf.Floor ((sp.y /(sceneCamera.pixelHeight)) * ownImage.mainTexture.height);
+		Debug.Log (x.ToString () + ", " + y.ToString ());
 
 		return tex.GetPixel(x,y).a > 0;
 	}
