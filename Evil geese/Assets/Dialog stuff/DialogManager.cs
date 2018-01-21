@@ -79,6 +79,7 @@ public class DialogManager : MonoBehaviour, ISerializationCallbackReceiver{
 		}
 	}
 
+	// called when a worldinteraction attached to the same object as this triggers a dialog event
 	public void beginDialog(){
 		if (state == null) {
 			state = GameStateManager.getGameStateManager ();
@@ -102,6 +103,7 @@ public class DialogManager : MonoBehaviour, ISerializationCallbackReceiver{
 		doDialogOption (dialogName);
 		}
 
+	// called when a dialog option is selected
 	public void doDialogOption(string option){
 		if (option == "" || option == "None") {// end dialog if dialog option is a dialog cancel option
 			state.movementEnabled = true;

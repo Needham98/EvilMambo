@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour {
 
+	//starts a new game, called when the new game button on the menu is pressed
 	public void NewGameBtn(string newGameScene){
 		GameStateManager state = GameObject.FindGameObjectWithTag ("GameStateManager").GetComponent<GameStateManager> ();
 		state.state = new GameState ();
@@ -17,6 +18,7 @@ public class ButtonManager : MonoBehaviour {
 		SceneManager.LoadScene (newGameScene);
 	}
 
+	// quits the game, called when the exit game button is pressed
 	public void ExitGameBtn(){
 		Application.Quit ();
 	}

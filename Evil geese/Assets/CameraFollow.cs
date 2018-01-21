@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//allows the camera to follow the player character in town mode, within a given bounding box
 public class CameraFollow : MonoBehaviour {
 	public Vector2 minPos;
 	public Vector2 maxPos;

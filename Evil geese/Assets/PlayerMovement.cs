@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-
+// controls the players movement in town mode
 public class PlayerMovement : MonoBehaviour {
 	Transform ownTransform;
 	public int x;// current x position on grid system
@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	}
 
+	// attempts to move in a given direction, returns true if the movement began sucessfully
 	public bool move (Vector2 dir){
 		int newx = x + (int) dir.normalized.x;
 		int newy = y + (int) dir.normalized.y;
@@ -96,6 +97,7 @@ public class PlayerMovement : MonoBehaviour {
 		return true;
 	}
 
+	//interacts with whatever is in front of the player
 	public void interact(){
 		GridPosition pos = movementGrid.getPosition(x + (int) movedir.x, y + (int) movedir.y);
 		if (pos == null){
@@ -111,6 +113,7 @@ public class PlayerMovement : MonoBehaviour {
 		interaction.interact ();
 	}
 
+	// moves the player to there x,y grid position instantly
 	public void snapToGridPos(){
 		ownTransform = this.transform;
 		ownTransform.position = new Vector3 ((float)x, (float)y, ownTransform.position.z);

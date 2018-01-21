@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //handles combat sequences
 public class CombatManager : MonoBehaviour {
 	//TODO visual representation of status effects (CombatEffects)
@@ -158,15 +159,17 @@ public class CombatManager : MonoBehaviour {
 		}
 	}
 
-	public void doAttack(){// function to be called when the "attack" button is hit
+	// function to be called when the "attack" button is hit
+	public void doAttack(){
 		if (currentStage == turnStages.selecting && frendlyAttacking) {
 			attack = attacker.basicAttack;
 			currentStage = turnStages.targetSelection;
 			targetsRemaining = attack.maxTargets;
 		}
 	}
-		
-	public void doAbilities(){// function called when the abilities button is pressed
+
+	// function called when the abilities button is pressed
+	public void doAbilities(){
 		if (currentStage != turnStages.selecting) {
 			return; // do nothing
 		}
@@ -203,7 +206,8 @@ public class CombatManager : MonoBehaviour {
 
 	}
 
-	public void doItems(){// function called when the items button is pressed
+	// function called when the items button is pressed
+	public void doItems(){
 		//uses the same panel as abilities
 		if (currentStage != turnStages.selecting) {
 			return; // do nothing
@@ -250,11 +254,13 @@ public class CombatManager : MonoBehaviour {
 
 	}
 
+	//hides the ablilities panel
 	public void hideAbilities(){
 		abilitiesPanel.SetActive (false);
 	}
 
-	public void doWin(){// function called when the continue button on the victory screen is pressed
+	// function called when the continue button on the victory screen is pressed
+	public void doWin(){
 		if (abilitiesPanel != null) {
 			Destroy (abilitiesPanel);
 			Destroy (selectorObj);
@@ -275,10 +281,12 @@ public class CombatManager : MonoBehaviour {
 		}
 	}
 
-	public void doLose(){// function called when the continue button on the defeat screen is pressed
-		Debug.LogError ("losing not implemented");
+	// function called when the continue button on the defeat screen is pressed
+	public void doLose(){
+		SceneManager.LoadScene ("Scenes/MenuScene");
 	}
 
+	// function called when an item button on the items panel is pressed
 	void selectItem(InventoryItems.itemTypes itemType){
 		selectAbility (InventoryItems.itemAbility (itemType));
 		if (InventoryItems.itemConsumedOnUse(itemType)) {
@@ -286,12 +294,14 @@ public class CombatManager : MonoBehaviour {
 		}
 	}
 
+	// function called when an abililty button on abilities panel is pressed
 	void selectAbility(CombatAbility ability){
 		attack = ability;
 		currentStage = turnStages.targetSelection;
 		targetsRemaining = attack.maxTargets;
 	}
 
+	// function called when a target is clicked during the target selection phase
 	void selectTarget(CombatCharacter target){
 		if (attackTargets == null) {
 			attackTargets = new List<CombatCharacter> ();
@@ -299,7 +309,8 @@ public class CombatManager : MonoBehaviour {
 		attackTargets.Add (target);
 		targetsRemaining -= 1;
 	}
-		
+
+	// gets rid of the target selectors from the target selection phase
 	void removeTargetSelectors(){
 		if (targetSelectorButtonObjs == null) {
 			return;
@@ -310,15 +321,18 @@ public class CombatManager : MonoBehaviour {
 		targetSelectorButtonObjs = null;
 	}
 
-	void lose(){//todo handle losing
+	//called when a losing state is detected
+	void lose(){
 		currentStage = turnStages.lose;
 		Debug.Log("You Lose! Now implement losing.");
 	}
 
+	// called when a winning state is detected
 	void win(){
 		currentStage = turnStages.win;
 	}
 
+	//called in update() if the current stage is the selection stage
 	void selectionStage(){
 		if (!frendlyAttacking) {
 			//TODO write better enemy combat logic
@@ -338,6 +352,7 @@ public class CombatManager : MonoBehaviour {
 		}
 	}
 
+	//called in update() if the current stage is the target selection stage
 	void targetSelectionStage(){
 		selectorRen.enabled = false;
 		hideAbilities ();
@@ -375,6 +390,7 @@ public class CombatManager : MonoBehaviour {
 		}
 	}
 
+	//called in update() if the current stage is the movement stage
 	void movingStage(){
 		hideAbilities ();
 		selectorRen.enabled = false;
@@ -385,6 +401,7 @@ public class CombatManager : MonoBehaviour {
 		}
 	}
 
+	//called in update() if the current stage is the attacking stage
 	void attackingStage(){// TODO add animations and delays to attack stage
 		if (timer > 1f) {
 			attack.doAbility (attackTargets, attacker);
@@ -394,6 +411,7 @@ public class CombatManager : MonoBehaviour {
 		}
 	}
 
+	//called in update() if the current stage is the returning stage
 	void returningStage(){
 		if (CombatCharacter.getFirstAlive (frendlyChars) == -1) {
 			lose ();
@@ -426,14 +444,17 @@ public class CombatManager : MonoBehaviour {
 		}
 	}
 
+	//called in update() if the current stage is the lose stage
 	void loseStage(){
 		LosePanel.SetActive (true);
 	}
 
+	//called in update() if the current stage is the win stage
 	void winStage(){
 		WinPanel.SetActive (true);
 	}
 
+	// used to activate combat
 	public static void startCombat(List<CombatCharacterFactory.CombatCharacterPresets> enemies){
 		GameObject combatObject = (GameObject) Instantiate (Resources.Load ("CombatCanvas"));
 		CombatManager combatMan = combatObject.GetComponentInChildren<CombatManager> ();

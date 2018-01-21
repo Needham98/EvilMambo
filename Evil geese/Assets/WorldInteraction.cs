@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+// represents an interaction with the game world, used in gridPosition
 public class WorldInteraction : MonoBehaviour {
 	public enum InteractionTypes {CombatStart, DialogStart, SceneChange}
 	public InteractionTypes ownInteractionType;
@@ -18,6 +18,7 @@ public class WorldInteraction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {}
 
+	// interacts with this world interaction
 	public void interact(){
 		switch (ownInteractionType) {
 		case InteractionTypes.CombatStart:

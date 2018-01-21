@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//TODO refactor Grid to GridManager
 public class Grid : MonoBehaviour, ISerializationCallbackReceiver{
 	public Dictionary<ulong, GridPosition> gridDictionary;
 	//these are both for serialization
@@ -12,6 +12,7 @@ public class Grid : MonoBehaviour, ISerializationCallbackReceiver{
 		this.gridDictionary = new Dictionary<ulong, GridPosition> ();
 	}
 
+	// gets the gridPosition at a set of coordinates if one exists
 	public GridPosition getPosition(int x, int y){
 		try{
 			return gridDictionary[GridPosition.hashablePosition(x,y)];
@@ -20,19 +21,21 @@ public class Grid : MonoBehaviour, ISerializationCallbackReceiver{
 		}
 	}
 
+	// sets a grid position
 	public void setPosition( GridPosition pos){
 		gridDictionary.Add (pos.hashable (), pos);
 	}
 
+	// clears a grid postion at a set of coordinates
 	public bool clearPosition(int x, int y){
 		return gridDictionary.Remove (GridPosition.hashablePosition (x, y));
 	}
 
+	// clears a gridposition
 	public bool clearPosition(GridPosition pos){
 		return gridDictionary.Remove (pos.hashable ());
 	}
-
-	// todo remove keys from serialization system since they can be calculated from the positions
+		
 	public void OnBeforeSerialize(){
 		_keys = new List<ulong> ();
 		_positions = new List<GridPosition> ();

@@ -5,7 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+//stores a GameState and provides access to it in a component
 public class GameStateManager : MonoBehaviour{
 	public List<CombatCharacterFactory.CombatCharacterPresets> availibleCharacters { 
 		get {return state.availibleCharacters;}

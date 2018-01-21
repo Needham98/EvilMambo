@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
+// a single node in a dialog tree/graph
 public class DialogElement {
 	public string speekerName; // the name of the character who is speeking (in the story)
 	public string dialogText;// the text content of this dialog

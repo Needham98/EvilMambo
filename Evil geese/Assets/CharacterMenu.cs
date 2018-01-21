@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+// handles the character selection menu
 public class CharacterMenu : MonoBehaviour {
 	GameObject characterButtonPattern;
 	GameObject abilityTextPattern;

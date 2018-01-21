@@ -41,6 +41,7 @@ public class CombatEntity : MonoBehaviour {
 		Destroy (energyBarMask);
 	}
 
+	//sets up the health and energy bars
 	public void setupBars(bool placeRight, bool showEnergy){
 		Vector3 pos = restPosition;
 		if (placeRight) {
@@ -57,6 +58,7 @@ public class CombatEntity : MonoBehaviour {
 		}
 	}
 
+	//sets the values of the health and energy bars
 	public void setBars(float healthBarScale, float energyBarScale){
 		Vector3 newHealthBarScale = healthBarMaskInitalScale * 1; // mulitply by one to force dereference
 		newHealthBarScale.x = healthBarMaskInitalScale.x * healthBarScale; 
@@ -67,8 +69,9 @@ public class CombatEntity : MonoBehaviour {
 		energyBarMask.transform.localScale = newEnergyBarScale;
 
 	}
-		
-	public bool moveAttack(){ // moves parent towards the attack position, returns true when at attack position
+
+	// moves parent towards the attack position, returns true when at attack position
+	public bool moveAttack(){ 
 		if (Mathf.Abs (transform.position.x) <= moveSpeed * Time.deltaTime) {
 			transform.position = new Vector3 (0.0f, transform.position.y, transform.position.z);
 			return true;
@@ -79,7 +82,8 @@ public class CombatEntity : MonoBehaviour {
 
 	}
 
-	public bool moveRest(){ // moves parent towards the rest position, returns true when at rest position
+	// moves parent towards the rest position, returns true when at rest position
+	public bool moveRest(){ 
 		if ((transform.position - restPosition).magnitude <= moveSpeed * Time.deltaTime) {
 			transform.position = restPosition;
 			return true;

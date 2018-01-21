@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
+//stores the majority of data relating to the current game state
 public class GameState : ISerializationCallbackReceiver{
 	public List<CombatCharacterFactory.CombatCharacterPresets> availibleCharacters;
 	public List<CombatCharacterFactory.CombatCharacterPresets> currentTeam;

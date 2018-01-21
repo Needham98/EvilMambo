@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEditor;
 [CustomEditor(typeof(DialogManager))]
 [CanEditMultipleObjects]
+// controls the inspector for dialogManager components
 public class DialogEditor : Editor{
 	DialogManager ownDialogManager;
 	DialogElement currentDialogElement;

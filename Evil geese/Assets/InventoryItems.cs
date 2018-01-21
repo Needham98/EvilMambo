@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// stores the data for the various inventory item types
 public static class InventoryItems {
 	public enum itemTypes{
 		Beak,

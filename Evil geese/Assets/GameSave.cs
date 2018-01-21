@@ -3,7 +3,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
-
+// used to save a gameState
 public static class GameSave {
 	static string savePath = Application.dataPath + "/" ; // root path for saves
 	const string saveExtension = ".geese";

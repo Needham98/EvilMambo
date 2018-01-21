@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 [System.Serializable]
+// used to determine whether a dialog option should be shown
 public class DialogConditional {
 	public enum comparableTypes{
 		variable,

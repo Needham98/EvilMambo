@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+// changes the sprite/image of its parent object in order to animate it
 public class AnimationLoop : MonoBehaviour {
 	public List<Sprite> frames;
 	public float frameRate;

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// handles player input in town mode
 public class InputManager : MonoBehaviour {
 	GameObject player;
 	PlayerMovement movement;

@@ -6,7 +6,7 @@ using UnityEditor;
 
 
 [CustomEditor(typeof(Grid))]
-[CanEditMultipleObjects]
+// handles the inspector for GridObjects
 public class GridEditor : Editor {
 	Vector2 mousePos = new Vector2 ();
 	int tempx = 0;
