@@ -49,6 +49,7 @@ public class CombatManager : MonoBehaviour {
 		abilitiesPanel = canvasObj.transform.Find ("AbilitiesPanel").gameObject;
 		state = GameStateManager.getGameStateManager ();
 
+		//hide non combat objects in the scene
 		sceneObjects = new List<GameObject> ();
 		foreach (GameObject obj in GameObject.FindObjectsOfType<GameObject>()) {
 			if (obj.tag == "MainCamera") {
@@ -87,6 +88,7 @@ public class CombatManager : MonoBehaviour {
 
 		GameObject combatEntityPrefab = Resources.Load<GameObject> ("CombatEntity");
 
+		// create objects representing combatants
 		Vector3 pos = new Vector3 (-4, 3); // arbitrary start position
 		Vector3 offset = new Vector3(0,-2); // arbitrary offset
 		foreach (CombatCharacter c in frendlyChars) {
