@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 // stores the data for the various inventory item types
 public static class InventoryItems {
+	private static Inventory Inventory;
 	public enum itemTypes{
 		Beak,
 		PlasticFork
@@ -30,6 +31,15 @@ public static class InventoryItems {
 		default:
 			return "error: No descrition exists for this item";	
 		}
+	}
+
+	/// <summary>
+	/// Checks if a item is in the inventory, uses their display name (new)
+	/// </summary>
+	/// <returns><c>true</c>, if in inventory was in item, <c>false</c> otherwise.</returns>
+	/// <param name="itemType">Item type.</param>
+	public static bool itemInInventory(itemTypes itemType){ //checks if the item is in the players inventory
+		return Inventory.inInventory(itemDisplayName(itemType));
 	}
 
 	public static bool itemHasAbility(itemTypes itemType){
