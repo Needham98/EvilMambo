@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* 
+  NEW SCRIPT BY UN-TWO
+*/
+
+
 public class EnemyScript : MonoBehaviour {
 
     public int moveSpeed = -3;

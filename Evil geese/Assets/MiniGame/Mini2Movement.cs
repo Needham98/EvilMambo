@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+/* 
+  NEW SCRIPT BY UN-TWO
+*/
 public class Mini2Movement : MonoBehaviour {
 
     private int PlayerSpeed = 3;

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* 
+  NEW SCRIPT BY UN-TWO
+*/
+
 public class GooseMovement : MonoBehaviour {
 
     public int speed;

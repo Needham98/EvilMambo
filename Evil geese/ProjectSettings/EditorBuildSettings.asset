@@ -32,3 +32,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Library.unity
     guid: 97ac8f9739710674a9ac4fd7770f8492
+  - enabled: 1
+    path: Assets/Scenes/MiniGameMenu.unity
+    guid: e9e25d53cd51ce747ba88c2a74d15a3f
+  - enabled: 1
+    path: Assets/Scenes/MiniGame.unity
+    guid: aae9d87cd80a3274a928bfee2f26560b
+  - enabled: 1
+    path: Assets/Scenes/Chemistry (2).unity
+    guid: c6b44c77700ac954295dc9b574822f55
