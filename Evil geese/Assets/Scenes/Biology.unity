@@ -164,17 +164,17 @@ Prefab:
     - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
         type: 2}
       propertyPath: state.currentTeam.Array.data[1]
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
         type: 2}
       propertyPath: state.availibleCharacters.Array.data[1]
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
         type: 2}
       propertyPath: state.availibleCharacters.Array.data[2]
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
         type: 2}
@@ -194,139 +194,21 @@ Prefab:
     - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
         type: 2}
       propertyPath: state.availibleCharacters.Array.data[0]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
-        type: 2}
-      propertyPath: state.currentTeam.Array.data[2]
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
         type: 2}
+      propertyPath: state.currentTeam.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114729010611386790, guid: d407bc6b3aaa52146ac4de7d6f7232fb,
+        type: 2}
       propertyPath: state.currentTeam.Array.data[0]
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d407bc6b3aaa52146ac4de7d6f7232fb, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &233066832
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 233066834}
-  - component: {fileID: 233066833}
-  m_Layer: 0
-  m_Name: LibraryToMarket
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &233066833
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 233066832}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3c8c62876d62338498cf4b77ff980ed3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.84, y: 0.42}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
---- !u!4 &233066834
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 233066832}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &462966827
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 462966829}
-  - component: {fileID: 462966828}
-  m_Layer: 0
-  m_Name: GotoWorldMapInteraction
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &462966828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 462966827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ba05fd0888f34e4f8360c77ec524234, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ownInteractionType: 2
-  enemies: 
-  sceneName: Scenes/WorldMap
-  playerX: 0
-  playerY: 0
---- !u!4 &462966829
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 462966827}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.895412, y: -1.3935632, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &827956597
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +221,6 @@ GameObject:
   - component: {fileID: 827956600}
   - component: {fileID: 827956599}
   - component: {fileID: 827956598}
-  - component: {fileID: 827956603}
   m_Layer: 0
   m_Name: 'Main Camera '
   m_TagString: MainCamera
@@ -410,131 +291,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827956597}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2140842086}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &827956603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 827956597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a6a5ad706538fc45b86dbad9785c168, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minPos: {x: 0.5, y: 0}
-  maxPos: {x: 0.5, y: 0}
---- !u!1 &873600574
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 873600577}
-  - component: {fileID: 873600576}
-  - component: {fileID: 873600575}
-  - component: {fileID: 873600578}
-  m_Layer: 0
-  m_Name: Goose2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &873600575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 873600574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3861ca20ab9e8a644aad9e85868d50be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  x: 2
-  y: -1
-  gameVar: GooseBlocking
-  value: true
-  invert: 0
---- !u!212 &873600576
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 873600574}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1e5b44b02a2704146a3db721995b2737, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
---- !u!4 &873600577
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 873600574}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: -1, z: -1}
-  m_LocalScale: {x: -1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &873600578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 873600574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c3afab324e1c9948b1b1db5313ae561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameVariable: GooseBlocking
-  Values:
-  - false
 --- !u!1 &986616144
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +413,196 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1190064886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1190064888}
+  - component: {fileID: 1190064887}
+  m_Layer: 0
+  m_Name: GotoWorldMapInteraction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1190064887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190064886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba05fd0888f34e4f8360c77ec524234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownInteractionType: 2
+  enemies: 
+  sceneName: Scenes/WorldMap
+  playerX: 0
+  playerY: 0
+--- !u!4 &1190064888
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190064886}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.895412, y: -1.3935632, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1258092193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1258092195}
+  - component: {fileID: 1258092194}
+  - component: {fileID: 1258092196}
+  - component: {fileID: 1258092197}
+  m_Layer: 5
+  m_Name: robot enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1258092194
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1258092193}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 675f5ccb0863a24479f956eca127b107, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.32, y: 0.32}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!4 &1258092195
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1258092193}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1258092196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1258092193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6976a059de7d1541969c6681fba7c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSelectorVarName: Robot text
+  dialogDataKeys:
+  - Combat
+  - Start
+  dialogDataValues:
+  - speekerName: The Narrator
+    dialogText: 01010111
+    optionDescription: []
+    optionPointer: []
+    optionConditional: []
+    actions:
+    - ownActionType: 1
+      gameVarName: 
+      gameVarValue: 
+      combatEnemies: 0600000006000000
+      itemType: 0
+      itemAmount: 0
+      character: 0
+      charAvailible: 0
+  - speekerName: The Narrater
+    dialogText: 010001110 (Halt in the name of Mike!)
+    optionDescription:
+    - Fight
+    - Retreat
+    optionPointer:
+    - combat
+    - 
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    actions: []
+--- !u!114 &1258092197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1258092193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba05fd0888f34e4f8360c77ec524234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownInteractionType: 1
+  enemies: 
+  sceneName: 
+  playerX: 0
+  playerY: 0
 --- !u!1 &1402107133
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,119 +631,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9399390be8dcfb4abc3036f8b4807ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keys: feffffff01000000ffffffff01000000ffffffff02000000ffffffff0300000002000000030000000200000002000000020000000100000004000000010000000300000001000000050000000100000006000000010000000700000001000000080000000000000008000000ffffffff07000000feffffff06000000feffffff05000000feffffff04000000feffffff03000000feffffff02000000feffffff01000000feffffff00000000fefffffffffffffffefffffffefffffffefffffffdfffffffefffffffcfffffffefffffffafffffffefffffffbfffffffefffffff9fffffffffffffff9ffffff00000000faffffff01000000fbffffff01000000fcffffff01000000fdffffff0100000000000000040000000100000004000000020000000000000002000000ffffffff01000000010000000000000001000000
+  _keys: fffffffffcfffffffefffffffcfffffffdfffffffcfffffffcfffffffcfffffffcfffffffdfffffffdfffffffefffffffefffffffefffffffffffffffefffffffcfffffffffffffffdffffff00000000feffffff00000000ffffffff00000000fcffffff01000000fcffffff02000000fcffffff03000000fdffffff04000000feffffff04000000ffffffff04000000000000000400000001000000040000000200000004000000030000000400000004000000040000000300000002000000020000000200000001000000020000000000000002000000ffffffff02000000feffffff0200000002000000000000000300000000000000040000000000000004000000feffffff03000000feffffff02000000feffffff05000000ffffffff05000000010000000500000002000000050000000300000005000000fdffffff04000000fcffffff03000000fcffffff02000000fcffffff01000000fbffffff00000000fbffffff00000000feffffff
   _positions:
+  - x: -1
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
   - x: -2
-    y: 1
+    y: -4
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
-  - x: -1
-    y: 1
+  - x: -3
+    y: -4
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
-  - x: -1
-    y: 2
+  - x: -4
+    y: -4
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
-  - x: -1
-    y: 3
+  - x: -4
+    y: -3
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
-  - x: 2
-    y: 3
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 2
-    y: 2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 2
-    y: 1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 4
-    y: 1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 3
-    y: 1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 5
-    y: 1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 6
-    y: 1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 7
-    y: 1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 8
-    y: 0
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 462966827}
-    blocked: 0
-  - x: 8
-    y: -1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 462966827}
-    blocked: 0
-  - x: 7
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 6
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 5
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 4
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 3
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 2
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 1
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 0
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: -1
+  - x: -3
     y: -2
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
@@ -800,43 +668,28 @@ MonoBehaviour:
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
-  - x: -3
+  - x: -1
     y: -2
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
   - x: -4
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: -6
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: -5
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: -7
     y: -1
     interactionObject: {fileID: 0}
-    stepOn: {fileID: 462966827}
-    blocked: 0
-  - x: -7
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -3
     y: 0
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 462966827}
-    blocked: 0
-  - x: -6
-    y: 1
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
-  - x: -5
-    y: 1
+  - x: -2
+    y: 0
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -1
+    y: 0
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
@@ -845,39 +698,169 @@ MonoBehaviour:
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
+  - x: -4
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -4
+    y: 3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
   - x: -3
-    y: 1
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -2
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -1
+    y: 4
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
   - x: 0
     y: 4
     interactionObject: {fileID: 0}
-    stepOn: {fileID: 462966827}
-    blocked: 0
+    stepOn: {fileID: 0}
+    blocked: 1
   - x: 1
     y: 4
     interactionObject: {fileID: 0}
-    stepOn: {fileID: 462966827}
-    blocked: 0
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 2
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 3
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 3
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 2
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 1
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 0
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -1
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -2
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
   - x: 2
     y: 0
-    interactionObject: {fileID: 1950430424}
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 3
+    y: 0
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: 0
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: -2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 3
+    y: -2
+    interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
   - x: 2
+    y: -2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 5
     y: -1
-    interactionObject: {fileID: 1950430424}
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 5
+    y: 1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 5
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 5
+    y: 3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 5
+    y: -3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 3
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 2
+    y: -4
+    interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
   - x: 1
-    y: 1
+    y: -5
     interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
+    stepOn: {fileID: 1190064886}
+    blocked: 0
   - x: 0
-    y: 1
+    y: -5
     interactionObject: {fileID: 0}
+    stepOn: {fileID: 1190064886}
+    blocked: 0
+  - x: 0
+    y: -2
+    interactionObject: {fileID: 1258092193}
     stepOn: {fileID: 0}
     blocked: 1
 --- !u!114 &1402107135
@@ -904,30 +887,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1950430424
+--- !u!1 &1657356118
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 1950430426}
-  - component: {fileID: 1950430425}
-  - component: {fileID: 1950430427}
-  - component: {fileID: 1950430428}
+  - component: {fileID: 1657356120}
+  - component: {fileID: 1657356119}
   m_Layer: 0
-  m_Name: Goose1
+  m_Name: Library
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!212 &1950430425
+--- !u!212 &1657356119
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1950430424}
+  m_GameObject: {fileID: 1657356118}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -956,132 +937,29 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1e5b44b02a2704146a3db721995b2737, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3ed99da8ff1d6484fb2efcae15233c5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!4 &1950430426
+--- !u!4 &1657356120
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1950430424}
+  m_GameObject: {fileID: 1657356118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: -1}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1950430427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1950430424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6976a059de7d1541969c6681fba7c18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startSelectorVarName: GeeseDialog
-  dialogDataKeys:
-  - start
-  - combat
-  dialogDataValues:
-  - speekerName: The Narrator
-    dialogText: These geese are blocking the path, they hiss aggressively.
-    optionDescription:
-    - FIGHT!!!
-    - RETREAT!!!
-    optionPointer:
-    - combat
-    - 
-    optionConditional:
-    - rightSideComparable: 2
-      leftSideComparable: 2
-      ownComparison: 0
-      rightSide: 
-      leftSide: 
-      rightItemType: 0
-      leftItemType: 0
-    - rightSideComparable: 2
-      leftSideComparable: 2
-      ownComparison: 0
-      rightSide: 
-      leftSide: 
-      rightItemType: 0
-      leftItemType: 0
-    actions: []
-  - speekerName: The narrator
-    dialogText: You've fought enough of the geese to clear a path.
-    optionDescription:
-    - Continue
-    optionPointer:
-    - 
-    optionConditional:
-    - rightSideComparable: 2
-      leftSideComparable: 2
-      ownComparison: 0
-      rightSide: 
-      leftSide: 
-      rightItemType: 0
-      leftItemType: 0
-    actions:
-    - ownActionType: 1
-      gameVarName: 
-      gameVarValue: 
-      combatEnemies: 0600000006000000
-      itemType: 0
-      itemAmount: 0
-      character: 0
-      charAvailible: 0
-    - ownActionType: 0
-      gameVarName: GeeseDialog
-      gameVarValue: repeat
-      combatEnemies: 
-      itemType: 0
-      itemAmount: 0
-      character: 0
-      charAvailible: 0
-    - ownActionType: 0
-      gameVarName: GooseBlocking
-      gameVarValue: false
-      combatEnemies: 
-      itemType: 0
-      itemAmount: 0
-      character: 0
-      charAvailible: 0
-    - ownActionType: 0
-      gameVarName: MarketUnlocked
-      gameVarValue: true
-      combatEnemies: 
-      itemType: 0
-      itemAmount: 0
-      character: 0
-      charAvailible: 0
---- !u!114 &1950430428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1950430424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ba05fd0888f34e4f8360c77ec524234, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ownInteractionType: 1
-  enemies: 
-  sceneName: 
-  playerX: 0
-  playerY: 0
 --- !u!1 &2140842085
 GameObject:
   m_ObjectHideFlags: 0
