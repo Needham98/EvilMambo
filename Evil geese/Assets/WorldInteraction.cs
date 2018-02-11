@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 // represents an interaction with the game world, used in gridPosition
 public class WorldInteraction : MonoBehaviour {
+    
 	public enum InteractionTypes {CombatStart, DialogStart, SceneChange}
 	public InteractionTypes ownInteractionType;
 	public List<CombatCharacterFactory.CombatCharacterPresets> enemies;
@@ -40,7 +41,7 @@ public class WorldInteraction : MonoBehaviour {
 			state.state.playerY = playerY;
 			SceneManager.LoadScene (sceneName);
 			break;
-
+                       
 		}
 	}
 

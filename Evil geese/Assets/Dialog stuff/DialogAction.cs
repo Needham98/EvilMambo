@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 [System.Serializable]
 public class DialogAction {
 	public enum actionType{
 		setGameVar,
 		startCombat,
 		giveItem,
-		setCharacterAvailibility
+		setCharacterAvailibility,
+        //added enum by UnTwo
+        startMiniGame
 	}
 	public actionType ownActionType;
 	public string gameVarName = "";
@@ -49,6 +53,10 @@ public class DialogAction {
 				}
 			}
 			break;
-		}
+            // added case for new enum UnTwo
+            case actionType.startMiniGame:
+                SceneManager.LoadScene("MiniGameMenu");
+                break;
+        }
 	}
 }
