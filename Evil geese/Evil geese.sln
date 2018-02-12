@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evil geese", "Evil geese.csproj", "{7B282D65-9475-A7CE-8D02-7989DE1175C7}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evil geese", "Assembly-CSharp.csproj", "{EF6C5FD9-2E53-432E-7332-CE5853DB0DD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7B282D65-9475-A7CE-8D02-7989DE1175C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7B282D65-9475-A7CE-8D02-7989DE1175C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7B282D65-9475-A7CE-8D02-7989DE1175C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7B282D65-9475-A7CE-8D02-7989DE1175C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF6C5FD9-2E53-432E-7332-CE5853DB0DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF6C5FD9-2E53-432E-7332-CE5853DB0DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF6C5FD9-2E53-432E-7332-CE5853DB0DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF6C5FD9-2E53-432E-7332-CE5853DB0DD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
