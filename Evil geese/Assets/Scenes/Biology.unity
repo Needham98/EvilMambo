@@ -365,7 +365,7 @@ MonoBehaviour:
     - ownActionType: 1
       gameVarName: 
       gameVarValue: 
-      combatEnemies: 060000000600000006000000
+      combatEnemies: 080000000800000008000000
       itemType: 0
       itemAmount: 0
       character: 0

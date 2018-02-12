@@ -10,7 +10,13 @@ public static class CombatCharacterFactory {
 		SusanShapeShifter,
 		WalterWizard,
 		PamelaPaladin,
-		Goose
+		Goose,
+        //added enums by UnTtwo for new enemies
+        Robot,
+        Shrub,
+        finalGoose,
+        gooseBoss
+
 	}
 
 	public static CombatCharacter MakeCharacter(CombatCharacterPresets characterType){
@@ -50,7 +56,17 @@ public static class CombatCharacterFactory {
 			return "Susan The ShapeShifter";
 		case CombatCharacterPresets.Goose:
 			return "Goose";
-		}
+        case CombatCharacterPresets.Robot:
+            return "Robot";
+        case CombatCharacterPresets.Shrub:
+            return "Shrub";
+        case CombatCharacterPresets.finalGoose:
+            return "finalGoose";
+        case CombatCharacterPresets.gooseBoss:
+            return "gooseBoss";
+
+
+        }
 		return "Character name not defined";
 	}
 
@@ -70,7 +86,15 @@ public static class CombatCharacterFactory {
 			return 100;
 		case CombatCharacterPresets.Goose:
 			return 50;
-		}
+            case CombatCharacterPresets.Robot:
+                return 80;
+            case CombatCharacterPresets.Shrub:
+                return 80;
+            case CombatCharacterPresets.finalGoose:
+                return 250;
+            case CombatCharacterPresets.gooseBoss:
+                return 250;
+        }
 		return 1;
 	}
 
@@ -88,7 +112,13 @@ public static class CombatCharacterFactory {
 			return 150;
 		case CombatCharacterPresets.SusanShapeShifter:
 			return 120;
-		}
+        case CombatCharacterPresets.Shrub:
+            return 100;
+        case CombatCharacterPresets.finalGoose:
+            return 200;
+        case CombatCharacterPresets.gooseBoss:
+            return 200;
+        }
 		return 1;
 	}
 
@@ -121,7 +151,16 @@ public static class CombatCharacterFactory {
 			break;
 		case CombatCharacterPresets.Goose:
 			break;
-		}
+        case CombatCharacterPresets.Robot:
+            break;
+        case CombatCharacterPresets.Shrub:
+            break;
+        case CombatCharacterPresets.finalGoose:
+            break;
+        case CombatCharacterPresets.gooseBoss:
+            break;
+
+        }
 		return abilities;
 	}
 
@@ -201,7 +240,31 @@ public static class CombatCharacterFactory {
 			frames.Add (Resources.Load<Sprite>("Sprites/Goose"));
 			sprites.Add ("base", frames);
 			break;
-		}
+
+            case CombatCharacterPresets.Robot:
+                frames = new List<Sprite>();
+                frames.Add(Resources.Load<Sprite>("Sprites/Robot"));
+                sprites.Add("base", frames);
+                break;
+
+            case CombatCharacterPresets.Shrub:
+                frames = new List<Sprite>();
+                frames.Add(Resources.Load<Sprite>("Sprites/Shrub"));
+                sprites.Add("base", frames);
+                break;
+
+            case CombatCharacterPresets.finalGoose:
+                frames = new List<Sprite>();
+                frames.Add(Resources.Load<Sprite>("Sprites/finalGoose"));
+                sprites.Add("base", frames);
+                break;
+
+            case CombatCharacterPresets.gooseBoss:
+                frames = new List<Sprite>();
+                frames.Add(Resources.Load<Sprite>("Sprites/gooseBoss"));
+                sprites.Add("base", frames);
+                break;
+        }
 		return sprites;
 	
 	}
