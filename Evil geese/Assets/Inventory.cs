@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour {
+	// This class is unused
+	// Inventory has already been implemented by Evil Geese
+	// Therefore to minimize code changes we will use their code rather than writing our own
+
+
+
 	//(New class which contains the players inventory)
 	private string[] items; //this is the players inventory, it can only contain 5 items
 	private int full;//this tracks if the inventory is full 

@@ -304,7 +304,15 @@ MonoBehaviour:
       leftSide: 
       rightItemType: 0
       leftItemType: 0
-    actions: []
+    actions:
+    - ownActionType: 0
+      gameVarName: LibraryToMarketUnlocked
+      gameVarValue: True
+      combatEnemies: 
+      itemType: 0
+      itemAmount: 0
+      character: 0
+      charAvailible: 0
 --- !u!4 &191100477
 Transform:
   m_ObjectHideFlags: 0
