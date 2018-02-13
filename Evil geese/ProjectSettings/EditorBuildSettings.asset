@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: 
     guid: 6052437404a1c6547ba5ef616cac156e
   - enabled: 1
-    path: Assets/Scenes/Movement demo.unity
+    path: Assets/Scenes/Market.unity
     guid: c0bfa11d50068594b98258c818a0abda
   - enabled: 1
     path: Assets/Scenes/WorldMap.unity
@@ -39,5 +39,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGame.unity
     guid: aae9d87cd80a3274a928bfee2f26560b
   - enabled: 1
-    path: Assets/Scenes/Chemistry (2).unity
+    path: Assets/Scenes/Chemistry.unity
     guid: c6b44c77700ac954295dc9b574822f55
+  - enabled: 1
+    path: Assets/Scenes/Biology.unity
+    guid: e15b1fc5499c5764ebf94aae92c44a57
+  - enabled: 1
+    path: Assets/Scenes/LibraryToMarket.unity
+    guid: f4a64ff7e5b4e494684b18ee23874164
