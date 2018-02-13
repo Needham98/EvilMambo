@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 */
 public class Mini2Movement : MonoBehaviour {
 
-    private int PlayerSpeed = 3;
+    private int PlayerSpeed = 4;
 
 
     void OnTriggerEnter2D(Collider2D collision)

@@ -408,7 +408,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8c77444eca175d34b97424bc7189ba74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -426,7 +426,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 859992416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: -1, z: 0}
+  m_LocalPosition: {x: -2.98, y: 2.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -463,24 +463,18 @@ MonoBehaviour:
   dialogDataKeys:
   - start
   - play
+  - 2
+  - 3
+  - 4
+  - choice
   dialogDataValues:
   - speekerName: Mike
-    dialogText: Hahahaha you've finally found me, yes ive been sending all the robots
-      after you, but i will stop if you take part in a little game with me
+    dialogText: Hi I'm Mike i build robots and make asault courses for hedgehogs
     optionDescription:
-    - Fine I'll play your game
-    - AHHHHHHH!!!
+    - WAIT! there your robots?
     optionPointer:
-    - play
-    - 
+    - 2
     optionConditional:
-    - rightSideComparable: 2
-      leftSideComparable: 2
-      ownComparison: 0
-      rightSide: 
-      leftSide: 
-      rightItemType: 0
-      leftItemType: 0
     - rightSideComparable: 2
       leftSideComparable: 2
       ownComparison: 0
@@ -512,6 +506,87 @@ MonoBehaviour:
       itemAmount: 0
       character: 0
       charAvailible: 0
+  - speekerName: Mike
+    dialogText: Ahh man have they been attacking people again? Im really not sure
+      why they do that they were programmed to love...
+    optionDescription:
+    - Your Insane
+    optionPointer:
+    - 3
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    actions: []
+  - speekerName: Mike
+    dialogText: Hey not as insane as that Graham guy in Biology he turns people into
+      Geese that guys insane
+    optionDescription:
+    - What where is that guy?
+    optionPointer:
+    - 4
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    actions: []
+  - speekerName: The True Overlord
+    dialogText: Hm Ian, oh he's over in Bilogy, trying to turn stuff into plants or
+      something like i said he's off his rocker! Anyway while your here want to play
+      a life or death game?
+    optionDescription:
+    - Yes?
+    - No, what are you crazy
+    optionPointer:
+    - play
+    - choice
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    actions:
+    - ownActionType: 0
+      gameVarName: BiologyUnlocked
+      gameVarValue: True
+      combatEnemies: 
+      itemType: 0
+      itemAmount: 0
+      character: 0
+      charAvailible: 0
+  - speekerName: Mike
+    dialogText: Too, bad you dont get a choice
+    optionDescription:
+    - Should have seen that coming
+    optionPointer:
+    - play
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    actions: []
 --- !u!1 &986616144
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,23 +775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9399390be8dcfb4abc3036f8b4807ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keys: feffffff01000000ffffffff01000000020000000100000004000000010000000300000001000000050000000100000006000000010000000700000001000000080000000000000008000000ffffffff07000000feffffff06000000feffffff05000000feffffff04000000feffffff03000000feffffff02000000feffffff01000000feffffff00000000fefffffffffffffffefffffffefffffffefffffffdfffffffefffffffcfffffffefffffffafffffffefffffffbfffffffefffffff9fffffffffffffff9ffffff00000000faffffff01000000fbffffff01000000fcffffff01000000fdffffff0100000002000000ffffffff00000000010000000100000001000000
+  _keys: 04000000010000000300000001000000070000000100000007000000feffffff04000000feffffff03000000fefffffffefffffffefffffffdfffffffefffffffcfffffffefffffff9fffffffffffffff9ffffff00000000f9fffffffefffffff9fffffffdfffffffafffffffcffffff07000000ffffffff0700000000000000fdffffff03000000fbfffffffcfffffffcfffffffcfffffffdfffffffcfffffffefffffffcfffffffffffffffcffffff00000000fcffffff01000000fcffffff02000000fcffffff03000000fcffffff04000000fcffffff05000000fcffffff06000000fcffffff07000000fdffffff070000000200000007000000030000000600000004000000050000000400000003000000040000000400000004000000020000000400000001000000040000000000000004000000ffffffff04000000feffffff04000000fdffffff04000000fcffffff04000000fbffffff04000000faffffff04000000f9ffffff03000000f9ffffff02000000f9ffffff01000000feffffff02000000fdffffff02000000fcffffff020000000300000000000000040000000000000004000000ffffffff03000000ffffffff03000000020000000400000002000000
   _positions:
-  - x: -2
-    y: 1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: -1
-    y: 1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 2
-    y: 1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
   - x: 4
     y: 1
     interactionObject: {fileID: 0}
@@ -727,42 +787,12 @@ MonoBehaviour:
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
-  - x: 5
-    y: 1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 6
-    y: 1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
   - x: 7
     y: 1
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
-  - x: 8
-    y: 0
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 462966827}
-    blocked: 0
-  - x: 8
-    y: -1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 462966827}
-    blocked: 0
   - x: 7
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 6
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 5
     y: -2
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
@@ -773,26 +803,6 @@ MonoBehaviour:
     stepOn: {fileID: 0}
     blocked: 1
   - x: 3
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 2
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 1
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 0
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: -1
     y: -2
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
@@ -812,58 +822,243 @@ MonoBehaviour:
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
-  - x: -6
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: -5
-    y: -2
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
   - x: -7
     y: -1
     interactionObject: {fileID: 0}
-    stepOn: {fileID: 462966827}
-    blocked: 0
+    stepOn: {fileID: 0}
+    blocked: 1
   - x: -7
     y: 0
     interactionObject: {fileID: 0}
     stepOn: {fileID: 462966827}
     blocked: 0
+  - x: -7
+    y: -2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -7
+    y: -3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
   - x: -6
-    y: 1
+    y: -4
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
-  - x: -5
-    y: 1
+  - x: 7
+    y: -1
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
-  - x: -4
-    y: 1
+  - x: 7
+    y: 0
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
   - x: -3
-    y: 1
-    interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
-  - x: 2
-    y: -1
+    y: 3
     interactionObject: {fileID: 859992416}
     stepOn: {fileID: 0}
     blocked: 1
+  - x: -5
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -4
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -3
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -2
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -1
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
   - x: 0
-    y: 1
+    y: -4
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
   - x: 1
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 2
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 3
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 5
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 6
+    y: -4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 7
+    y: -3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 7
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 7
+    y: 3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 6
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 5
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 3
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 2
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 1
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 0
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -1
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -2
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -3
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -4
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -5
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -6
+    y: 4
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -7
+    y: 3
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -7
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -7
     y: 1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -2
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -3
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -4
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 3
+    y: 0
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: 0
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: -1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 3
+    y: -1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 3
+    y: 2
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: 4
+    y: 2
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
@@ -885,11 +1080,84 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1402107133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.03, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2137993371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2137993373}
+  - component: {fileID: 2137993372}
+  m_Layer: 0
+  m_Name: Chemistry
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &2137993372
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137993371}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d7ee2dc11297ec249a69f018f7a6cd09, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 4.95, y: 2.97}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!4 &2137993373
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137993371}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.05, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2140842085
 GameObject:
