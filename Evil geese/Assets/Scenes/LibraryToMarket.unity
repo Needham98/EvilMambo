@@ -1097,7 +1097,7 @@ MonoBehaviour:
       charAvailible: 0
     - ownActionType: 0
       gameVarName: GooseBlocking
-      gameVarValue: false
+      gameVarValue: False
       combatEnemies: 
       itemType: 0
       itemAmount: 0
@@ -1105,7 +1105,7 @@ MonoBehaviour:
       charAvailible: 0
     - ownActionType: 0
       gameVarName: MarketUnlocked
-      gameVarValue: true
+      gameVarValue: True
       combatEnemies: 
       itemType: 0
       itemAmount: 0

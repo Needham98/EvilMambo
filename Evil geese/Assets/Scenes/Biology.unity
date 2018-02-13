@@ -311,7 +311,7 @@ Transform:
   m_GameObject: {fileID: 68423719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -593,7 +593,7 @@ Transform:
   m_GameObject: {fileID: 985523830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1, y: -1, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -906,7 +906,7 @@ Transform:
   m_GameObject: {fileID: 1222642342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: -1, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -1181,7 +1181,7 @@ MonoBehaviour:
   - speekerName: Graham Ian
     dialogText: Hello Im Ian Graham welcome to biology, want to set some mice on fire?
     optionDescription:
-    - Wait arn't you the guy from scene 3?
+    - Arn't you the guy from scene 3?
     - Yes!
     optionPointer:
     - caboom
@@ -1218,9 +1218,9 @@ MonoBehaviour:
       leftItemType: 0
     actions: []
   - speekerName: Ian Graham
-    dialogText: Actually no we have time for this, you must stop the Vice C that guy
-      is insane, and trust me i know insane people, he's taken a load of geese and
-      goe on top of the spaceship, go stop him
+    dialogText: Actually no we have no time for this, you must stop the Vice C that
+      guy is insane, and trust me i know insane people, he's taken a load of geese
+      and gone on top of the spaceship, go stop him
     optionDescription:
     - Fine i guess
     optionPointer:
