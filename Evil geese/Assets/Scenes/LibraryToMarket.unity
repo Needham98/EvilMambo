@@ -934,8 +934,8 @@ MonoBehaviour:
   ownInteractionType: 2
   enemies: 
   sceneName: Scenes/MarketSquare
-  playerX: 0
-  playerY: 0
+  playerX: -4
+  playerY: -4
 --- !u!4 &1645722502
 Transform:
   m_ObjectHideFlags: 0

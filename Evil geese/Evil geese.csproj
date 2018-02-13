@@ -258,6 +258,7 @@
     <Compile Include="Assets\Unit tests\DialogSystemTests.cs" />
     <Compile Include="Assets\Unit tests\GameStateTests.cs" />
     <Compile Include="Assets\Unit tests\GridSystemTests.cs" />
+    <Compile Include="Assets\Unit tests\New tests\InventoryTest.cs" />
     <Compile Include="Assets\WorldInteraction.cs" />
     <Compile Include="Assets\WorldMap\WorldMapButton.cs" />
   </ItemGroup>
