@@ -586,8 +586,8 @@ GameObject:
   - component: {fileID: 1258092194}
   - component: {fileID: 1258092196}
   - component: {fileID: 1258092197}
-  - component: {fileID: 1258092199}
   - component: {fileID: 1258092198}
+  - component: {fileID: 1258092199}
   m_Layer: 5
   m_Name: robot enemy
   m_TagString: Untagged
@@ -687,13 +687,21 @@ MonoBehaviour:
     - ownActionType: 1
       gameVarName: 
       gameVarValue: 
-      combatEnemies: 0600000006000000
+      combatEnemies: 0700000007000000
       itemType: 0
       itemAmount: 0
       character: 0
       charAvailible: 0
     - ownActionType: 0
-      gameVarName: RobotBlock
+      gameVarName: RobotBlocked
+      gameVarValue: false
+      combatEnemies: 
+      itemType: 0
+      itemAmount: 0
+      character: 0
+      charAvailible: 0
+    - ownActionType: 0
+      gameVarName: RobotHide
       gameVarValue: False
       combatEnemies: 
       itemType: 0
@@ -751,9 +759,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3afab324e1c9948b1b1db5313ae561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameVariable: RobotBlock
+  gameVariable: RobotHide
   Values:
-  - false
+  - False
 --- !u!114 &1258092199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,9 +775,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: -1
-  gameVar: RobotBlock
-  value: True
-  invert: 0
+  gameVar: RobotBlocked
+  value: False
+  invert: 1
 --- !u!1 &1402107133
 GameObject:
   m_ObjectHideFlags: 0
