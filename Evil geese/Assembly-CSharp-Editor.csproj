@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{EF6C5FD9-2E53-432E-7332-CE5853DB0DD8}</ProjectGuid>
+    <ProjectGuid>{58986EED-9455-3850-D96F-E3A8F37C2047}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
@@ -51,53 +51,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AnimationLoop.cs" />
-     <Compile Include="Assets\BlockGridGameVar.cs" />
-     <Compile Include="Assets\CameraFollow.cs" />
-     <Compile Include="Assets\CharacterMenu.cs" />
-     <Compile Include="Assets\CombatStuff\abilities\GiveEffect.cs" />
-     <Compile Include="Assets\CombatStuff\abilities\SelfEffect.cs" />
-     <Compile Include="Assets\CombatStuff\abilities\SimpleAttack.cs" />
-     <Compile Include="Assets\CombatStuff\abilities\SimpleHeal.cs" />
-     <Compile Include="Assets\CombatStuff\CombatAbility.cs" />
-     <Compile Include="Assets\CombatStuff\CombatCharacter.cs" />
-     <Compile Include="Assets\CombatStuff\CombatCharacterFactory.cs" />
-     <Compile Include="Assets\CombatStuff\CombatEffect.cs" />
-     <Compile Include="Assets\CombatStuff\CombatEntity.cs" />
-     <Compile Include="Assets\CombatStuff\CombatManager.cs" />
-     <Compile Include="Assets\Dialog stuff\DialogAction.cs" />
-     <Compile Include="Assets\Dialog stuff\DialogConditional.cs" />
-     <Compile Include="Assets\Dialog stuff\DialogEditor.cs" />
-     <Compile Include="Assets\Dialog stuff\DialogElement.cs" />
-     <Compile Include="Assets\Dialog stuff\DialogManager.cs" />
-     <Compile Include="Assets\GameSave.cs" />
-     <Compile Include="Assets\GameState.cs" />
-     <Compile Include="Assets\GameStateManager.cs" />
-     <Compile Include="Assets\Grid stuff\Grid.cs" />
-     <Compile Include="Assets\Grid stuff\GridEditor.cs" />
-     <Compile Include="Assets\Grid stuff\GridPosition.cs" />
-     <Compile Include="Assets\HideSpriteGameVar.cs" />
-     <Compile Include="Assets\InputManager.cs" />
-     <Compile Include="Assets\Inventory.cs" />
-     <Compile Include="Assets\InventoryItems.cs" />
-     <Compile Include="Assets\Menu\Scripts\ButtonManager.cs" />
-     <Compile Include="Assets\MiniGame\EnemyScript.cs" />
-     <Compile Include="Assets\MiniGame\GooseMovement.cs" />
-     <Compile Include="Assets\MiniGame\Mini2Movement.cs" />
-     <Compile Include="Assets\PauseMenuManager.cs" />
-     <Compile Include="Assets\PlayerMovement.cs" />
-     <Compile Include="Assets\Unit tests\CombatSystemTests.cs" />
-     <Compile Include="Assets\Unit tests\DialogSystemTests.cs" />
-     <Compile Include="Assets\Unit tests\GameStateTests.cs" />
-     <Compile Include="Assets\Unit tests\GridSystemTests.cs" />
-     <Compile Include="Assets\Unit tests\New tests\InventoryTest.cs" />
-     <Compile Include="Assets\WorldInteraction.cs" />
-     <Compile Include="Assets\WorldMap\WorldMapButton.cs" />
+     <Compile Include="Assets\Unit tests\New tests\Editor\ItemTests.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Networking">
+ <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TestRunner">
+ <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
  <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
@@ -108,24 +76,64 @@
  <Reference Include="UnityEngine.Timeline">
  <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.Timeline">
+ <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TreeEditor">
+ <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UIAutomation">
  <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UIAutomation">
+ <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/UIAutomation/Editor/UnityEditor.UIAutomation.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.GoogleAudioSpatializer">
+ <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/Editor/UnityEditor.GoogleAudioSpatializer.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.GoogleAudioSpatializer">
  <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.HoloLens">
+ <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.SpatialTracking">
+ <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/Editor/UnityEditor.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.VR">
+ <HintPath>C:/Program Files/Unity2017/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files/Unity2017/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+ <HintPath>C:/Program Files/Unity2017/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Advertisements">
+ <HintPath>C:/Users/callum/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@1.0.7/Editor/UnityEditor.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Users/callum/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Analytics">
+ <HintPath>C:/Users/callum/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/Editor/UnityEditor.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Purchasing">
  <HintPath>C:/Users/callum/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.Purchasing">
+ <HintPath>C:/Users/callum/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/Editor/UnityEditor.Purchasing.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{EF6C5FD9-2E53-432E-7332-CE5853DB0DD8}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
