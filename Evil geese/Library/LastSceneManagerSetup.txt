@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Market.unity
+=======
+- path: Assets/InitTestScene636541160833218544.unity
+>>>>>>> 4fc9e316c6720cec36b6dcd98fe96b80f911a070
   isLoaded: 1
   isActive: 1
