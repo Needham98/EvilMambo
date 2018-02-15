@@ -985,7 +985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9399390be8dcfb4abc3036f8b4807ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keys: 0100000000000000ffffffff00000000feffffff01000000fdffffff01000000fcffffff00000000fcfffffffffffffffcfffffffefffffffdfffffffdfffffffefffffffdfffffffffffffffdffffff00000000fdffffff01000000fdffffff02000000fdffffff03000000fdffffff04000000feffffff04000000ffffffff0400000000000000030000000100000002000000010000000000000000000000ffffffffffffffff00000000feffffff01000000ffffffff
+  _keys: 0100000000000000ffffffff00000000feffffff01000000fdffffff01000000fcffffff00000000fcfffffffffffffffcfffffffefffffffdfffffffdfffffffefffffffdfffffffffffffffdffffff00000000fdffffff01000000fdffffff02000000fdffffff03000000fdffffff04000000feffffff04000000ffffffff0400000000000000030000000100000002000000010000000000000000000000ffffffffffffffff00000000feffffff01000000fffffffffdffffffffffffff
   _positions:
   - x: 1
     y: 0
@@ -1035,8 +1035,8 @@ MonoBehaviour:
   - x: -1
     y: -3
     interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
+    stepOn: {fileID: 1495732737}
+    blocked: 0
   - x: 0
     y: -3
     interactionObject: {fileID: 0}
@@ -1102,6 +1102,11 @@ MonoBehaviour:
     interactionObject: {fileID: 1222642342}
     stepOn: {fileID: 0}
     blocked: 0
+  - x: -3
+    y: -1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 1495732737}
+    blocked: 0
 --- !u!114 &1402107135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1125,6 +1130,98 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1495732737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1495732740}
+  - component: {fileID: 1495732739}
+  - component: {fileID: 1495732738}
+  m_Layer: 0
+  m_Name: HideShrubs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1495732738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1495732737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba05fd0888f34e4f8360c77ec524234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownInteractionType: 1
+  enemies: 
+  sceneName: 
+  playerX: 0
+  playerY: 0
+--- !u!114 &1495732739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1495732737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6976a059de7d1541969c6681fba7c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSelectorVarName: Enter Biology
+  dialogDataKeys:
+  - start
+  dialogDataValues:
+  - speekerName: Narrator
+    dialogText: Welcome to biology, the faint smell of rotting corpses sills the air
+    optionDescription:
+    - '...'
+    optionPointer:
+    - 
+    optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    actions:
+    - ownActionType: 0
+      gameVarName: BiologyEnemiesHidden
+      gameVarValue: True
+      combatEnemies: 
+      itemType: 0
+      itemAmount: 0
+      character: 0
+      charAvailible: 0
+    - ownActionType: 0
+      gameVarName: Enter Biology
+      gameVarValue: None
+      combatEnemies: 
+      itemType: 0
+      itemAmount: 0
+      character: 0
+      charAvailible: 0
+--- !u!4 &1495732740
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1495732737}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1688032, y: -1.3451657, z: 0.032132637}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881954674
 GameObject:
