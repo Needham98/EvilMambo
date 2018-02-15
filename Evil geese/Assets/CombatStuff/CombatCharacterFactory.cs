@@ -86,14 +86,14 @@ public static class CombatCharacterFactory {
 			return 100;
 		case CombatCharacterPresets.Goose:
 			return 50;
-            case CombatCharacterPresets.Robot:
-                return 80;
-            case CombatCharacterPresets.Shrub:
-                return 80;
-            case CombatCharacterPresets.finalGoose:
-                return 250;
-            case CombatCharacterPresets.gooseBoss:
-                return 250;
+        case CombatCharacterPresets.Robot:
+            return 80;
+        case CombatCharacterPresets.Shrub:
+           	return 80;
+        case CombatCharacterPresets.finalGoose:
+            return 250;
+        case CombatCharacterPresets.gooseBoss:
+            return 250;
         }
 		return 1;
 	}

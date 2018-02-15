@@ -277,7 +277,7 @@ public class CombatManager : MonoBehaviour {
 					obj.SetActive (true);
 				}
 			}
-
+			state.
 			sceneCamera.transform.position = startingCameraPosition;
 			Destroy (this.transform.parent.gameObject);
 		}

@@ -16,6 +16,29 @@ public static class InventoryItems {
 
 	}
 
+	public static int itemCost(itemTypes itemType){
+		switch (itemType) {
+		case itemTypes.Beak:
+			return 1;
+		case itemTypes.PlasticFork:
+			return 2;
+		case itemTypes.KeyCard:
+			return 10;
+		case itemTypes.CateringCard:
+			return 10;
+		case itemTypes.YusuJumper:
+			return 20;
+		case itemTypes.ElectionFlier:
+			return 3;
+		case itemTypes.ReturnTicket:
+			return 2;
+		default:
+			return 0;
+		}
+
+	}
+
+
 	public static string itemDisplayName(itemTypes itemType){
 		switch (itemType) {
 		case itemTypes.Beak:
@@ -82,20 +105,19 @@ public static class InventoryItems {
 	public static CombatAbility itemAbility(itemTypes itemType){
 		switch (itemType) {
 		case itemTypes.Beak:
-			Debug.Log ("what does the beak do?");
-			return new SimpleAttack (15, 15, "beak", 0, "Beak Poke");
+			return new SimpleAttack (15, 40, "beak", 0, "Beak Poke");
 		case itemTypes.PlasticFork:
-			return new SimpleAttack (10, 20, "melee", 0, "Fork Stab");
+			return new SimpleAttack (10, 45, "melee", 0, "Fork Stab");
 		case itemTypes.KeyCard:
-			return new SimpleAttack (10, 25, "melee", 0, "KeyCard Swing");
+			return new SimpleAttack (10, 55, "melee", 0, "KeyCard Swing");
 		case itemTypes.CateringCard:
-			return new SimpleHeal (10,30,0,"Food");
+			return new SimpleHeal (10,60,0,"Food");
 		case itemTypes.ElectionFlier:
 			return new SimpleAttack(0,100,"melee",0,"Canvasing");
 		case itemTypes.YusuJumper:
-			return new SimpleAttack (15, 35, "melee", 0, "Smother by merchandising");
+			return new SimpleAttack (15, 65, "melee", 0, "Smother by merchandising");
 		case itemTypes.ReturnTicket:
-			return new SimpleAttack (20, 30, "melee", 0, "Torn Sorrow");
+			return new SimpleAttack (20, 40, "melee", 0, "Torn Sorrow");
 		default:
 			return null;
 		}

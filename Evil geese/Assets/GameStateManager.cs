@@ -94,6 +94,20 @@ public class GameStateManager : MonoBehaviour{
 		}
 	}
 
+	public bool setCurrency(int amount){ //new added to handle the spending of currency, returns true if the addition/subtraction was successful
+		if (amount < 0) {
+			if (state.currency > amount) {
+				state.currency = state.currency + amount;
+				return true;
+			}
+			else {return false;}
+		}
+		else{
+			state.currency = state.currency + amount;
+			return true;
+		}
+	}
+
 	public void saveState(string saveName){
 		GameSave.saveState (saveName, state);
 	}
