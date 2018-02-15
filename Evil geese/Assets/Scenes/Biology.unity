@@ -690,8 +690,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99df8faf571c6b24a9a019df7d3b7c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  y: 0
+  x: -3
+  y: -1
   stepObject: {fileID: 0}
   movedir: {x: 0, y: 1}
   upAnimationLoop:

@@ -77,15 +77,17 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFiltering: 0
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousColorSigma: 1
-    m_PVRFilteringAtrousNormalSigma: 1
-    m_PVRFilteringAtrousPositionSigma: 1
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -107,6 +109,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    debug:
+      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &118535589
 GameObject:
@@ -603,6 +607,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -618,6 +623,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -901,8 +907,8 @@ MonoBehaviour:
   - x: 2
     y: -5
     interactionObject: {fileID: 0}
-    stepOn: {fileID: 0}
-    blocked: 1
+    stepOn: {fileID: 1862540896}
+    blocked: 0
   - x: 1
     y: -5
     interactionObject: {fileID: 0}
@@ -990,13 +996,13 @@ MonoBehaviour:
     blocked: 1
   - x: -4
     y: 2
-    interactionObject: {fileID: 1658153290}
+    interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
   - x: -3
     y: 3
     interactionObject: {fileID: 0}
-    stepOn: {fileID: 1862540896}
+    stepOn: {fileID: 1715470523}
     blocked: 0
 --- !u!1 &908265249
 GameObject:
@@ -1073,7 +1079,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!4 &908265254
 Transform:
   m_ObjectHideFlags: 0
@@ -1117,8 +1122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99df8faf571c6b24a9a019df7d3b7c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  y: 0
+  x: -4
+  y: -4
   stepObject: {fileID: 0}
   movedir: {x: 0, y: 1}
   upAnimationLoop:
@@ -1138,6 +1143,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1153,6 +1159,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -1178,7 +1185,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1377318971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1201,139 +1208,51 @@ MonoBehaviour:
   loop: 1
   obeysPause: 1
   animationTime: 0
---- !u!1 &1658153290
+--- !u!1 &1715470523
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 1658153292}
-  - component: {fileID: 1658153291}
-  - component: {fileID: 1658153293}
+  - component: {fileID: 1715470525}
+  - component: {fileID: 1715470524}
   m_Layer: 0
-  m_Name: WorldMapDialog
+  m_Name: GoToChemistry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1658153291
+--- !u!114 &1715470524
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1658153290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6976a059de7d1541969c6681fba7c18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startSelectorVarName: 
-  dialogDataKeys:
-  - start
-  - Enabled
-  - Disabled
-  dialogDataValues:
-  - speekerName: The Narrator
-    dialogText: what state should the world map button for this scene be in?
-    optionDescription:
-    - Enabled
-    - Disabled
-    optionPointer:
-    - Enabled
-    - Disabled
-    optionConditional:
-    - rightSideComparable: 2
-      leftSideComparable: 2
-      ownComparison: 0
-      rightSide: 
-      leftSide: 
-      rightItemType: 0
-      leftItemType: 0
-    - rightSideComparable: 2
-      leftSideComparable: 2
-      ownComparison: 0
-      rightSide: 
-      leftSide: 
-      rightItemType: 0
-      leftItemType: 0
-    actions: []
-  - speekerName: The Narrator
-    dialogText: okay, it's enabled.
-    optionDescription:
-    - Continue
-    optionPointer:
-    - 
-    optionConditional:
-    - rightSideComparable: 2
-      leftSideComparable: 2
-      ownComparison: 0
-      rightSide: 
-      leftSide: 
-      rightItemType: 0
-      leftItemType: 0
-    actions:
-    - ownActionType: 0
-      gameVarName: test
-      gameVarValue: true
-      combatEnemies: 
-      itemType: 0
-      itemAmount: 0
-      character: 0
-      charAvailible: 0
-  - speekerName: The Narrator
-    dialogText: Okay, it's disabled.
-    optionDescription:
-    - Continue
-    optionPointer:
-    - 
-    optionConditional:
-    - rightSideComparable: 2
-      leftSideComparable: 2
-      ownComparison: 0
-      rightSide: 
-      leftSide: 
-      rightItemType: 0
-      leftItemType: 0
-    actions:
-    - ownActionType: 0
-      gameVarName: test
-      gameVarValue: false
-      combatEnemies: 
-      itemType: 0
-      itemAmount: 0
-      character: 0
-      charAvailible: 0
---- !u!4 &1658153292
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1658153290}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.384434, y: -2.2772527, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1658153293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1658153290}
+  m_GameObject: {fileID: 1715470523}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ba05fd0888f34e4f8360c77ec524234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownInteractionType: 1
+  ownInteractionType: 2
   enemies: 
-  sceneName: 
-  playerX: 0
+  sceneName: Scenes/Chemistry
+  playerX: -6
   playerY: 0
+--- !u!4 &1715470525
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715470523}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.25, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1803088029
 GameObject:
   m_ObjectHideFlags: 0
