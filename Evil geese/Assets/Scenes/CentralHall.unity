@@ -602,8 +602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99df8faf571c6b24a9a019df7d3b7c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: -6
-  y: -2
+  x: -3
+  y: -1
   stepObject: {fileID: 0}
   movedir: {x: 0, y: 1}
   upAnimationLoop:
@@ -744,7 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9399390be8dcfb4abc3036f8b4807ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keys: 00000000fefffffffffffffffefffffffefffffffefffffffdfffffffefffffffcfffffffefffffffcffffff00000000fdffffff00000000feffffff00000000ffffffff000000000000000000000000
+  _keys: 00000000fefffffffffffffffefffffffefffffffefffffffdfffffffefffffffcfffffffefffffffcffffff00000000fdffffff00000000feffffff00000000ffffffff00000000000000000000000000000000fffffffffcffffffffffffff
   _positions:
   - x: 0
     y: -2
@@ -796,6 +796,16 @@ MonoBehaviour:
     interactionObject: {fileID: 0}
     stepOn: {fileID: 0}
     blocked: 1
+  - x: 0
+    y: -1
+    interactionObject: {fileID: 117325565}
+    stepOn: {fileID: 0}
+    blocked: 1
+  - x: -4
+    y: -1
+    interactionObject: {fileID: 0}
+    stepOn: {fileID: 1049383801}
+    blocked: 0
 --- !u!114 &1402107135
 MonoBehaviour:
   m_ObjectHideFlags: 0
