@@ -29,6 +29,8 @@ public class GameState : ISerializationCallbackReceiver{
 	public int playerX;
 	public int playerY;
 
+	public int currency; //new variable added to enable a shop
+
 	public GameState(){
 		gameStateVars = new Dictionary<string, string> ();
 		movementEnabled = true;
@@ -36,6 +38,7 @@ public class GameState : ISerializationCallbackReceiver{
 		availibleCharacters = new List<CombatCharacterFactory.CombatCharacterPresets> ();
 		currentTeam = new List<CombatCharacterFactory.CombatCharacterPresets> ();
 		inventory = new Dictionary<InventoryItems.itemTypes, int> ();
+		currency = 10;
 	}
 
 	public void OnBeforeSerialize(){

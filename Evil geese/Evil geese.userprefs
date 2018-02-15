@@ -1,12 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Unit tests\New tests\InventoryTest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GameStateManager.cs">
     <Files>
-      <File FileName="Assets\InventoryItems.cs" Line="98" Column="64" />
-      <File FileName="Assets\Unit tests\CombatSystemTests.cs" Line="17" Column="3" />
+      <File FileName="Assets\InventoryItems.cs" Line="36" Column="13" />
       <File FileName="Assets\Unit tests\New tests\InventoryTest.cs" Line="31" Column="29" />
       <File FileName="Assets\Unit tests\GameStateTests.cs" Line="5" Column="1" />
-      <File FileName="Assets\CombatStuff\CombatManager.cs" Line="195" Column="41" />
+      <File FileName="Assets\CombatStuff\CombatManager.cs" Line="280" Column="10" />
+      <File FileName="Assets\GameState.cs" Line="33" Column="2" />
+      <File FileName="Assets\GameStateManager.cs" Line="99" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

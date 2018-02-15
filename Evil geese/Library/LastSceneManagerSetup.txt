@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/CampusTransition.unity
+=======
+- path: Assets/Scenes/CentralHall.unity
+>>>>>>> 7ca298ed72dd4521b42dda3418be3412e157a30e
   isLoaded: 1
   isActive: 1
