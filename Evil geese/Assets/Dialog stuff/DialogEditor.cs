@@ -160,6 +160,10 @@ public class DialogEditor : Editor{
 						action.character = (CombatCharacterFactory.CombatCharacterPresets)EditorGUILayout.EnumPopup (action.character);
 						action.charAvailible = EditorGUILayout.Toggle (action.charAvailible);
 						break;
+					case DialogAction.actionType.buy:
+						action.itemType = (InventoryItems.itemTypes)EditorGUILayout.EnumPopup (action.itemType);
+						action.itemAmount = EditorGUILayout.IntField (action.itemAmount);
+						break;
 					}
 					if (GUILayout.Button ("Delete")) {
 						actionToDelete = action;

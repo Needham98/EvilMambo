@@ -11,7 +11,8 @@ public class DialogAction {
 		giveItem,
 		setCharacterAvailibility,
         //added enum by UnTwo
-        startMiniGame
+        startMiniGame,
+		buy
 	}
 	public actionType ownActionType;
 	public string gameVarName = "";
@@ -39,6 +40,14 @@ public class DialogAction {
 		case actionType.giveItem:
 			state.changeItem (itemType, itemAmount);
 			break;
+		case actionType.buy:
+			if (state.setCurrency (-InventoryItems.itemCost (itemType))) {
+				state.changeItem (itemType, itemAmount);
+				break;
+			} else {
+				break;
+			}
+			
 		case actionType.setCharacterAvailibility:
 			if (charAvailible) {
 				if (!state.availibleCharacters.Contains (character)) {

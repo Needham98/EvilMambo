@@ -277,7 +277,7 @@ public class CombatManager : MonoBehaviour {
 					obj.SetActive (true);
 				}
 			}
-			state.
+			state.setCurrency (10);//new, awards the player with money at the end of combat
 			sceneCamera.transform.position = startingCameraPosition;
 			Destroy (this.transform.parent.gameObject);
 		}
