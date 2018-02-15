@@ -506,6 +506,14 @@ MonoBehaviour:
       itemAmount: 0
       character: 0
       charAvailible: 0
+    - ownActionType: 0
+      gameVarName: StopFiend
+      gameVarValue: None
+      combatEnemies: 
+      itemType: 0
+      itemAmount: 0
+      character: 0
+      charAvailible: 0
 --- !u!4 &163530992
 Transform:
   m_ObjectHideFlags: 0
