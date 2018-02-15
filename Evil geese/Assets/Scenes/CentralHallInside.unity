@@ -2436,8 +2436,8 @@ MonoBehaviour:
   ownInteractionType: 2
   enemies: 
   sceneName: Scenes/CentralHall
-  playerX: 0
-  playerY: 0
+  playerX: -3
+  playerY: -1
 --- !u!4 &1846524767
 Transform:
   m_ObjectHideFlags: 0

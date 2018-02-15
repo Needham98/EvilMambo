@@ -255,7 +255,7 @@ public static class CombatCharacterFactory {
 
             case CombatCharacterPresets.finalGoose:
                 frames = new List<Sprite>();
-                frames.Add(Resources.Load<Sprite>("Sprites/finalGoose"));
+                frames.Add(Resources.Load<Sprite>("Sprites/final goose"));
                 sprites.Add("base", frames);
                 break;
 
