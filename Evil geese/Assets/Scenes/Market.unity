@@ -173,7 +173,6 @@ MonoBehaviour:
   - combat
   - postCombat
   - itemTest
-  - itemTest2
   - newChar
   dialogDataValues:
   - speekerName: You
@@ -502,17 +501,40 @@ MonoBehaviour:
       leftSide: 
       rightItemType: 0
       leftItemType: 0
-    actions: []
-  - speekerName: The Narrator
-    dialogText: 'You use your Incredible debug powers to cause a... goose beak...
-      ok then, a magnificent goose beak to appear in the air in front of you.
-
-      You now have %Beak beaks.'
+    actions:
+    - ownActionType: 0
+      gameVarName: Chemistry
+      gameVarValue: true
+      combatEnemies: 
+      itemType: 0
+      itemAmount: 0
+      character: 0
+      charAvailible: 0
+  - speekerName: Shop
+    dialogText: What would you like to buy?
     optionDescription:
-    - Continue
+    - Jumper
+    - Election Flier
+    - Return Ticket
     optionPointer:
     - 
+    - 
+    - 
     optionConditional:
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
+    - rightSideComparable: 2
+      leftSideComparable: 2
+      ownComparison: 0
+      rightSide: 
+      leftSide: 
+      rightItemType: 0
+      leftItemType: 0
     - rightSideComparable: 2
       leftSideComparable: 2
       ownComparison: 0
@@ -521,31 +543,30 @@ MonoBehaviour:
       rightItemType: 0
       leftItemType: 0
     actions:
-    - ownActionType: 2
+    - ownActionType: 5
       gameVarName: 
       gameVarValue: 
       combatEnemies: 
-      itemType: 0
+      itemType: 4
       itemAmount: 1
       character: 0
       charAvailible: 0
-  - speekerName: The Narrator
-    dialogText: 'You already made a goose beak.
-
-      You did however just try the new conditional dialog system.'
-    optionDescription:
-    - Continue
-    optionPointer:
-    - 
-    optionConditional:
-    - rightSideComparable: 2
-      leftSideComparable: 2
-      ownComparison: 0
-      rightSide: 
-      leftSide: 
-      rightItemType: 0
-      leftItemType: 0
-    actions: []
+    - ownActionType: 5
+      gameVarName: 
+      gameVarValue: 
+      combatEnemies: 
+      itemType: 5
+      itemAmount: 1
+      character: 0
+      charAvailible: 0
+    - ownActionType: 5
+      gameVarName: 
+      gameVarValue: 
+      combatEnemies: 
+      itemType: 6
+      itemAmount: 1
+      character: 0
+      charAvailible: 0
   - speekerName: The Narrator
     dialogText: A new character is added to your roster
     optionDescription:
