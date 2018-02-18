@@ -24,7 +24,8 @@ public class CombatEffect {
 
 	public void doEffect(CombatCharacter character){
 		if (type == effectType.abilityPerTurn) {
-			List<CombatCharacter> characterList = new List<CombatCharacter> ();
+            this.modifier = modifier * character.GetLevel(character.Name); 
+            List <CombatCharacter> characterList = new List<CombatCharacter> ();
 			characterList.Add (character);
 			ability.doAbility (characterList, character);
 		}

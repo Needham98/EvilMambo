@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 [System.Serializable]
 public static class CombatCharacterFactory {
@@ -31,12 +32,16 @@ public static class CombatCharacterFactory {
 		default:
 			newCharacter = new CombatCharacter(characterMaxHealth, characterMaxHealth, characterMaxEnergy, characterMaxEnergy, basicAttack);
 			break;
-		}
-		List<CombatAbility> abilities = GetCharacterAbilities (characterType);
+         
+        }
+
+        List<CombatAbility> abilities = GetCharacterAbilities (characterType);
 		foreach (CombatAbility ability in abilities) {
 			newCharacter.AddAbility (ability);
 		}
 		newCharacter.combatSprites = getCharacterSprites (characterType);
+
+        newCharacter.Name = GetCharacterName(characterType);
 		return newCharacter;
 	}
 
@@ -255,7 +260,7 @@ public static class CombatCharacterFactory {
 
             case CombatCharacterPresets.finalGoose:
                 frames = new List<Sprite>();
-                frames.Add(Resources.Load<Sprite>("Sprites/final goose"));
+                frames.Add(Resources.Load<Sprite>("Sprites/finalGoose"));
                 sprites.Add("base", frames);
                 break;
 
@@ -268,5 +273,7 @@ public static class CombatCharacterFactory {
 		return sprites;
 	
 	}
+
+   
 }
 

@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 [System.Serializable]
 public class CombatCharacter {
+    public string Name;
 	public int maxHealth;
 	public int health;
 	public int maxEnergy;
@@ -109,4 +111,24 @@ public class CombatCharacter {
 		}
 		return -1;
 	}
+    public int GetLevel(string characterName)
+    {
+        StreamReader reader = new StreamReader(characterName + ".txt");
+        int exp = int.Parse(reader.ReadLine());
+        reader.Close();
+        return (exp/50);
+    }
+
+    public void AddExp(string characterName)
+    {
+        StreamReader reader = new StreamReader(characterName + ".txt");
+        int exp = int.Parse(reader.ReadLine());
+        reader.Close();
+
+        StreamWriter writer = new StreamWriter(characterName + ".txt");
+        writer.WriteLine((exp + 20).ToString());
+        writer.Close();
+
+
+    }
 }
