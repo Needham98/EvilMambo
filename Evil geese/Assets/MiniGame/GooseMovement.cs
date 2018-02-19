@@ -22,6 +22,7 @@ public class GooseMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+	//This warps geese back to the top to ensure endless enemies
         if (transform.position.y < end.position.y)
         {
             int charge = Random.Range(3, 20);
