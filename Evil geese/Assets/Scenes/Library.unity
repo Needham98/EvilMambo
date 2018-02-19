@@ -307,7 +307,7 @@ MonoBehaviour:
     actions:
     - ownActionType: 0
       gameVarName: LibraryToMarketUnlocked
-      gameVarValue: True
+      gameVarValue: true
       combatEnemies: 
       itemType: 0
       itemAmount: 0

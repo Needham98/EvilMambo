@@ -379,8 +379,8 @@ MonoBehaviour:
       character: 0
       charAvailible: 0
     - ownActionType: 0
-      gameVarName: CentralHallUnlocked
-      gameVarValue: True
+      gameVarName: CentralHallInsideUnlocked
+      gameVarValue: true
       combatEnemies: 
       itemType: 0
       itemAmount: 0

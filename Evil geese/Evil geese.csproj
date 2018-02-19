@@ -262,6 +262,14 @@
     <Compile Include="Assets\WorldInteraction.cs" />
     <Compile Include="Assets\WorldMap\WorldMapButton.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\CombatStuff\Bobby The Bard.txt" />
+    <None Include="Assets\CombatStuff\Charlie The Cleric.txt" />
+    <None Include="Assets\CombatStuff\Mabel The Mage.txt" />
+    <None Include="Assets\CombatStuff\Pamela The Paladin.txt" />
+    <None Include="Assets\CombatStuff\Susan The ShapeShifter.txt" />
+    <None Include="Assets\CombatStuff\Walter The Wizard.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>

@@ -1107,7 +1107,7 @@ MonoBehaviour:
       charAvailible: 0
     - ownActionType: 0
       gameVarName: MarketUnlocked
-      gameVarValue: True
+      gameVarValue: true
       combatEnemies: 
       itemType: 0
       itemAmount: 0
