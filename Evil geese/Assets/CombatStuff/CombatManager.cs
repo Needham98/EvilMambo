@@ -279,7 +279,7 @@ public class CombatManager : MonoBehaviour {
 					obj.SetActive (true);
 				}
 			}
-			state.
+            state.setCurrency(10);
 			sceneCamera.transform.position = startingCameraPosition;
 			Destroy (this.transform.parent.gameObject);
 		}
